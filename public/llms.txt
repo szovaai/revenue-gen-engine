@@ -1,0 +1,11 @@
+# ClickAdMedia
+
+> Local-business web design and lead generation agency that builds revenue-generating websites designed to turn visitors into calls, leads, jobs, and appointments.
+
+## Pages
+
+- [Home](/): Revenue-generating websites for local service businesses.
+- [Free Website Audit](/free-audit): Request a free audit of your current website.
+- [Book a Strategy Call](/strategy-call): Book a strategy call to plan your growth.
+- [Website Examples](/website-examples): Examples of websites we've built.
+- [Contact](/contact): Get in touch with ClickAdMedia.
