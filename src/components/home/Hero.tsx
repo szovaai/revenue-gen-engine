@@ -82,7 +82,7 @@ function FunnelStep({
   index,
   started,
 }: {
-  step: (typeof steps)[number];
+  step: Step;
   index: number;
   started: boolean;
 }) {
