@@ -9,8 +9,32 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WebsiteExamplesRouteImport } from './routes/website-examples'
+import { Route as StrategyCallRouteImport } from './routes/strategy-call'
+import { Route as FreeAuditRouteImport } from './routes/free-audit'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 
+const WebsiteExamplesRoute = WebsiteExamplesRouteImport.update({
+  id: '/website-examples',
+  path: '/website-examples',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StrategyCallRoute = StrategyCallRouteImport.update({
+  id: '/strategy-call',
+  path: '/strategy-call',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FreeAuditRoute = FreeAuditRouteImport.update({
+  id: '/free-audit',
+  path: '/free-audit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +43,83 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/free-audit': typeof FreeAuditRoute
+  '/strategy-call': typeof StrategyCallRoute
+  '/website-examples': typeof WebsiteExamplesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/free-audit': typeof FreeAuditRoute
+  '/strategy-call': typeof StrategyCallRoute
+  '/website-examples': typeof WebsiteExamplesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/free-audit': typeof FreeAuditRoute
+  '/strategy-call': typeof StrategyCallRoute
+  '/website-examples': typeof WebsiteExamplesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/free-audit'
+    | '/strategy-call'
+    | '/website-examples'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/contact' | '/free-audit' | '/strategy-call' | '/website-examples'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/free-audit'
+    | '/strategy-call'
+    | '/website-examples'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
+  FreeAuditRoute: typeof FreeAuditRoute
+  StrategyCallRoute: typeof StrategyCallRoute
+  WebsiteExamplesRoute: typeof WebsiteExamplesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/website-examples': {
+      id: '/website-examples'
+      path: '/website-examples'
+      fullPath: '/website-examples'
+      preLoaderRoute: typeof WebsiteExamplesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/strategy-call': {
+      id: '/strategy-call'
+      path: '/strategy-call'
+      fullPath: '/strategy-call'
+      preLoaderRoute: typeof StrategyCallRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/free-audit': {
+      id: '/free-audit'
+      path: '/free-audit'
+      fullPath: '/free-audit'
+      preLoaderRoute: typeof FreeAuditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +132,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
+  FreeAuditRoute: FreeAuditRoute,
+  StrategyCallRoute: StrategyCallRoute,
+  WebsiteExamplesRoute: WebsiteExamplesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
