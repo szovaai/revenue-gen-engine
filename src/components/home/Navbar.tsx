@@ -28,9 +28,9 @@ export function Navbar() {
           : "border-b border-transparent"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2.5" aria-label="ClickAdMedia home">
-          <img src={logoAsset.url} alt="" className="h-20 w-20 rounded-md object-cover" />
+          <img src={logoAsset.url} alt="" className="h-[120px] w-[120px] rounded-md object-cover" />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
