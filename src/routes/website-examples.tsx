@@ -19,6 +19,19 @@ export const Route = createFileRoute("/website-examples")({
       { property: "og:url", content: "/website-examples" },
     ],
     links: [{ rel: "canonical", href: "/website-examples" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Website Examples — ClickAdMedia",
+          description:
+            "A curated portfolio of revenue-generating websites built by ClickAdMedia for local service businesses.",
+          url: "https://revenue-gen-engine.lovable.app/website-examples",
+        }),
+      },
+    ],
   }),
   component: ExamplesPage,
 });

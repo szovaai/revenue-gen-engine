@@ -89,11 +89,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "ClickAdMedia — Websites That Turn Clicks Into Customers" },
       { name: "twitter:title", content: "ClickAdMedia — Websites That Turn Clicks Into Customers" },
-      { name: "description", content: "Lead Machine HQ builds revenue-generating websites for local businesses to increase leads, calls, and revenue." },
-      { property: "og:description", content: "Lead Machine HQ builds revenue-generating websites for local businesses to increase leads, calls, and revenue." },
-      { name: "twitter:description", content: "Lead Machine HQ builds revenue-generating websites for local businesses to increase leads, calls, and revenue." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5025ca93-ac98-48b9-95d0-bd454242d341/id-preview-67df024a--db4f9046-65a9-4940-ad61-a276df9e1884.lovable.app-1780591997288.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5025ca93-ac98-48b9-95d0-bd454242d341/id-preview-67df024a--db4f9046-65a9-4940-ad61-a276df9e1884.lovable.app-1780591997288.png" },
+      { property: "og:description", content: "ClickAdMedia builds premium direct-response websites that turn local-business traffic into leads, calls, and customers." },
+      { name: "twitter:description", content: "ClickAdMedia builds premium direct-response websites that turn local-business traffic into leads, calls, and customers." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

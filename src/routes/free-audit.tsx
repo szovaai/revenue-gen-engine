@@ -26,9 +26,20 @@ export const Route = createFileRoute("/free-audit")({
 function AuditPage() {
   return (
     <PageShell>
-      <div className="pt-20">
-        <AuditForm />
+      <div className="pt-28 pb-4">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
+          <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+            Free Audit
+          </span>
+          <h1 className="mt-3 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+            Free Website Conversion Audit
+          </h1>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Tell us about your site and we'll show you what's costing you leads — and the fastest wins to fix it.
+          </p>
+        </div>
       </div>
+      <AuditForm />
     </PageShell>
   );
 }
