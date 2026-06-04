@@ -25,13 +25,21 @@ function useCountUp(target: number, durationMs = 1400, start = false) {
   return value;
 }
 
-const steps = [
+type Step = {
+  label: string;
+  icon: typeof Globe;
+  value: number;
+  suffix: string;
+  custom?: string;
+};
+
+const steps: Step[] = [
   { label: "Traffic", icon: Globe, value: 1284, suffix: " visits" },
   { label: "Leads", icon: Users, value: 87, suffix: " inquiries" },
   { label: "Calls", icon: Phone, value: 42, suffix: " calls" },
   { label: "Booked Jobs", icon: Calendar, value: 19, suffix: " jobs" },
   { label: "Revenue", icon: TrendingUp, value: 0, suffix: "", custom: "↗ Growth" },
-] as const;
+];
 
 function FunnelMockup() {
   const ref = useRef<HTMLDivElement>(null);
