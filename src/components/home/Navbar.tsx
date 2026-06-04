@@ -30,11 +30,7 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2.5" aria-label="ClickAdMedia home">
-          <img src={logoAsset.url} alt="" className="h-9 w-9 rounded-md object-cover" />
-          <span className="text-sm font-semibold tracking-tight text-foreground">
-            Click<span className="text-accent">Ad</span>Media
-            <span className="text-muted-foreground">.co</span>
-          </span>
+          <img src={logoAsset.url} alt="" className="h-14 w-14 rounded-md object-cover" />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
