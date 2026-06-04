@@ -14,7 +14,7 @@ import { FooterCTA } from "@/components/home/FooterCTA";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Revenue-Generating Websites For Local Businesses | ClickAdMedia" },
+      { title: "Websites That Turn Clicks Into Customers | ClickAdMedia" },
       {
         name: "description",
         content:

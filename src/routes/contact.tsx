@@ -19,6 +19,20 @@ export const Route = createFileRoute("/contact")({
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "ClickAdMedia",
+          email: "hello@clickadmedia.co",
+          telephone: "+1-000-000-0000",
+          url: "https://revenue-gen-engine.lovable.app/contact",
+          openingHours: "Mo-Fr 09:00-18:00",
+        }),
+      },
+    ],
   }),
   component: ContactPage,
 });
