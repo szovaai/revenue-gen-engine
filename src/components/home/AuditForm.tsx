@@ -176,7 +176,7 @@ function Field({
         placeholder={placeholder}
         aria-invalid={!!error}
         aria-describedby={error ? errId : undefined}
-        className={`w-full rounded-xl border bg-background/60 px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+        className={`w-full rounded-xl border bg-background/60 px-4 py-3 text-base text-foreground placeholder:text-muted-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
           error ? "border-destructive" : "border-border focus-visible:border-primary"
         }`}
       />
