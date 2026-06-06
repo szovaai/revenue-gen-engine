@@ -84,11 +84,11 @@ function ExamplesPage() {
             Portfolio
           </span>
           <h1 className="mt-3 text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
-            Websites that <span className="text-gradient-brand">convert.</span>
+            Revenue Engines that <span className="text-gradient-brand">convert.</span>
           </h1>
           <p className="mt-5 text-lg text-muted-foreground">
-            Real builds for real local businesses. Every site is engineered around one job:
-            turning visitors into leads, calls, and booked jobs.
+            Real builds for real contractors and operators. Every site ships wired to a CRM and
+            automated follow-up — not a brochure, a 24/7 salesperson.
           </p>
         </div>
       </section>
@@ -137,10 +137,10 @@ function ExamplesPage() {
                         <ExternalLink className="h-4 w-4" />
                       </a>
                       <Link
-                        to="/strategy-call"
+                        to="/apply"
                         className="inline-flex h-12 items-center justify-center rounded-full border border-border bg-secondary/40 px-6 text-sm font-semibold text-foreground hover:bg-secondary"
                       >
-                        Get a site like this
+                        Get an Engine like this
                       </Link>
                     </div>
                   </div>
@@ -151,17 +151,17 @@ function ExamplesPage() {
 
           <div className="mt-16 flex flex-col items-center justify-center gap-3 text-center sm:flex-row">
             <Link
-              to="/strategy-call"
+              to="/apply"
               className="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-primary px-7 text-sm font-semibold text-primary-foreground shadow-[0_10px_40px_var(--glow-blue)] transition-all hover:translate-y-[-1px]"
             >
-              Book A Strategy Call
+              Apply for the Pilot Program
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
             <Link
               to="/free-audit"
               className="inline-flex h-14 items-center justify-center rounded-full border border-border bg-secondary/40 px-7 text-sm font-semibold text-foreground hover:bg-secondary"
             >
-              Get a Free Audit
+              Get a Free Ghost Town Audit
             </Link>
           </div>
         </div>
