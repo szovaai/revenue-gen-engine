@@ -3,6 +3,7 @@ import { PageShell } from "@/components/home/PageShell";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import westlightsAsset from "@/assets/westlights.png.asset.json";
 import truecanAsset from "@/assets/truecan.png.asset.json";
+import truecantechAsset from "@/assets/truecantech.png.asset.json";
 
 export const Route = createFileRoute("/website-examples")({
   head: () => ({
@@ -54,6 +55,14 @@ const examples = [
     description:
       "Conversion-optimized site for a licensed ESA-certified electrical contractor. Bold trust-driven hero with instant consultation form, dual emergency CTAs, featured services grid, reliability proof points, and FAQ to overcome objections before the call.",
     image: truecanAsset.url,
+  },
+  {
+    name: "TrueCan Tech",
+    url: "https://truecantech.com",
+    industry: "Industrial Automation & Controls",
+    description:
+      "B2B authority site for an industrial automation and control systems firm. Outcome-focused messaging (protect assets, increase production, decrease OPEX), industries-served grid, proof-driven performance stats, and a structured request-a-technical-review form for high-intent leads.",
+    image: truecantechAsset.url,
   },
 ];
 
