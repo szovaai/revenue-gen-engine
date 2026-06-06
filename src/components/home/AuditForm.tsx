@@ -73,11 +73,11 @@ export function AuditForm() {
               id="audit-heading"
               className="mt-3 text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
             >
-              Get a free website conversion audit.
+              Free Digital Ghost Town Audit.
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-              We'll show you what's costing you leads, what to improve, and the quickest wins for
-              more conversions.
+              Drop your URL and we'll show you exactly where your site is leaking leads — and the
+              fastest wins to turn it into a Revenue Engine.
             </p>
           </div>
 

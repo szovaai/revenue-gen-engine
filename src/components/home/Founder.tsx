@@ -27,9 +27,9 @@ export function Founder() {
                 id="founder-heading"
                 className="mt-3 text-xl font-medium leading-relaxed text-foreground sm:text-2xl"
               >
-                "I believe websites should do more than look good. They should generate measurable
-                business growth. Every website we build is designed around conversion, trust, and
-                long-term results."
+                "Contractors don't need another web design project. They need a salesperson that
+                works 24/7 for the cost of a phone bill. That's what the Revenue Engine is —
+                and that's why we put it in for $0 down."
               </blockquote>
               <footer className="mt-6">
                 <p className="text-base font-semibold text-foreground">Jason R. Szova</p>

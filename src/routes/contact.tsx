@@ -46,10 +46,10 @@ function ContactPage() {
             Contact
           </span>
           <h1 className="mt-3 text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
-            Let's <span className="text-gradient-brand">talk growth.</span>
+            Let's plug in your <span className="text-gradient-brand">Revenue Engine.</span>
           </h1>
           <p className="mt-5 text-lg text-muted-foreground">
-            The fastest way to reach us is to book a strategy call. Otherwise, drop us a line.
+            Fastest path: apply for the Pilot Program. Prefer to chat first? Email or call us.
           </p>
 
           <div className="mx-auto mt-10 grid max-w-xl gap-3 text-left">
@@ -81,10 +81,10 @@ function ContactPage() {
 
           <div className="mt-10">
             <Link
-              to="/strategy-call"
+              to="/apply"
               className="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-primary px-7 text-sm font-semibold text-primary-foreground shadow-[0_10px_40px_var(--glow-blue)] transition-all hover:translate-y-[-1px]"
             >
-              Book A Strategy Call
+              Apply for the Pilot Program
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>

@@ -3,30 +3,31 @@ import { PageShell } from "@/components/home/PageShell";
 import { Hero } from "@/components/home/Hero";
 import { WhyWebsitesFail } from "@/components/home/WhyWebsitesFail";
 import { Framework } from "@/components/home/Framework";
-import { Packages } from "@/components/home/Packages";
+import { Pricing } from "@/components/home/Pricing";
 import { BeforeAfter } from "@/components/home/BeforeAfter";
 import { Industries } from "@/components/home/Industries";
 import { Checklist } from "@/components/home/Checklist";
 import { Founder } from "@/components/home/Founder";
+import { FAQ } from "@/components/home/FAQ";
 import { AuditForm } from "@/components/home/AuditForm";
 import { FooterCTA } from "@/components/home/FooterCTA";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Websites That Turn Clicks Into Customers | ClickAdMedia" },
+      { title: "Revenue Engine for Contractors — $0 Setup | ClickAdMedia" },
       {
         name: "description",
         content:
-          "ClickAdMedia builds premium direct-response websites designed to generate more leads, calls, appointments, and customers for local businesses.",
+          "ClickAdMedia builds a 24/7 Revenue Engine for contractors — lead-gen website + automated GHL CRM. $0 setup, $199/mo. You only pay to scale.",
       },
       {
         property: "og:title",
-        content: "Websites That Turn Clicks Into Customers — ClickAdMedia",
+        content: "Revenue Engine for Contractors — $0 Setup | ClickAdMedia",
       },
       {
         property: "og:description",
-        content: "Premium direct-response websites built for local business growth.",
+        content: "Lead-gen website + automated CRM follow-up. $0 down. Apply for the Pilot Program.",
       },
       { property: "og:url", content: "/" },
     ],
@@ -39,9 +40,37 @@ export const Route = createFileRoute("/")({
           "@type": "ProfessionalService",
           name: "ClickAdMedia",
           description:
-            "Direct-response website design and lead generation for local service businesses.",
-          areaServed: "United States",
-          serviceType: "Web Design & Lead Generation",
+            "Revenue-as-a-Service for contractors: lead-gen website plus automated GHL CRM. $0 setup, monthly subscription.",
+          areaServed: "United States, Canada",
+          serviceType: "Lead Generation & CRM Automation for Contractors",
+          offers: [
+            {
+              "@type": "Offer",
+              name: "Core Engine",
+              price: "199",
+              priceCurrency: "USD",
+              priceSpecification: {
+                "@type": "UnitPriceSpecification",
+                price: "199",
+                priceCurrency: "USD",
+                billingIncrement: 1,
+                unitText: "MONTH",
+              },
+            },
+            {
+              "@type": "Offer",
+              name: "Growth Engine",
+              price: "499",
+              priceCurrency: "USD",
+              priceSpecification: {
+                "@type": "UnitPriceSpecification",
+                price: "499",
+                priceCurrency: "USD",
+                billingIncrement: 1,
+                unitText: "MONTH",
+              },
+            },
+          ],
         }),
       },
     ],
@@ -55,11 +84,12 @@ function HomePage() {
       <Hero />
       <WhyWebsitesFail />
       <Framework />
-      <Packages />
+      <Pricing />
       <BeforeAfter />
       <Industries />
       <Checklist />
       <Founder />
+      <FAQ />
       <AuditForm />
       <FooterCTA />
     </PageShell>

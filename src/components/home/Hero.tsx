@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Phone, Calendar, TrendingUp, Globe, Users } from "lucide-react";
+import { ArrowRight, Phone, Calendar, TrendingUp, Globe, Users, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 function useCountUp(target: number, durationMs = 1400, start = false) {
@@ -36,7 +36,7 @@ type Step = {
 const steps: Step[] = [
   { label: "Traffic", icon: Globe, value: 1284, suffix: " visits" },
   { label: "Leads", icon: Users, value: 87, suffix: " inquiries" },
-  { label: "Calls", icon: Phone, value: 42, suffix: " calls" },
+  { label: "Auto Follow-up", icon: Phone, value: 42, suffix: " SMS sent" },
   { label: "Booked Jobs", icon: Calendar, value: 19, suffix: " jobs" },
   { label: "Revenue", icon: TrendingUp, value: 0, suffix: "", custom: "↗ Growth" },
 ];
@@ -65,7 +65,7 @@ function FunnelMockup() {
             <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
             <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
           </div>
-          <span className="text-xs text-muted-foreground">Revenue Funnel · Live</span>
+          <span className="text-xs text-muted-foreground">Revenue Engine · Live</span>
         </div>
         <ul className="space-y-3">
           {steps.map((step, i) => (
@@ -137,28 +137,28 @@ export function Hero() {
       />
       <div className="mx-auto grid max-w-7xl gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-10 lg:px-8">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/40 px-3 py-1 text-xs font-medium text-muted-foreground">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary motion-safe:animate-pulse" />
-            Direct-Response Web Design
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+            <Sparkles className="h-3.5 w-3.5" />
+            Revenue-as-a-Service for Contractors
           </span>
           <h1
             id="hero-heading"
             className="mt-5 text-[clamp(2.25rem,6vw,5.5rem)] font-extrabold leading-[1.02] tracking-tight text-foreground"
           >
-            Websites That Turn{" "}
-            <span className="text-gradient-brand">Clicks Into Customers</span>
+            We build your{" "}
+            <span className="text-gradient-brand">Revenue Engine</span> for $0 down.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Premium direct-response websites designed to generate more leads, more calls, more
-            appointments, and more revenue for local businesses.
+            A done-for-you website + automated CRM that puts qualified leads in your calendar
+            24/7. No upfront fees. No 6-week build. You only pay to scale.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Link
-              to="/strategy-call"
-              aria-label="Book a strategy call with ClickAdMedia"
+              to="/apply"
+              aria-label="Apply for the ClickAdMedia Pilot Program"
               className="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-primary px-7 text-sm font-semibold text-primary-foreground shadow-[0_10px_40px_var(--glow-blue)] transition-all hover:translate-y-[-1px] hover:shadow-[0_14px_50px_var(--glow-blue)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              Book A Strategy Call
+              Apply for the Pilot Program
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
             <Link
@@ -166,21 +166,21 @@ export function Hero() {
               aria-label="See ClickAdMedia website examples"
               className="inline-flex h-14 items-center justify-center rounded-full border border-border bg-secondary/40 px-7 text-sm font-semibold text-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              See Website Examples
+              See Live Examples
             </Link>
           </div>
           <dl className="mt-10 grid max-w-md grid-cols-3 gap-6">
             <div>
-              <dt className="text-xs uppercase tracking-wider text-muted-foreground">Avg. Lift</dt>
-              <dd className="mt-1 text-2xl font-bold text-foreground">3.2×</dd>
+              <dt className="text-xs uppercase tracking-wider text-muted-foreground">Setup</dt>
+              <dd className="mt-1 text-2xl font-bold text-foreground">$0</dd>
             </div>
             <div>
-              <dt className="text-xs uppercase tracking-wider text-muted-foreground">Load Time</dt>
-              <dd className="mt-1 text-2xl font-bold text-foreground">&lt;2s</dd>
+              <dt className="text-xs uppercase tracking-wider text-muted-foreground">Starts At</dt>
+              <dd className="mt-1 text-2xl font-bold text-foreground">$199/mo</dd>
             </div>
             <div>
-              <dt className="text-xs uppercase tracking-wider text-muted-foreground">Mobile</dt>
-              <dd className="mt-1 text-2xl font-bold text-foreground">100%</dd>
+              <dt className="text-xs uppercase tracking-wider text-muted-foreground">Sells</dt>
+              <dd className="mt-1 text-2xl font-bold text-foreground">24/7</dd>
             </div>
           </dl>
         </div>
