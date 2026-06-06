@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/home/PageShell";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import westlightsAsset from "@/assets/westlights.png.asset.json";
+import truecanAsset from "@/assets/truecan.png.asset.json";
 
 export const Route = createFileRoute("/website-examples")({
   head: () => ({
