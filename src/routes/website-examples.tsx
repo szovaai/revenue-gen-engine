@@ -4,6 +4,7 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import westlightsAsset from "@/assets/westlights.png.asset.json";
 import truecanAsset from "@/assets/truecan.png.asset.json";
 import truecantechAsset from "@/assets/truecantech.png.asset.json";
+import caminoAsset from "@/assets/camino.png.asset.json";
 
 export const Route = createFileRoute("/website-examples")({
   head: () => ({
