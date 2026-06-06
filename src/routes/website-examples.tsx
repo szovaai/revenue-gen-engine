@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/home/PageShell";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import westlightsAsset from "@/assets/westlights.png.asset.json";
+import truecanAsset from "@/assets/truecan.png.asset.json";
 
 export const Route = createFileRoute("/website-examples")({
   head: () => ({
@@ -45,6 +46,14 @@ const examples = [
     description:
       "Lead-capture-first website for a premium permanent roofline lighting company. High-converting hero with above-the-fold authorized dealer form, social proof gallery, trust badges, and clear how-it-works flow.",
     image: westlightsAsset.url,
+  },
+  {
+    name: "TrueCan Power Systems",
+    url: "https://truecanpower.com",
+    industry: "Electrical Contractor — Calgary, AB",
+    description:
+      "Conversion-optimized site for a licensed ESA-certified electrical contractor. Bold trust-driven hero with instant consultation form, dual emergency CTAs, featured services grid, reliability proof points, and FAQ to overcome objections before the call.",
+    image: truecanAsset.url,
   },
 ];
 
