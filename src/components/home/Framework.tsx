@@ -1,25 +1,20 @@
-import { ArrowRight, MousePointerClick, LayoutTemplate, Inbox, DollarSign } from "lucide-react";
+import { ArrowRight, Megaphone, LayoutTemplate, MessageSquare } from "lucide-react";
 
 const steps = [
   {
-    title: "Traffic",
-    icon: MousePointerClick,
-    body: "Google Ads, Facebook Ads, SEO, and referrals drive qualified visitors.",
+    title: "Connect The Traffic",
+    icon: Megaphone,
+    body: "Ads, SEO, and our scraper outreach push qualified contractor-shoppers to your site.",
   },
   {
-    title: "Conversion Website",
+    title: "Convert On The Site",
     icon: LayoutTemplate,
-    body: "Headline, offer, trust, proof, and a single clear call to action.",
+    body: "A direct-response site engineered around one job: turning the click into a form fill or call.",
   },
   {
-    title: "Lead Capture",
-    icon: Inbox,
-    body: "Forms, calls, bookings, and messenger — every visitor has a path.",
-  },
-  {
-    title: "Revenue",
-    icon: DollarSign,
-    body: "More jobs, more clients, predictable monthly growth.",
+    title: "Close With GHL",
+    icon: MessageSquare,
+    body: "Every lead gets automated SMS + email follow-up in seconds — booked into your calendar.",
   },
 ];
 
@@ -32,20 +27,20 @@ export function Framework() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-            Our Method
+            How It Works
           </span>
           <h2
             id="framework-heading"
             className="mt-3 text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
           >
-            The Revenue Website Framework™
+            The 3-Step Revenue Framework
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            A repeatable four-step system that turns clicks into customers.
+            Traffic. Conversion. Automated closing. Your Revenue Engine, end to end.
           </p>
         </div>
 
-        <ol className="mt-16 grid gap-4 md:grid-cols-4 md:gap-3">
+        <ol className="mt-16 grid gap-4 md:grid-cols-3 md:gap-3">
           {steps.map((s, i) => {
             const Icon = s.icon;
             return (

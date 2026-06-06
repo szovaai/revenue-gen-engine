@@ -15,8 +15,8 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-              Premium direct-response websites built to generate more leads, calls, and revenue for
-              local service businesses.
+              Revenue Engines for contractors. Lead-gen websites plus automated CRM follow-up —
+              $0 setup, monthly subscription.
             </p>
           </div>
           <div>
@@ -47,8 +47,8 @@ export function Footer() {
             </h3>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
-                <Link to="/strategy-call" className="text-foreground/80 hover:text-foreground">
-                  Book A Strategy Call
+                <Link to="/apply" className="text-foreground/80 hover:text-foreground">
+                  Apply for the Pilot Program
                 </Link>
               </li>
             </ul>

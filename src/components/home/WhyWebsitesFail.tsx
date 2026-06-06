@@ -1,22 +1,21 @@
 import { Check, X } from "lucide-react";
 
 const failures = [
-  "Pretty but don't convert",
-  "No direct-response copy",
-  "No lead capture strategy",
-  "Slow load speeds",
-  "No follow-up system",
-  "No clear offer",
+  "Looks like a brochure, sells like a ghost",
+  "Visitors leave without leaving a name",
+  "Zero follow-up when a lead does come in",
+  "No SMS, no CRM, no automation",
+  "Slow on mobile, invisible on Google",
+  "Built and forgotten — never optimized",
 ];
 
 const wins = [
-  "Built around conversion psychology",
-  "Direct-response copywriting",
-  "Mobile-first design",
-  "Lightning-fast loading",
-  "Lead capture systems built in",
-  "Optimized for SEO",
-  "Built for paid advertising",
+  "Direct-response site built to convert clicks",
+  "Auto SMS + email follow-up within seconds",
+  "GHL CRM tracks every lead end-to-end",
+  "Lead routed to your phone in real time",
+  "Sub-2s mobile load, optimized for ads",
+  "Continuously tuned for more booked jobs",
 ];
 
 export function WhyWebsitesFail() {
@@ -34,10 +33,11 @@ export function WhyWebsitesFail() {
             id="why-fail-heading"
             className="mt-3 text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
           >
-            Why most business websites fail.
+            Most contractor sites are a digital ghost town.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Most agencies design websites to look pretty. We engineer them to generate revenue.
+            Your website exists, but it doesn't do anything. We turn it into a 24/7 salesperson
+            that books jobs while you're on the truck.
           </p>
         </div>
 
@@ -47,7 +47,7 @@ export function WhyWebsitesFail() {
               <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-destructive/15 text-destructive ring-1 ring-destructive/30">
                 <X className="h-5 w-5" />
               </span>
-              <h3 className="text-xl font-semibold text-foreground">Typical Websites</h3>
+              <h3 className="text-xl font-semibold text-foreground">Digital Ghost Town</h3>
             </header>
             <ul className="space-y-3.5">
               {failures.map((f) => (
@@ -68,7 +68,7 @@ export function WhyWebsitesFail() {
               <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/15 text-primary ring-1 ring-primary/30">
                 <Check className="h-5 w-5" />
               </span>
-              <h3 className="text-xl font-semibold text-foreground">The ClickAdMedia Difference</h3>
+              <h3 className="text-xl font-semibold text-foreground">Your Revenue Engine</h3>
             </header>
             <ul className="space-y-3.5">
               {wins.map((w) => (

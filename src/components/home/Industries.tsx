@@ -1,23 +1,14 @@
-import {
-  Home,
-  Zap,
-  Wind,
-  Wrench,
-  Trees,
-  Smile,
-  Stethoscope,
-  Briefcase,
-} from "lucide-react";
+import { Home, Wind, Wrench, Trees, Zap, Hammer, PaintRoller, Snowflake } from "lucide-react";
 
 const industries = [
   { name: "Roofing", icon: Home },
-  { name: "Electrical", icon: Zap },
   { name: "HVAC", icon: Wind },
   { name: "Plumbing", icon: Wrench },
   { name: "Landscaping", icon: Trees },
-  { name: "Dental", icon: Smile },
-  { name: "Medical", icon: Stethoscope },
-  { name: "Professional Services", icon: Briefcase },
+  { name: "Electrical", icon: Zap },
+  { name: "General Contracting", icon: Hammer },
+  { name: "Painting", icon: PaintRoller },
+  { name: "Snow & Ice", icon: Snowflake },
 ];
 
 export function Industries() {
@@ -29,14 +20,18 @@ export function Industries() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-            Who We Serve
+            Built For The Trades
           </span>
           <h2
             id="industries-heading"
             className="mt-3 text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
           >
-            Built for local service businesses.
+            Engineered for contractors.
           </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            We obsess over one buyer: the time-starved contractor who needs more booked jobs, not
+            another web design project.
+          </p>
         </div>
 
         <ul className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">

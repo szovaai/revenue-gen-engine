@@ -2,16 +2,16 @@ import { Check } from "lucide-react";
 import { useState } from "react";
 
 const items = [
-  "Clear, benefit-driven headline",
-  "Strong, specific offer",
-  "Trust builders above the fold",
-  "Testimonials and proof",
-  "Call tracking installed",
-  "Lead capture forms",
-  "Mobile optimization",
-  "Fast loading (<2s)",
-  "SEO foundation",
-  "Analytics & conversion tracking",
+  "Lead-gen homepage with one clear offer",
+  "Phone & form CTA above the fold",
+  "Instant SMS reply to every new lead",
+  "Automated email follow-up sequence",
+  "CRM that captures every inquiry",
+  "Call tracking & lead source attribution",
+  "Trust signals (reviews, licenses, badges)",
+  "Sub-2s mobile load time",
+  "Local SEO foundation in place",
+  "Ad-ready landing pages for paid traffic",
 ];
 
 export function Checklist() {
@@ -34,23 +34,23 @@ export function Checklist() {
         <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <div>
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-              Audit Your Own Site
+              What's Inside The Engine
             </span>
             <h2
               id="checklist-heading"
               className="mt-3 text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
             >
-              The Website Conversion Checklist.
+              Everything your Revenue Engine ships with.
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              How many of these does your current website have? Tick what applies — the missing
-              ones are leaking leads every day.
+              How many of these does your current site have? Tick what applies — the missing ones
+              are leads slipping through your fingers every day.
             </p>
             <p
               className="mt-6 font-mono text-sm text-muted-foreground"
               aria-live="polite"
             >
-              {checked.size}/{items.length} complete
+              {checked.size}/{items.length} you already have
             </p>
           </div>
 
