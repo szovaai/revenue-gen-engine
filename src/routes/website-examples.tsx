@@ -65,6 +65,14 @@ const examples = [
       "B2B authority site for an industrial automation and control systems firm. Outcome-focused messaging (protect assets, increase production, decrease OPEX), industries-served grid, proof-driven performance stats, and a structured request-a-technical-review form for high-intent leads.",
     image: truecantechAsset.url,
   },
+  {
+    name: "Camino Chemicals",
+    url: "https://caminochemicals.com",
+    industry: "Industrial Chemicals — Canada",
+    description:
+      "Conversion-optimized site for a Canadian manufacturer of industrial detergents and specialty chemicals. Bold benefit-led hero, trust badges, featured product grid, industries-served section, and dual quote/SDS CTAs that match how B2B buyers actually shop.",
+    image: caminoAsset.url,
+  },
 ];
 
 function ExamplesPage() {
