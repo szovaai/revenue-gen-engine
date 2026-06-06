@@ -1,62 +1,77 @@
-## ClickAdMedia Homepage Build Plan
 
-A premium dark-mode, conversion-focused homepage matching the brief, with brand tokens, logo asset, and stub routes for the secondary CTAs.
+# Pivot to "Revenue Engine" Subscription Model
 
-### Design System (src/styles.css)
-Replace default tokens with the ClickAdMedia palette (converted to oklch where needed, hex preserved as CSS vars):
-- `--background` #050505, `--foreground` #FFFFFF
-- `--primary` #0066FF, `--primary-foreground` #FFFFFF
-- `--secondary` #C0C0C0, `--muted-foreground` #A6A6A6
-- `--card` #0B0B0F, `--border` rgba(255,255,255,0.12)
-- Custom: `--glow-blue`, `--glow-purple`, `--gradient-hero`, `--shadow-glow`
-- Force dark class on `<html>` in `__root.tsx`
-- Inter font via Google Fonts link in root head
+Rewrite copy + restructure pricing across the site. No business logic / no backend changes — purely content, CTAs, and a few component tweaks.
 
-### Assets
-- Upload `Logo.jpeg` via `lovable-assets` → `src/assets/logo.asset.json` for navbar + footer
-- OG meta uses logo URL
+## Positioning shift
 
-### Routes (src/routes/)
-- `index.tsx` — full homepage (replaces placeholder)
-- `website-examples.tsx` — "Coming soon" stub with nav + footer
-- `free-audit.tsx` — standalone audit form page
-- `strategy-call.tsx` — calendar booking placeholder + contact info
-- `contact.tsx` — simple contact page
-- Each route gets unique `head()` with title, description, og:title, og:description; canonical on leaves only
+- From: project-based web design, $997 / $2497 starting prices, "Book Strategy Call"
+- To: Revenue-as-a-Service for contractor trades (HVAC, Roofing, Plumbing, Landscaping), $0 setup, monthly subscription, "Apply for the Pilot Program"
+- Core message: We build your revenue engine for $0 down. You only pay to scale.
+- Hook: Most contractors run a "Digital Ghost Town." We turn the site into a 24/7 salesperson via website + GHL CRM automations + (optional) ad management.
 
-### Homepage Sections (componentized under `src/components/home/`)
-1. **PremiumNavbar** — fixed glass nav, logo left, links (Examples, Audit, Contact), "Book Strategy Call" CTA right; mobile sheet menu
-2. **Hero** — H1 "Websites That Turn Clicks Into Customers", subhead, two CTAs; right-side animated funnel mockup (Traffic→Leads→Calls→Jobs→Revenue) with count-up numbers using IntersectionObserver, pulsing arrows, blue glow background
-3. **WhyWebsitesFail** — two-column split (❌ failures / ✅ ClickAdMedia difference) with glass cards
-4. **RevenueFramework** — 4-step diagram (Traffic / Conversion Website / Lead Capture / Revenue) connected with glowing lines
-5. **Packages** — 3 glass pricing cards (Essential $997, Growth $2,497 featured, Authority $4,997+) with feature lists
-6. **BeforeAfter** — two comparison cards side-by-side
-7. **Industries** — 8-item icon grid (Roofing, Electrical, HVAC, Plumbing, Landscaping, Dental, Medical, Professional)
-8. **ConversionChecklist** — interactive 10-item checklist (click to toggle, keyboard accessible, aria-pressed)
-9. **Founder** — Jason R. Szova card with quote, generated portrait placeholder
-10. **AuditForm** — Zod-validated form (name, email, website), success state, stored to localStorage for now (no backend requested)
-11. **FooterCTA + Footer** — final CTA band + footer with logo, links, copyright
+## Global CTA + nav changes
 
-### Motion & Accessibility
-- Tailwind `motion-safe:` for fades/lifts; all animations wrapped to respect `prefers-reduced-motion`
-- Count-up disabled under reduced motion
-- Focus-visible rings using `--ring`, semantic `<main>`, `<section>` with aria-labelledby, alt text, form labels + error messages, aria-live on form success
-- Tap targets ≥44px
+- Replace every "Book Strategy Call" / "Book A Strategy Call" CTA with "Apply for the Pilot Program" linking to `/apply` (new route, replaces `/strategy-call` usage in nav and buttons).
+- Keep `/strategy-call` route file as a redirect-style page that points users to `/apply` (avoids breaking sitemap / old links). Or repurpose its content — TBD in build.
+- Update Navbar + Footer links accordingly.
+- "Get a Free Audit" secondary CTA stays, but reframed as "Get a Free Digital Ghost Town Audit."
 
-### SEO
-- Per-route `head()` with title/description/og tags
-- JSON-LD Organization on root, Service schema on home
-- Canonical on each leaf
+## Page-by-page changes
 
-### Technical
-- Brand color tokens added once in `src/styles.css` — components consume `bg-primary`, `text-primary`, `bg-card`, `border-border`, etc. No hardcoded hex in components
-- Generate one funnel illustration / abstract glow background via imagegen if needed for hero ambiance
-- Founder photo: ask user to upload later; placeholder silhouette or initials avatar with note
+### Home (`src/routes/index.tsx` + `src/components/home/*`)
+- `Hero`: New headline "We Build Your Revenue Engine For $0 Down." Subhead emphasizes contractors, monthly model, you only pay to scale. Primary CTA → Apply for the Pilot Program. Stats row reframed (e.g. "$0 Setup", "24/7 Sales", "Pilot Cities").
+- `WhyWebsitesFail` → reframe around "Digital Ghost Town" concept.
+- `Framework` → rewrite to the 3-Step Revenue Framework:
+  1. Connect the Scraper (Traffic)
+  2. The Site (Conversion)
+  3. GHL (Automated Closing — SMS + email follow-up)
+  Reduce from 4 steps to 3; update icons/labels.
+- `Packages` → replace with two-tier pricing table:
+  - Core Engine — $199/mo, $0 setup: lead-gen website, hosting, GHL CRM with auto SMS/email follow-up.
+  - Growth Engine — $499/mo + ad spend: everything in Core plus managed ad traffic into the CRM.
+  Highlight "$0 Setup Fee" badge and "Apply for Pilot Program" CTA on each tier.
+- `Industries` → tighten to HVAC, Roofing, Plumbing, Landscaping (and adjacent trades).
+- `Checklist` → reframe items as "what your Revenue Engine does for you."
+- `Founder` → light edit to match partnership / pilot framing.
+- `AuditForm` heading → "Free Digital Ghost Town Audit."
+- `FooterCTA` → "Ready to plug in your Revenue Engine?" with Apply CTA.
+- Add a new `FAQ` component answering: Why $0? (We win when you win.) What's the pilot? Do I own the site? What's GHL? What if I already have a site? Cancel anytime?
+- Update home `head()` title + description + JSON-LD to reflect subscription positioning.
 
-### Out of Scope (this pass)
-- Real booking integration (Calendly/Cal.com) — stub link
-- Backend audit submissions (no Lovable Cloud requested) — client-side validation + success message only
-- Real testimonials/case studies content
-- CMS implementation (model documented in brief, not built yet)
+### Apply page (new `src/routes/apply.tsx`)
+- Replaces "Strategy Call" as the primary conversion destination.
+- Copy: "Apply for the Pilot Program" — limited cities, $0 setup, qualification-style form (name, business, trade, city, website, monthly lead goal).
+- Reuses existing form patterns from `AuditForm` (zod + localStorage submission — no backend work).
+- SEO head() set appropriately.
 
-Let me know if you want booking integration (Cal.com link?) or Lovable Cloud enabled to actually store audit form submissions — otherwise I'll ship form with client-side success state.
+### Strategy Call (`src/routes/strategy-call.tsx`)
+- Repoint content to the Pilot Program (or render a short "Now called the Pilot Program" panel with a link to `/apply`). Keeps URL alive for any external links / sitemap entry.
+
+### Free Audit (`src/routes/free-audit.tsx`)
+- Rename hero to "Free Digital Ghost Town Audit." Update head() title/description accordingly.
+
+### Website Examples (`src/routes/website-examples.tsx`)
+- Light copy tweak only: intro paragraph and bottom CTA reflect "Revenue Engine" framing and Apply CTA. Existing 4 examples untouched.
+
+### Contact (`src/routes/contact.tsx`)
+- Update intro + CTA to mention Pilot Program; no structural changes.
+
+### Sitemap (`src/routes/sitemap[.]xml.ts`)
+- Add `/apply`. Keep `/strategy-call`.
+
+## Files touched
+
+- New: `src/routes/apply.tsx`, `src/components/home/Pricing.tsx` (replaces `Packages` usage on home), `src/components/home/FAQ.tsx`
+- Edited: `src/components/home/Hero.tsx`, `WhyWebsitesFail.tsx`, `Framework.tsx`, `Industries.tsx`, `Checklist.tsx`, `Founder.tsx`, `AuditForm.tsx`, `FooterCTA.tsx`, `Navbar.tsx`, `Footer.tsx`, `src/routes/index.tsx`, `src/routes/strategy-call.tsx`, `src/routes/free-audit.tsx`, `src/routes/website-examples.tsx`, `src/routes/contact.tsx`, `src/routes/sitemap[.]xml.ts`
+- `Packages.tsx` either deleted or kept unused (will delete to avoid dead code).
+
+## Out of scope (not in this plan)
+
+- No GoHighLevel integration, no real form submission backend, no Stripe/Paddle billing wiring. Forms stay client-only like the current `AuditForm`.
+- No new images / screenshots.
+- No analytics or A/B testing setup.
+
+## Open question
+
+Per the user's closing question: do you already have a GoHighLevel account with a Lead Notification + SMS Follow-up automation, or should that be a follow-up task after the copy pivot ships? I'll proceed with copy-only changes now and we can scope the GHL snapshot work separately.
