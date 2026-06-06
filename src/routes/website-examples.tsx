@@ -47,6 +47,14 @@ const examples = [
       "Lead-capture-first website for a premium permanent roofline lighting company. High-converting hero with above-the-fold authorized dealer form, social proof gallery, trust badges, and clear how-it-works flow.",
     image: westlightsAsset.url,
   },
+  {
+    name: "TrueCan Power Systems",
+    url: "https://truecanpower.com",
+    industry: "Electrical Contractor — Calgary, AB",
+    description:
+      "Conversion-optimized site for a licensed ESA-certified electrical contractor. Bold trust-driven hero with instant consultation form, dual emergency CTAs, featured services grid, reliability proof points, and FAQ to overcome objections before the call.",
+    image: truecanAsset.url,
+  },
 ];
 
 function ExamplesPage() {
