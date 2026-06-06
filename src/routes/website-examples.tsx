@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/home/PageShell";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
+import westlightsAsset from "@/assets/westlights.png.asset.json";
 
 export const Route = createFileRoute("/website-examples")({
   head: () => ({
@@ -36,22 +37,92 @@ export const Route = createFileRoute("/website-examples")({
   component: ExamplesPage,
 });
 
+const examples = [
+  {
+    name: "WestLights",
+    url: "https://westlights.ca",
+    industry: "Permanent Lighting — Calgary, AB",
+    description:
+      "Lead-capture-first website for a premium permanent roofline lighting company. High-converting hero with above-the-fold authorized dealer form, social proof gallery, trust badges, and clear how-it-works flow.",
+    image: westlightsAsset.url,
+  },
+];
+
 function ExamplesPage() {
   return (
     <PageShell>
-      <section className="relative pt-36 pb-28">
+      <section className="relative pt-36 pb-16">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
           <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
             Portfolio
           </span>
           <h1 className="mt-3 text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
-            Website examples — <span className="text-gradient-brand">launching soon.</span>
+            Websites that <span className="text-gradient-brand">convert.</span>
           </h1>
           <p className="mt-5 text-lg text-muted-foreground">
-            We're curating a fresh set of case studies and live builds. In the meantime, book a
-            call and we'll walk you through recent client results in detail.
+            Real builds for real local businesses. Every site is engineered around one job:
+            turning visitors into leads, calls, and booked jobs.
           </p>
-          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        </div>
+      </section>
+
+      <section className="pb-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-10">
+            {examples.map((ex) => (
+              <article
+                key={ex.name}
+                className="overflow-hidden rounded-2xl border border-border bg-card shadow-[0_10px_40px_rgba(0,0,0,0.4)]"
+              >
+                <div className="grid gap-0 md:grid-cols-2">
+                  <a
+                    href={ex.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative block max-h-[600px] overflow-hidden border-b border-border md:border-b-0 md:border-r"
+                    aria-label={`Visit ${ex.name} website`}
+                  >
+                    <img
+                      src={ex.image}
+                      alt={`${ex.name} website screenshot`}
+                      loading="lazy"
+                      className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+                    />
+                  </a>
+                  <div className="flex flex-col justify-center p-8 sm:p-10">
+                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                      {ex.industry}
+                    </span>
+                    <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                      {ex.name}
+                    </h2>
+                    <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                      {ex.description}
+                    </p>
+                    <div className="mt-7 flex flex-wrap gap-3">
+                      <a
+                        href={ex.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground transition-all hover:shadow-[0_0_30px_var(--glow-blue)]"
+                      >
+                        Visit Site
+                        <ExternalLink className="h-4 w-4" />
+                      </a>
+                      <Link
+                        to="/strategy-call"
+                        className="inline-flex h-12 items-center justify-center rounded-full border border-border bg-secondary/40 px-6 text-sm font-semibold text-foreground hover:bg-secondary"
+                      >
+                        Get a site like this
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-16 flex flex-col items-center justify-center gap-3 text-center sm:flex-row">
             <Link
               to="/strategy-call"
               className="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-primary px-7 text-sm font-semibold text-primary-foreground shadow-[0_10px_40px_var(--glow-blue)] transition-all hover:translate-y-[-1px]"
