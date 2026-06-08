@@ -11,7 +11,6 @@ export function Footer() {
               <img src={logoAsset.url} alt="" className="h-9 w-9 rounded-md object-cover" />
               <span className="text-sm font-semibold tracking-tight">
                 Click<span className="text-accent">Ad</span>Media
-                <span className="text-muted-foreground">.co</span>
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
