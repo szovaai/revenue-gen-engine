@@ -20,6 +20,10 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/strategy-call", changefreq: "monthly", priority: "0.5" },
           { path: "/website-examples", changefreq: "monthly", priority: "0.7" },
           { path: "/contact", changefreq: "monthly", priority: "0.6" },
+          { path: "/blog", changefreq: "weekly", priority: "0.8" },
+          { path: "/blog/affordable-web-design-calgary-2026", changefreq: "monthly", priority: "0.7" },
+          { path: "/blog/local-seo-alberta-small-business-2026", changefreq: "monthly", priority: "0.7" },
+          { path: "/blog/mobile-first-websites-calgary-trades", changefreq: "monthly", priority: "0.7" },
         ];
 
         const urls = entries.map((e) =>
