@@ -346,57 +346,291 @@ function AffordableCalgaryArticle() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Article 2 — Outline                                                         */
+/* Article 2 — Full                                                              */
 /* -------------------------------------------------------------------------- */
 
 function LocalSeoOutline() {
   return (
     <>
       <p>
-        <em>
-          Full article publishing soon. Outline below — if you'd like us to prioritize this one, reply to any
-          ClickAdMedia email and we'll move it to the top of the queue.
-        </em>
+        If you own a small business in Alberta — a Calgary HVAC crew, an Edmonton dental clinic, a Red Deer
+        auto shop, or a Lethbridge law firm — you've probably noticed something frustrating: Google Ads keeps
+        getting more expensive, and the map pack (the three business listings under the map) seems to be
+        dominated by the same companies no matter what you search.
       </p>
-      <h2>Working outline</h2>
+      <p>
+        Here's the truth most Alberta business owners don't know: ranking in that map pack is not about
+        having the biggest budget. It's about doing a specific set of local SEO tasks consistently — most
+        of which cost nothing but time. In this guide, we'll walk through the exact playbook we use to get
+        Calgary and Alberta businesses found on Google in 2026, including a 30-day sprint you can start
+        today.
+      </p>
+
+      <h2>Why local SEO is the highest-ROI channel for Alberta SMBs</h2>
+      <p>
+        A click from a Google Ads campaign for "Calgary plumber" or "Edmonton roofing" can cost anywhere
+        from $4 to $18. A click from the map pack costs $0 — and converts at roughly the same rate because
+        the searcher is already looking for a local solution right now.
+      </p>
+      <p>
+        According to BrightLocal's 2025 Local Consumer Review Survey, 76% of consumers "regularly" read
+        online reviews for local businesses, and 42% of local searches lead to a click on the map pack
+        within 24 hours. For Alberta trades, home services, and professional services, that means the map
+        pack is often the single biggest source of qualified leads — if you show up there.
+      </p>
+      <p>
+        The businesses that do show up are not necessarily the biggest or the oldest. They're the ones that
+        Google trusts to deliver a consistent name, address, phone, and service description everywhere it
+        looks. That's what this guide fixes.
+      </p>
+
+      <h2>Google Business Profile: the foundation everything else sits on</h2>
+      <p>
+        Your Google Business Profile (GBP) is the #1 ranking factor for local map pack results. Not your
+        website. Not your backlinks. Your GBP. Here's how to set it up to win in Calgary, Edmonton, or any
+        Alberta market:
+      </p>
+
+      <h3>Pick the right primary category</h3>
+      <p>
+        Google uses your primary category to decide which searches to show you for. "HVAC Contractor" is
+        better than "Heating and Air Conditioning" if that's what your competitors are using — check the
+        top three map pack results for your target keyword and match their primary category if it's accurate.
+        You can add up to 10 secondary categories (e.g., "Air Conditioning Repair Service," "Furnace Repair
+        Service") to capture more searches.
+      </p>
+
+      <h3>Service area vs. physical address</h3>
+      <p>
+        If you run a mobile service — roofing, landscaping, mobile detailing — hide your address and set a
+        service area covering Calgary, Airdrie, Cochrane, Okotoks, Chestermere, and Strathmore. If you have
+        a real storefront or office customers can visit, use the address. Do not use a PO box, a virtual
+        office, or a friend's address. Google suspends profiles for this regularly in 2026.
+      </p>
+
+      <h3>Post weekly photos and updates</h3>
+      <p>
+        Businesses that post photos weekly get significantly more discovery searches. Take real photos of your
+        crew working in Tuscany, McKenzie Towne, Bowness, or wherever your actual jobs are. Geo-tag them if
+        you can. Write 100–200 word GBP posts once a week with a clear call to action — "Book a free quote
+        this week and get 10% off."
+      </p>
+
+      <h3>Activate products and services</h3>
+      <p>
+        Most Alberta businesses leave this section empty. Fill in every service you offer with a description
+        that includes the city — "Emergency Furnace Repair in Calgary," "Commercial Roof Inspection in Red
+        Deer." Google indexes this text and uses it to match you to searches.
+      </p>
+
+      <h2>NAP consistency: the silent killer of Alberta local rankings</h2>
+      <p>
+        NAP stands for <strong>Name, Address, Phone</strong>. Google crawls hundreds of directories and
+        checks whether your NAP is identical everywhere. If your YellowPages.ca listing says "Calgary
+        Plumbing Pros Inc." but your GBP says "Calgary Plumbing Pros," and your Facebook page uses a
+        different phone number, Google gets confused — and confusion means lower rankings.
+      </p>
+      <p>Audit and fix your NAP on these Alberta-relevant directories:</p>
+      <ul>
+        <li>Google Business Profile</li>
+        <li>Yelp (yelp.ca)</li>
+        <li>HomeStars (essential for trades)</li>
+        <li>YellowPages.ca</li>
+        <li>Better Business Bureau (bbb.org)</li>
+        <li>Foursquare</li>
+        <li>Apple Maps Business Connect</li>
+        <li>Bing Places for Business</li>
+        <li>Facebook Business Page</li>
+        <li>Industry-specific directories (e.g., ESA contractor lookup for electricians)</li>
+      </ul>
+      <p>
+        <strong>Pro tip:</strong> If you've moved offices, changed phone numbers, or rebranded, your old
+        NAP can linger for years. Use a tool like Moz Local or BrightLocal to find and suppress old
+        listings, or hire a local SEO specialist to run a citation cleanup.
+      </p>
+
+      <h2>The Alberta review playbook: how to get 5-star reviews without breaking Google's rules</h2>
+      <p>
+        Reviews are the #2 local ranking factor, and in competitive Alberta markets like Calgary and Edmonton,
+        the difference between position 1 and position 3 in the map pack often comes down to review quantity,
+        velocity, and sentiment.
+      </p>
+
+      <h3>Review velocity: why slow and steady wins</h3>
+      <p>
+        A business that gets 50 reviews in one week and then nothing for six months looks suspicious. A
+        business that gets 3–5 reviews per month consistently looks legitimate and active. Set a simple
+        system: every time you finish a job, send a text with a direct GBP review link within 2 hours.
+        Follow up once 48 hours later if they haven't left one.
+      </p>
+
+      <h3>Review response templates</h3>
+      <p>
+        Respond to every review — positive and negative — within 24 hours. For positive reviews: thank
+        them, name the service, and mention the neighbourhood. "Thanks Sarah! Glad the emergency furnace repair
+        in Tuscany kept your family warm during that cold snap."
+      </p>
+      <p>
+        For negative reviews: apologise, take responsibility, move the conversation offline, and offer a
+        fix. Never argue. A well-handled one-star review often convinces future readers more than a string
+        of perfect fives.
+      </p>
+
+      <h3>Keyword-rich review prompts (the safe way)</h3>
+      <p>
+        You cannot tell customers what to write — that's against Google's guidelines and can get reviews
+        removed. But you <em>can</em> ask specific questions that naturally produce keyword-rich answers:
+        "How did our Calgary HVAC team do on your furnace installation?" or "Would you recommend our Red
+        Deer roofing crew to a neighbour?"
+      </p>
+
+      <h2>Service-area pages: how to rank in Airdrie, Cochrane, and Okotoks without a physical office</h2>
+      <p>
+        If your main office is in Calgary but you serve Airdrie, Cochrane, Okotoks, Chestermere, and
+        Strathmore, you need a dedicated page for each city. Not a dropdown. Not a paragraph on your
+        homepage. A real page.
+      </p>
+      <p>Each service-area page should include:</p>
+      <ul>
+        <li>A unique H1 like "HVAC Repair in Airdrie, Alberta — Same-Day Service"</li>
+        <li>At least 400 words of unique, useful copy about that area (not duplicated from Calgary)</li>
+        <li>A photo from a real job in that city</li>
+        <li>A review or testimonial from a customer in that city</li>
+        <li>A clear call to action with a click-to-call button</li>
+        <li>Embedded directions or a map showing the route from that city to your service area</li>
+      </ul>
+      <p>
+        The biggest mistake we see? A single page titled "Calgary and Area" with a bulleted list of towns.
+        Google ignores those. Specificity wins.
+      </p>
+
+      <h2>On-page signals that tell Google you're a real Alberta business</h2>
+      <p>
+        Your website needs to back up your GBP with matching signals. Here's the checklist:
+      </p>
+      <ul>
+        <li>
+          <strong>Title tags with city + service.</strong> "Calgary Plumber | Emergency Drain & Pipe Repair
+          | YourBusinessName"
+        </li>
+        <li>
+          <strong>LocalBusiness schema.</strong> JSON-LD on every page with your NAP, hours, service area,
+          and accepted payment types.
+        </li>
+        <li>
+          <strong>Embedded Google Map.</strong> An iframe or static map linking to your GBP on your contact
+          page reinforces your location signal.
+        </li>
+        <li>
+          <strong>Internal linking.</strong> Link from your homepage to each service-area page, and from each
+          service-area page back to your main service and contact pages.
+        </li>
+        <li>
+          <strong>Neighbourhood mentions.</strong> Weave in real Calgary neighbourhoods (Kensington, Inglewood,
+          Bridgeland, etc.) or Edmonton areas (Whyte Ave, Oliver, Strathcona) in your copy where natural.
+        </li>
+      </ul>
+
+      <h2>How to measure if your Alberta local SEO is actually working</h2>
+      <p>
+        Don't track vanity metrics. Track these four numbers:
+      </p>
       <ol>
         <li>
-          <strong>Why local SEO is the highest-ROI channel for Alberta SMBs.</strong> Compared to Google Ads
-          ($4–$18 CPC in Calgary trades), ranking in the 3-pack is essentially free traffic.
+          <strong>GBP insights — "Calls" and "Website clicks."</strong> These are your lead indicators. If
+          they're flat or falling, something upstream (reviews, photos, NAP) needs attention.
         </li>
         <li>
-          <strong>Google Business Profile, the right way.</strong> Categories (primary + secondary), service
-          area vs. address-based, weekly photos, Q&amp;A, products/services, GBP posts.
+          <strong>GA4 events — form submissions and click-to-call taps.</strong> Set these up as conversions
+          so you can see which pages and traffic sources actually drive leads.
         </li>
         <li>
-          <strong>NAP consistency across the Alberta directory web.</strong> Yelp, HomeStars, YellowPages.ca,
-          BBB, Foursquare, Apple Maps Business Connect — and what to do when your old address keeps reappearing.
+          <strong>Google Search Console — "Queries" report.</strong> Look for "near me" and city-specific
+          terms. If your impressions are climbing but clicks are flat, your title tags or GBP might need
+          sharpening.
         </li>
         <li>
-          <strong>The Calgary review playbook.</strong> Review velocity, response templates, keyword-rich
-          review prompts (without violating Google's guidelines), and how to recover from a one-star review.
-        </li>
-        <li>
-          <strong>Service-area pages that actually rank.</strong> Templates for Airdrie, Cochrane, Okotoks,
-          Chestermere, Strathmore — and why "Calgary AND area" pages never crack the map pack.
-        </li>
-        <li>
-          <strong>On-page signals.</strong> Title tags, <code>LocalBusiness</code> schema, internal linking,
-          embedded GBP map, and the "city + service" H1 formula.
-        </li>
-        <li>
-          <strong>Measurement.</strong> GA4 events for calls and forms, Search Console queries to watch, GBP
-          insights, and the one weekly report that tells you if your local SEO is actually working.
-        </li>
-        <li>
-          <strong>Common Alberta mistakes.</strong> PO box addresses, virtual offices, keyword-stuffed business
-          names, fake review buying — what gets you suspended in 2026.
-        </li>
-        <li>
-          <strong>30-day Alberta local SEO sprint.</strong> Week-by-week action plan a Calgary business owner
-          can run themselves.
+          <strong>Review velocity.</strong> Count new reviews per month. Target 4–8 for a solo operator, 10–20
+          for a crew with multiple techs.
         </li>
       </ol>
+      <p>
+        Run these numbers in a simple spreadsheet once a week. In 90 days you'll know exactly whether your
+        local SEO investment is paying off.
+      </p>
+
+      <h2>Mistakes that get Alberta businesses suspended or delisted</h2>
+      <p>
+        Google cracked down hard on spammy local SEO tactics in 2025–2026. Avoid these:
+      </p>
+      <ul>
+        <li>
+          <strong>PO box or virtual office addresses.</strong> If Google Street View shows a UPS Store or a
+          Regus suite, your profile is at risk.
+        </li>
+        <li>
+          <strong>Keyword-stuffed business names.</strong> "Calgary Best Affordable HVAC Repair Pros" is
+          not a real business name. Use your legal DBA and add keywords in the description, not the title.
+        </li>
+        <li>
+          <strong>Fake or incentivised reviews.</strong> Offering a $50 gift card for a review violates
+          Google's policy and can wipe your entire review history.
+        </li>
+        <li>
+          <strong>Duplicate GBP listings.</strong> One business, one profile. If you have old profiles from
+          a previous owner or location, contact Google support to merge or close them.
+        </li>
+      </ul>
+
+      <h2>Your 30-day Alberta local SEO sprint</h2>
+      <p>
+        Here's a week-by-week action plan any Calgary, Edmonton, or Red Deer business owner can run:
+      </p>
+
+      <h3>Week 1 — Foundation</h3>
+      <ul>
+        <li>Claim or verify your Google Business Profile.</li>
+        <li>Audit your NAP on the top 10 directories and fix inconsistencies.</li>
+        <li>Set your primary and secondary categories.</li>
+        <li>Upload 5 real photos with geo-tags.</li>
+      </ul>
+
+      <h3>Week 2 — Content and pages</h3>
+      <ul>
+        <li>Write or commission one service-area page for your next most important city.</li>
+        <li>Add LocalBusiness schema to your homepage.</li>
+        <li>Update your title tags to include city + service.</li>
+        <li>Embed a Google Map on your contact page.</li>
+      </ul>
+
+      <h3>Week 3 — Reviews and posts</h3>
+      <ul>
+        <li>Send review requests to your last 20 happy customers.</li>
+        <li>Respond to every existing review.</li>
+        <li>Post 2 GBP updates with offers or seasonal tips.</li>
+        <li>Add products/services descriptions with city names.</li>
+      </ul>
+
+      <h3>Week 4 — Measurement and iteration</h3>
+      <ul>
+        <li>Set up GA4 conversion events for calls and forms.</li>
+        <li>Check Search Console for "near me" and city query impressions.</li>
+        <li>Document your top 3 competitors' GBP categories and review counts.</li>
+        <li>Plan next month's service-area page and photo batch.</li>
+      </ul>
+
+      <h2>When to hire help, and what it should cost</h2>
+      <p>
+        If you're a solo operator with 5–10 hours a week, you can run most of this yourself. If you're a
+        growing crew with 3+ service areas and you're already busy, a local SEO specialist or agency saves
+        you time and catches things you'd miss.
+      </p>
+      <p>
+        Be careful: many agencies charge $1,000–$2,500/month for "local SEO" that consists of a monthly
+        report and a few directory submissions. The work that actually moves rankings — GBP management,
+        review systems, service-area content, and citation cleanup — is specific and trackable. If your
+        agency can't show you week-over-week GBP call and direction data, you're paying for busywork.
+      </p>
     </>
   );
 }
