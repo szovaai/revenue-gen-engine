@@ -5,6 +5,7 @@ import logoAsset from "@/assets/logo.asset.json";
 
 const links = [
   { to: "/website-examples", label: "Examples" },
+  { to: "/blog", label: "Blog" },
   { to: "/free-audit", label: "Free Audit" },
   { to: "/contact", label: "Contact" },
 ] as const;
