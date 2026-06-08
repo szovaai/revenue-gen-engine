@@ -73,7 +73,7 @@ export function AuditForm() {
               id="audit-heading"
               className="mt-3 text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
             >
-              Free Digital Ghost Town Audit.
+              Free Revenue Audit.
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
               Drop your URL and we'll show you exactly where your site is leaking leads — and the

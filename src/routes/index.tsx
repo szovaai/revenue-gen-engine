@@ -15,19 +15,20 @@ import { FooterCTA } from "@/components/home/FooterCTA";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Revenue Engine for Contractors — $0 Setup | ClickAdMedia" },
+      { title: "Revenue Engine for Contractors — $500 One-Time Setup | ClickAdMedia" },
       {
         name: "description",
         content:
-          "ClickAdMedia builds a 24/7 Revenue Engine for contractors — lead-gen website + automated GHL CRM. $0 setup, $199/mo. You only pay to scale.",
+          "ClickAdMedia builds contractors a done-for-you lead-gen website plus instant follow-up automation for a one-time $500 setup. No huge agency bill.",
       },
       {
         property: "og:title",
-        content: "Revenue Engine for Contractors — $0 Setup | ClickAdMedia",
+        content: "Revenue Engine for Contractors — $500 One-Time Setup | ClickAdMedia",
       },
       {
         property: "og:description",
-        content: "Lead-gen website + automated CRM follow-up. $0 down. Apply for the Pilot Program.",
+        content:
+          "Lead-gen website plus automated follow-up, built for a one-time $500 setup. Apply today.",
       },
       { property: "og:url", content: "/" },
     ],
@@ -40,35 +41,17 @@ export const Route = createFileRoute("/")({
           "@type": "ProfessionalService",
           name: "ClickAdMedia",
           description:
-            "Revenue-as-a-Service for contractors: lead-gen website plus automated GHL CRM. $0 setup, monthly subscription.",
+            "Done-for-you lead-gen website plus automated follow-up system for contractors. One-time $500 setup.",
           areaServed: "United States, Canada",
-          serviceType: "Lead Generation & CRM Automation for Contractors",
+          serviceType: "Lead Generation Website & Follow-Up Setup for Contractors",
           offers: [
             {
               "@type": "Offer",
-              name: "Core Engine",
-              price: "199",
+              name: "Revenue Engine Setup",
+              price: "500",
               priceCurrency: "USD",
-              priceSpecification: {
-                "@type": "UnitPriceSpecification",
-                price: "199",
-                priceCurrency: "USD",
-                billingIncrement: 1,
-                unitText: "MONTH",
-              },
-            },
-            {
-              "@type": "Offer",
-              name: "Growth Engine",
-              price: "499",
-              priceCurrency: "USD",
-              priceSpecification: {
-                "@type": "UnitPriceSpecification",
-                price: "499",
-                priceCurrency: "USD",
-                billingIncrement: 1,
-                unitText: "MONTH",
-              },
+              description:
+                "One-time done-for-you lead-gen website plus instant SMS/email follow-up automation setup.",
             },
           ],
         }),

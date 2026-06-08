@@ -49,7 +49,7 @@ function ContactPage() {
             Let's plug in your <span className="text-gradient-brand">Revenue Engine.</span>
           </h1>
           <p className="mt-5 text-lg text-muted-foreground">
-            Fastest path: apply for the Pilot Program. Prefer to chat first? Email or call us.
+            Fastest path: apply for the $500 Setup. Prefer to chat first? Email or call us.
           </p>
 
           <div className="mx-auto mt-10 grid max-w-xl gap-3 text-left">

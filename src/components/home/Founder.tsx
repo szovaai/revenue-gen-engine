@@ -27,9 +27,9 @@ export function Founder() {
                 id="founder-heading"
                 className="mt-3 text-xl font-medium leading-relaxed text-foreground sm:text-2xl"
               >
-                "Contractors don't need another web design project. They need a salesperson that
-                works 24/7 for the cost of a phone bill. That's what the Revenue Engine is —
-                and that's why we put it in for $0 down."
+                "Contractors don't need a $5k web design project. They need a clean,
+                conversion-focused Revenue Engine that captures leads and follows up fast.
+                That's why we productized the build into a simple, one-time $500 setup."
               </blockquote>
               <footer className="mt-6">
                 <p className="text-base font-semibold text-foreground">Jason R. Szova</p>

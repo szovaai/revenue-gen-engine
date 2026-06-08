@@ -7,16 +7,17 @@ import { PageShell } from "@/components/home/PageShell";
 export const Route = createFileRoute("/apply")({
   head: () => ({
     meta: [
-      { title: "Apply for the Pilot Program | ClickAdMedia" },
+      { title: "Apply for the $500 Revenue Engine Setup | ClickAdMedia" },
       {
         name: "description",
         content:
-          "Apply for the ClickAdMedia Pilot Program. $0 setup. A Revenue Engine that puts qualified leads in your contractor calendar, every month.",
+          "Apply for the ClickAdMedia $500 Revenue Engine setup. Done-for-you contractor lead-gen website plus instant SMS/email follow-up automation.",
       },
-      { property: "og:title", content: "Apply for the Pilot Program — ClickAdMedia" },
+      { property: "og:title", content: "Apply for the $500 Setup — ClickAdMedia" },
       {
         property: "og:description",
-        content: "$0 setup. A 24/7 Revenue Engine for contractors. Limited pilot cities.",
+        content:
+          "One-time $500 setup. A done-for-you Revenue Engine for contractors who want more booked jobs.",
       },
       { property: "og:url", content: "/apply" },
     ],
@@ -39,10 +40,10 @@ const schema = z.object({
 type Errors = Partial<Record<keyof z.infer<typeof schema>, string>>;
 
 const benefits = [
-  "$0 setup fee — you only pay to scale",
-  "Lead-gen website + GHL CRM included",
-  "Auto SMS & email follow-up out of the box",
-  "Limited to a handful of pilot cities per trade",
+  "One-time $500 setup — no surprise agency bill",
+  "Done-for-you contractor lead-gen website",
+  "Instant SMS & email follow-up automation",
+  "CRM-ready lead routing and trust sections",
 ];
 
 function ApplyPage() {
@@ -100,15 +101,15 @@ function ApplyPage() {
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
               <Sparkles className="h-3.5 w-3.5" />
-              Pilot Program
+              $500 One-Time Setup
             </span>
             <h1 className="mt-4 text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
               Apply for the{" "}
-              <span className="text-gradient-brand">Pilot Program.</span>
+              <span className="text-gradient-brand">$500 Setup.</span>
             </h1>
             <p className="mt-5 text-lg text-muted-foreground">
-              We're rolling out our Revenue Engine to a limited number of contractors per city.
-              $0 setup. You only pay to scale once leads are coming in.
+              Tell us about your trade, service area, and goals. If it's a fit, we'll map out
+              your Revenue Engine and start the setup process.
             </p>
             <ul className="mt-8 space-y-3">
               {benefits.map((b) => (
@@ -135,45 +136,43 @@ function ApplyPage() {
                 <div>
                   <p className="font-semibold text-foreground">Application received.</p>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    If your city and trade are still open, we'll reach out within one business
+                    We'll review your trade and service area and reach out within one business
                     day with the next step.
                   </p>
                 </div>
               </div>
             ) : (
-              <form onSubmit={onSubmit} noValidate className="grid gap-4" aria-label="Pilot Program application">
+              <form onSubmit={onSubmit} noValidate className="grid gap-4" aria-label="Revenue Engine setup application">
                 <h2 className="text-xl font-semibold text-foreground">Tell us about your business</h2>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <Field label="Your name" name="name" type="text" autoComplete="name" error={errors.name} placeholder="Jane Smith" />
                   <Field label="Business name" name="business" type="text" autoComplete="organization" error={errors.business} placeholder="Smith Roofing Co." />
                   <Field label="Trade" name="trade" type="text" error={errors.trade} placeholder="Roofing, HVAC, Plumbing…" />
                   <Field label="City / Service area" name="city" type="text" autoComplete="address-level2" error={errors.city} placeholder="Calgary, AB" />
-                  <Field label="Email" name="email" type="email" autoComplete="email" error={errors.email} placeholder="jane@business.com" />
-                  <Field label="Phone" name="phone" type="tel" autoComplete="tel" error={errors.phone} placeholder="(555) 555-5555" />
+                  <Field label="Email" name="email" type="email" autoComplete="email" error={errors.email} placeholder="you@business.com" />
+                  <Field label="Phone" name="phone" type="tel" autoComplete="tel" error={errors.phone} placeholder="(555) 123-4567" />
                 </div>
                 <Field label="Current website (optional)" name="website" type="text" autoComplete="url" error={errors.website} placeholder="yourbusiness.com" />
-                <div>
-                  <label htmlFor="goal" className="mb-1.5 block text-sm font-medium text-foreground">
-                    Monthly lead goal (optional)
-                  </label>
+                <label className="grid gap-1.5">
+                  <span className="text-sm font-medium text-foreground">Lead goal (optional)</span>
                   <textarea
-                    id="goal"
                     name="goal"
                     rows={3}
-                    placeholder="e.g. 20 qualified roofing leads / month"
-                    className="w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    placeholder="e.g. 20 quote requests per month"
+                    className="w-full rounded-xl border border-border bg-background/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none"
                   />
-                </div>
+                  {errors.goal && <span className="text-xs text-destructive">{errors.goal}</span>}
+                </label>
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="group mt-2 inline-flex h-14 items-center justify-center gap-2 rounded-full bg-primary px-7 text-sm font-semibold text-primary-foreground shadow-[0_10px_40px_var(--glow-blue)] transition-all hover:translate-y-[-1px] hover:shadow-[0_14px_50px_var(--glow-blue)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:opacity-60"
+                  className="group mt-2 inline-flex h-14 items-center justify-center gap-2 rounded-full bg-primary px-7 text-sm font-semibold text-primary-foreground shadow-[0_10px_40px_var(--glow-blue)] transition-all hover:translate-y-[-1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:opacity-60"
                 >
-                  {submitting ? "Submitting…" : "Apply for the Pilot Program"}
+                  {submitting ? "Submitting…" : "Apply for the $500 Setup"}
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </button>
                 <p className="text-center text-xs text-muted-foreground">
-                  $0 setup. No credit card. Pilot spots are limited per city.
+                  By applying, you agree to be contacted about your application.
                 </p>
               </form>
             )}
@@ -199,30 +198,18 @@ function Field({
   error?: string;
   placeholder?: string;
 }) {
-  const id = `apply-${name}`;
-  const errId = `${id}-err`;
   return (
-    <div>
-      <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-foreground">
-        {label}
-      </label>
+    <label className="grid gap-1.5">
+      <span className="text-sm font-medium text-foreground">{label}</span>
       <input
-        id={id}
         name={name}
         type={type}
         autoComplete={autoComplete}
         placeholder={placeholder}
-        aria-invalid={!!error}
-        aria-describedby={error ? errId : undefined}
-        className={`w-full rounded-xl border bg-background/60 px-4 py-3 text-base text-foreground placeholder:text-muted-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
-          error ? "border-destructive" : "border-border focus-visible:border-primary"
-        }`}
+        className="h-12 w-full rounded-xl border border-border bg-background/50 px-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none"
+        aria-invalid={error ? "true" : "false"}
       />
-      {error && (
-        <p id={errId} className="mt-1.5 text-xs text-destructive">
-          {error}
-        </p>
-      )}
-    </div>
+      {error && <span className="text-xs text-destructive">{error}</span>}
+    </label>
   );
 }

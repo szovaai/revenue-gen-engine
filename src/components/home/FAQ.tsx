@@ -3,28 +3,24 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    q: "Why is the setup $0? What's the catch?",
-    a: "Because we win when you win. We've productized our build process so we can roll out a proven Revenue Engine in days, not months. There's no catch — we're betting that once you see leads come in, you'll stay subscribed (and most contractors upgrade to Growth within 60 days).",
+    q: "Why only $500?",
+    a: "Because we productized the build. Most contractors do not need a $5,000 custom agency website to start generating leads. They need a clean, conversion-focused Revenue Engine that captures leads, follows up fast, and makes it easy for customers to call or request a quote.",
   },
   {
-    q: "What exactly is the Pilot Program?",
-    a: "We're rolling out our system to a limited number of contractors per trade, per city — so we don't compete two roofers in the same zip code against each other. Pilot members get $0 setup, locked-in monthly pricing, and priority onboarding.",
+    q: "Is this monthly?",
+    a: "The setup is a one-time $500 fee. Optional monthly growth support, ads, hosting, CRM, or optimization can be added later if you want us to help scale the system.",
   },
   {
     q: "Do I own the website?",
-    a: "You lease a turnkey Revenue Engine — site, CRM, automations, and (on Growth) ad management — for one monthly fee. Think of it as a digital salesperson on payroll, not a one-off build that goes stale.",
+    a: "Yes, the setup is built for your business. We can either hand it off or help maintain and optimize it through an optional monthly growth plan.",
   },
   {
-    q: "What is GHL and why does it matter?",
-    a: "GHL (GoHighLevel) is the CRM brain behind your Revenue Engine. Every form fill, call, and inquiry triggers automated SMS and email follow-up within seconds — because the contractor who responds first almost always wins the job.",
+    q: "Who is this for?",
+    a: "Roofers, electricians, HVAC companies, plumbers, landscapers, painters, general contractors, snow removal companies, and other local service businesses that want more quote requests and booked jobs.",
   },
   {
-    q: "What if I already have a website?",
-    a: "Most contractor sites are 'digital ghost towns' — they exist, but they don't sell. We'll either rebuild on the Revenue Engine framework or wire your existing site into the CRM and automations. The Free Audit will tell you which path makes sense.",
-  },
-  {
-    q: "Can I cancel?",
-    a: "Yes. Month-to-month. No long-term contracts. If the engine isn't producing, you shouldn't be paying for it.",
+    q: "What happens after I apply?",
+    a: "We review your trade, service area, current website, and goals. If it is a fit, we map out your Revenue Engine and start the setup process.",
   },
 ];
 
