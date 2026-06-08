@@ -145,42 +145,47 @@ export function Hero() {
             id="hero-heading"
             className="mt-5 text-[clamp(2.25rem,6vw,5.5rem)] font-extrabold leading-[1.02] tracking-tight text-foreground"
           >
-            We build your{" "}
-            <span className="text-gradient-brand">Revenue Engine</span> for $0 down.
+            We build your contractor{" "}
+            <span className="text-gradient-brand">Revenue Engine</span> for a one-time $500 setup.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            A done-for-you website + automated CRM that puts qualified leads in your calendar
-            24/7. No upfront fees. No 6-week build. You only pay to scale.
+            Get a high-converting lead-gen website, CRM-ready forms, instant follow-up automation,
+            and a system designed to turn visitors into booked jobs — without paying $5k+ for a
+            website build.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Link
               to="/apply"
-              aria-label="Apply for the ClickAdMedia Pilot Program"
+              aria-label="Apply for the $500 Revenue Engine setup"
               className="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-primary px-7 text-sm font-semibold text-primary-foreground shadow-[0_10px_40px_var(--glow-blue)] transition-all hover:translate-y-[-1px] hover:shadow-[0_14px_50px_var(--glow-blue)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              Apply for the Pilot Program
+              Apply for the $500 Setup
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
             <Link
-              to="/website-examples"
-              aria-label="See ClickAdMedia website examples"
+              to="/free-audit"
+              aria-label="Get a free revenue audit"
               className="inline-flex h-14 items-center justify-center rounded-full border border-border bg-secondary/40 px-7 text-sm font-semibold text-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              See Live Examples
+              Get a Free Revenue Audit
             </Link>
           </div>
-          <dl className="mt-10 grid max-w-md grid-cols-3 gap-6">
+          <dl className="mt-10 grid max-w-md grid-cols-2 gap-6 sm:grid-cols-4">
             <div>
               <dt className="text-xs uppercase tracking-wider text-muted-foreground">Setup</dt>
-              <dd className="mt-1 text-2xl font-bold text-foreground">$0</dd>
+              <dd className="mt-1 text-2xl font-bold text-foreground">$500</dd>
             </div>
             <div>
-              <dt className="text-xs uppercase tracking-wider text-muted-foreground">Starts At</dt>
-              <dd className="mt-1 text-2xl font-bold text-foreground">$199/mo</dd>
+              <dt className="text-xs uppercase tracking-wider text-muted-foreground">Timeline</dt>
+              <dd className="mt-1 text-2xl font-bold text-foreground">Fast</dd>
             </div>
             <div>
-              <dt className="text-xs uppercase tracking-wider text-muted-foreground">Sells</dt>
-              <dd className="mt-1 text-2xl font-bold text-foreground">24/7</dd>
+              <dt className="text-xs uppercase tracking-wider text-muted-foreground">Goal</dt>
+              <dd className="mt-1 text-2xl font-bold text-foreground">Leads</dd>
+            </div>
+            <div>
+              <dt className="text-xs uppercase tracking-wider text-muted-foreground">System</dt>
+              <dd className="mt-1 text-2xl font-bold text-foreground">Site + Follow-Up</dd>
             </div>
           </dl>
         </div>

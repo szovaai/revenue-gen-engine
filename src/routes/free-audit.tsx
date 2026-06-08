@@ -5,13 +5,13 @@ import { AuditForm } from "@/components/home/AuditForm";
 export const Route = createFileRoute("/free-audit")({
   head: () => ({
     meta: [
-      { title: "Free Digital Ghost Town Audit | ClickAdMedia" },
+      { title: "Free Revenue Audit | ClickAdMedia" },
       {
         name: "description",
         content:
-          "Find out why your contractor website is a digital ghost town. Free audit reveals the leaks and the fastest fixes to turn it into a Revenue Engine.",
+          "Free Revenue Audit for contractors. We'll show you where your site is leaking leads and the fastest fixes to turn it into a Revenue Engine.",
       },
-      { property: "og:title", content: "Free Digital Ghost Town Audit — ClickAdMedia" },
+      { property: "og:title", content: "Free Revenue Audit — ClickAdMedia" },
       {
         property: "og:description",
         content: "See where your site is leaking leads — and how to turn it into a Revenue Engine.",
@@ -32,7 +32,7 @@ function AuditPage() {
             Free Audit
           </span>
           <h1 className="mt-3 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-            Free Digital Ghost Town Audit
+            Free Revenue Audit
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
             Drop your URL and we'll show you where your site is silently losing leads — and the

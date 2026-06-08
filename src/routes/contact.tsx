@@ -49,7 +49,7 @@ function ContactPage() {
             Let's plug in your <span className="text-gradient-brand">Revenue Engine.</span>
           </h1>
           <p className="mt-5 text-lg text-muted-foreground">
-            Fastest path: apply for the Pilot Program. Prefer to chat first? Email or call us.
+            Fastest path: apply for the $500 Setup. Prefer to chat first? Email or call us.
           </p>
 
           <div className="mx-auto mt-10 grid max-w-xl gap-3 text-left">
@@ -84,7 +84,7 @@ function ContactPage() {
               to="/apply"
               className="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-primary px-7 text-sm font-semibold text-primary-foreground shadow-[0_10px_40px_var(--glow-blue)] transition-all hover:translate-y-[-1px]"
             >
-              Apply for the Pilot Program
+              Apply for the $500 Setup
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
