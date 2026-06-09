@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Check, Sparkles } from "lucide-react";
+import { Check, Sparkles, ArrowRight } from "lucide-react";
 
 const coreFeatures = [
   "Professional contractor lead-gen website",
@@ -36,17 +36,17 @@ export function Pricing() {
         <div className="mx-auto max-w-3xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
             <Sparkles className="h-3.5 w-3.5" />
-            $500 One-Time Setup
+            Custom Quote
           </span>
           <h2
             id="pricing-heading"
             className="mt-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
           >
-            Own your Revenue Engine setup without a huge agency bill.
+            Get a quote built around your trade and service area.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            One transparent, one-time fee. Built to capture leads, follow up fast, and look more
-            professional online.
+            Every contractor is different — share your goals and we'll send a tailored quote for
+            your Revenue Engine setup within one business day.
           </p>
         </div>
 
@@ -64,14 +64,10 @@ export function Pricing() {
               The done-for-you build that turns your site into a lead-capturing, follow-up
               machine.
             </p>
-            <div className="mt-6 flex items-baseline gap-1.5">
-              <span className="text-5xl font-bold tracking-tight text-foreground">$500</span>
-              <span className="text-sm text-muted-foreground">one-time</span>
-            </div>
-            <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-primary">
-              $500 One-Time Setup
+            <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-primary">
+              Quoted per project
             </p>
-            <ul className="mt-6 flex-1 space-y-3">
+            <ul className="mt-4 flex-1 space-y-3">
               {coreFeatures.map((f) => (
                 <li key={f} className="flex items-start gap-2.5 text-sm text-foreground/90">
                   <Check className="mt-0.5 h-4 w-4 flex-none text-primary" aria-hidden />
@@ -80,10 +76,11 @@ export function Pricing() {
               ))}
             </ul>
             <Link
-              to="/apply"
-              className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-[0_0_30px_var(--glow-blue)] transition-all hover:shadow-[0_0_40px_var(--glow-blue)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              to="/quote"
+              className="group mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-[0_0_30px_var(--glow-blue)] transition-all hover:shadow-[0_0_40px_var(--glow-blue)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              Apply for the $500 Setup
+              Request a Quote
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </article>
 
@@ -95,14 +92,10 @@ export function Pricing() {
             <p className="mt-2 text-sm text-muted-foreground">
               Once your engine is live, add managed traffic and ongoing optimization to scale.
             </p>
-            <div className="mt-6 flex items-baseline gap-1.5">
-              <span className="text-5xl font-bold tracking-tight text-foreground">Custom</span>
-              <span className="text-sm text-muted-foreground">monthly pricing</span>
-            </div>
-            <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Available after setup
+            <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              Available after setup · custom monthly
             </p>
-            <ul className="mt-6 flex-1 space-y-3">
+            <ul className="mt-4 flex-1 space-y-3">
               {growthFeatures.map((f) => (
                 <li key={f} className="flex items-start gap-2.5 text-sm text-foreground/90">
                   <Check className="mt-0.5 h-4 w-4 flex-none text-primary" aria-hidden />
@@ -111,7 +104,7 @@ export function Pricing() {
               ))}
             </ul>
             <Link
-              to="/apply"
+              to="/quote"
               className="mt-8 inline-flex h-12 items-center justify-center rounded-full border border-border bg-secondary/40 px-6 text-sm font-semibold text-foreground transition-all hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               Ask About Growth
@@ -119,8 +112,8 @@ export function Pricing() {
           </article>
         </div>
         <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted-foreground">
-          One-time $500 setup. No long contracts. Optional monthly growth support if and when
-          you want to scale.
+          Transparent, per-project quotes. No long contracts. Optional monthly growth support if
+          and when you want to scale.
         </p>
       </div>
     </section>

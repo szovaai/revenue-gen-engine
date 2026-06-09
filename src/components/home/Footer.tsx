@@ -15,7 +15,7 @@ export function Footer() {
             </Link>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
               Revenue Engines for contractors. Lead-gen websites plus automated follow-up
-              systems — built for a one-time $500 setup.
+              systems — quoted per project.
             </p>
           </div>
           <div>
@@ -46,8 +46,8 @@ export function Footer() {
             </h3>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
-                <Link to="/apply" className="text-foreground/80 hover:text-foreground">
-                  Apply for the $500 Setup
+                <Link to="/quote" className="text-foreground/80 hover:text-foreground">
+                  Request a Quote
                 </Link>
               </li>
             </ul>

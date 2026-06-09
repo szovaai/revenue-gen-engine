@@ -29,7 +29,7 @@ export function Founder() {
               >
                 "Contractors don't need a $5k web design project. They need a clean,
                 conversion-focused Revenue Engine that captures leads and follows up fast.
-                That's why we productized the build into a simple, one-time $500 setup."
+                That's why we quote each build per project — tailored to your trade and goals."
               </blockquote>
               <footer className="mt-6">
                 <p className="text-base font-semibold text-foreground">Jason R. Szova</p>
