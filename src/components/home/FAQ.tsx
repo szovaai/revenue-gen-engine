@@ -3,12 +3,12 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    q: "Why only $500?",
-    a: "Because we productized the build. Most contractors do not need a $5,000 custom agency website to start generating leads. They need a clean, conversion-focused Revenue Engine that captures leads, follows up fast, and makes it easy for customers to call or request a quote.",
+    q: "How does pricing work?",
+    a: "Every contractor's setup is a little different, so we quote per project. Share your trade, service area, and goals through the quote form and we'll send a tailored price within one business day — no surprise agency-style invoices.",
   },
   {
     q: "Is this monthly?",
-    a: "The setup is a one-time $500 fee. Optional monthly growth support, ads, hosting, CRM, or optimization can be added later if you want us to help scale the system.",
+    a: "The build is a one-time setup fee, quoted per project. Optional monthly growth support — ads, hosting, CRM, or optimization — can be added later if you want help scaling the system.",
   },
   {
     q: "Do I own the website?",
@@ -19,8 +19,8 @@ const faqs = [
     a: "Roofers, electricians, HVAC companies, plumbers, landscapers, painters, general contractors, snow removal companies, and other local service businesses that want more quote requests and booked jobs.",
   },
   {
-    q: "What happens after I apply?",
-    a: "We review your trade, service area, current website, and goals. If it is a fit, we map out your Revenue Engine and start the setup process.",
+    q: "What happens after I request a quote?",
+    a: "We review your trade, service area, current website, and goals. If it is a fit, we send a tailored quote and map out your Revenue Engine before starting the setup process.",
   },
 ];
 

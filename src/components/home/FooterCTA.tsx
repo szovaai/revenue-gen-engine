@@ -17,15 +17,16 @@ export function FooterCTA() {
           <span className="text-gradient-brand">Revenue Engine?</span>
         </h2>
         <p className="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground">
-          For a one-time $500 setup, we'll build the core system your contracting business needs
-          to capture leads, follow up faster, and look more professional online.
+          Tell us about your trade and we'll send a tailored quote to build the system your
+          contracting business needs to capture leads, follow up faster, and look more
+          professional online.
         </p>
         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
-            to="/apply"
+            to="/quote"
             className="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-primary px-8 text-base font-semibold text-primary-foreground shadow-[0_10px_40px_var(--glow-blue)] transition-all hover:translate-y-[-1px] hover:shadow-[0_14px_50px_var(--glow-blue)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
-            Apply for the $500 Setup
+            Request a Quote
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
           <Link

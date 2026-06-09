@@ -146,7 +146,7 @@ export function Hero() {
             className="mt-5 text-[clamp(2.25rem,6vw,5.5rem)] font-extrabold leading-[1.02] tracking-tight text-foreground"
           >
             We build your contractor{" "}
-            <span className="text-gradient-brand">Revenue Engine</span> for a one-time $500 setup.
+            <span className="text-gradient-brand">Revenue Engine</span> — quoted per project.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
             Get a high-converting lead-gen website, CRM-ready forms, instant follow-up automation,
@@ -155,11 +155,11 @@ export function Hero() {
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Link
-              to="/apply"
-              aria-label="Apply for the $500 Revenue Engine setup"
+              to="/quote"
+              aria-label="Request a custom quote for your Revenue Engine setup"
               className="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-primary px-7 text-sm font-semibold text-primary-foreground shadow-[0_10px_40px_var(--glow-blue)] transition-all hover:translate-y-[-1px] hover:shadow-[0_14px_50px_var(--glow-blue)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              Apply for the $500 Setup
+              Request a Quote
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
             <Link
@@ -172,8 +172,8 @@ export function Hero() {
           </div>
           <dl className="mt-10 grid max-w-md grid-cols-2 gap-6 sm:grid-cols-4">
             <div>
-              <dt className="text-xs uppercase tracking-wider text-muted-foreground">Setup</dt>
-              <dd className="mt-1 text-2xl font-bold text-foreground">$500</dd>
+              <dt className="text-xs uppercase tracking-wider text-muted-foreground">Pricing</dt>
+              <dd className="mt-1 text-2xl font-bold text-foreground">Quoted</dd>
             </div>
             <div>
               <dt className="text-xs uppercase tracking-wider text-muted-foreground">Timeline</dt>

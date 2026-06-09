@@ -49,10 +49,10 @@ export function Navbar() {
 
         <div className="hidden md:block">
           <Link
-            to="/apply"
+            to="/quote"
             className="group relative inline-flex h-11 items-center justify-center rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition-all hover:shadow-[0_0_30px_var(--glow-blue)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
-            Apply for the $500 Setup
+            Request a Quote
           </Link>
         </div>
 
@@ -81,11 +81,11 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              to="/apply"
+              to="/quote"
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex h-12 items-center justify-center rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground"
             >
-              Apply for the $500 Setup
+              Request a Quote
             </Link>
           </nav>
         </div>

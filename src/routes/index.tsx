@@ -15,20 +15,20 @@ import { FooterCTA } from "@/components/home/FooterCTA";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Revenue Engine for Contractors — $500 One-Time Setup | ClickAdMedia" },
+      { title: "Revenue Engine for Contractors — Custom Quote | ClickAdMedia" },
       {
         name: "description",
         content:
-          "ClickAdMedia builds contractors a done-for-you lead-gen website plus instant follow-up automation for a one-time $500 setup. No huge agency bill.",
+          "ClickAdMedia builds contractors a done-for-you lead-gen website plus instant follow-up automation. Request a custom quote tailored to your trade.",
       },
       {
         property: "og:title",
-        content: "Revenue Engine for Contractors — $500 One-Time Setup | ClickAdMedia",
+        content: "Revenue Engine for Contractors — Custom Quote | ClickAdMedia",
       },
       {
         property: "og:description",
         content:
-          "Lead-gen website plus automated follow-up, built for a one-time $500 setup. Apply today.",
+          "Lead-gen website plus automated follow-up, quoted per project. Request a free quote today.",
       },
       { property: "og:url", content: "/" },
     ],
@@ -41,19 +41,9 @@ export const Route = createFileRoute("/")({
           "@type": "ProfessionalService",
           name: "ClickAdMedia",
           description:
-            "Done-for-you lead-gen website plus automated follow-up system for contractors. One-time $500 setup.",
+            "Done-for-you lead-gen website plus automated follow-up system for contractors. Quoted per project.",
           areaServed: "United States, Canada",
           serviceType: "Lead Generation Website & Follow-Up Setup for Contractors",
-          offers: [
-            {
-              "@type": "Offer",
-              name: "Revenue Engine Setup",
-              price: "500",
-              priceCurrency: "USD",
-              description:
-                "One-time done-for-you lead-gen website plus instant SMS/email follow-up automation setup.",
-            },
-          ],
         }),
       },
     ],
