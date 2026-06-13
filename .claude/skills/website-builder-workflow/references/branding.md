@@ -18,13 +18,13 @@ change.
 
 ```css
 :root {
-  --background: #050505;     /* page base */
-  --foreground: #ffffff;     /* body text */
-  --primary: #0066ff;        /* CTAs, links, ring */
-  --accent: #8050ff;         /* gradient end, highlights */
-  --glow-blue: rgba(0,102,255,0.45);
-  --glow-purple: rgba(128,80,255,0.35);
-  --gradient-hero: radial-gradient(...);  /* ambient hero light */
+  --background: #050505; /* page base */
+  --foreground: #ffffff; /* body text */
+  --primary: #0066ff; /* CTAs, links, ring */
+  --accent: #8050ff; /* gradient end, highlights */
+  --glow-blue: rgba(0, 102, 255, 0.45);
+  --glow-purple: rgba(128, 80, 255, 0.35);
+  --gradient-hero: radial-gradient(...); /* ambient hero light */
 }
 ```
 

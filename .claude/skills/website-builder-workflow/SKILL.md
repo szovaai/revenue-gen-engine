@@ -20,11 +20,11 @@ encodes the firm's house style and the conventions already proven in
 Run the phases in order. Each has a dedicated reference; load it when you reach
 that phase to keep context lean.
 
-| Phase           | Goal                                             | Reference                |
-| --------------- | ------------------------------------------------ | ------------------------ |
-| 1. **Branding** | Lock the design language (tokens, color, type)   | `references/branding.md` |
-| 2. **Layout**   | Compose routes + sections into pages             | `references/layout.md`   |
-| 3. **Mobile**   | Make it flawless on phones; QA                   | `references/mobile.md`   |
+| Phase           | Goal                                           | Reference                |
+| --------------- | ---------------------------------------------- | ------------------------ |
+| 1. **Branding** | Lock the design language (tokens, color, type) | `references/branding.md` |
+| 2. **Layout**   | Compose routes + sections into pages           | `references/layout.md`   |
+| 3. **Mobile**   | Make it flawless on phones; QA                 | `references/mobile.md`   |
 
 ## Phase 1 — Branding
 

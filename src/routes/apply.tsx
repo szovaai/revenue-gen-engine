@@ -104,12 +104,11 @@ function ApplyPage() {
               $500 One-Time Setup
             </span>
             <h1 className="mt-4 text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
-              Apply for the{" "}
-              <span className="text-gradient-brand">$500 Setup.</span>
+              Apply for the <span className="text-gradient-brand">$500 Setup.</span>
             </h1>
             <p className="mt-5 text-lg text-muted-foreground">
-              Tell us about your trade, service area, and goals. If it's a fit, we'll map out
-              your Revenue Engine and start the setup process.
+              Tell us about your trade, service area, and goals. If it's a fit, we'll map out your
+              Revenue Engine and start the setup process.
             </p>
             <ul className="mt-8 space-y-3">
               {benefits.map((b) => (
@@ -136,23 +135,78 @@ function ApplyPage() {
                 <div>
                   <p className="font-semibold text-foreground">Application received.</p>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    We'll review your trade and service area and reach out within one business
-                    day with the next step.
+                    We'll review your trade and service area and reach out within one business day
+                    with the next step.
                   </p>
                 </div>
               </div>
             ) : (
-              <form onSubmit={onSubmit} noValidate className="grid gap-4" aria-label="Revenue Engine setup application">
-                <h2 className="text-xl font-semibold text-foreground">Tell us about your business</h2>
+              <form
+                onSubmit={onSubmit}
+                noValidate
+                className="grid gap-4"
+                aria-label="Revenue Engine setup application"
+              >
+                <h2 className="text-xl font-semibold text-foreground">
+                  Tell us about your business
+                </h2>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <Field label="Your name" name="name" type="text" autoComplete="name" error={errors.name} placeholder="Jane Smith" />
-                  <Field label="Business name" name="business" type="text" autoComplete="organization" error={errors.business} placeholder="Smith Roofing Co." />
-                  <Field label="Trade" name="trade" type="text" error={errors.trade} placeholder="Roofing, HVAC, Plumbing…" />
-                  <Field label="City / Service area" name="city" type="text" autoComplete="address-level2" error={errors.city} placeholder="Calgary, AB" />
-                  <Field label="Email" name="email" type="email" autoComplete="email" error={errors.email} placeholder="you@business.com" />
-                  <Field label="Phone" name="phone" type="tel" autoComplete="tel" error={errors.phone} placeholder="(555) 123-4567" />
+                  <Field
+                    label="Your name"
+                    name="name"
+                    type="text"
+                    autoComplete="name"
+                    error={errors.name}
+                    placeholder="Jane Smith"
+                  />
+                  <Field
+                    label="Business name"
+                    name="business"
+                    type="text"
+                    autoComplete="organization"
+                    error={errors.business}
+                    placeholder="Smith Roofing Co."
+                  />
+                  <Field
+                    label="Trade"
+                    name="trade"
+                    type="text"
+                    error={errors.trade}
+                    placeholder="Roofing, HVAC, Plumbing…"
+                  />
+                  <Field
+                    label="City / Service area"
+                    name="city"
+                    type="text"
+                    autoComplete="address-level2"
+                    error={errors.city}
+                    placeholder="Calgary, AB"
+                  />
+                  <Field
+                    label="Email"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    error={errors.email}
+                    placeholder="you@business.com"
+                  />
+                  <Field
+                    label="Phone"
+                    name="phone"
+                    type="tel"
+                    autoComplete="tel"
+                    error={errors.phone}
+                    placeholder="(555) 123-4567"
+                  />
                 </div>
-                <Field label="Current website (optional)" name="website" type="text" autoComplete="url" error={errors.website} placeholder="yourbusiness.com" />
+                <Field
+                  label="Current website (optional)"
+                  name="website"
+                  type="text"
+                  autoComplete="url"
+                  error={errors.website}
+                  placeholder="yourbusiness.com"
+                />
                 <label className="grid gap-1.5">
                   <span className="text-sm font-medium text-foreground">Lead goal (optional)</span>
                   <textarea

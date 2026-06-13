@@ -88,8 +88,8 @@ Match the repo's existing `IntersectionObserver` pattern (see `Hero.tsx`). Pass 
 - **Canvas is invisible / 0px tall** → the wrapper element has no height. Set one
   via `className` (`h-[480px]`, `h-screen`, etc.).
 - **`useFrame`/`useThree` "not part of the R3F tree"** → those hooks only work in
-  components rendered *inside* `<Canvas>`, not in the parent.
+  components rendered _inside_ `<Canvas>`, not in the parent.
 - **Hooks must be unconditional** → compute `prefersReducedMotion()` then branch
-  *inside* `useFrame`; never wrap the hook in an `if`.
+  _inside_ `useFrame`; never wrap the hook in an `if`.
 - **Type errors on intrinsics** (`<mesh>` unknown) → ensure `@react-three/fiber`
   is installed and imported; it augments JSX automatically.

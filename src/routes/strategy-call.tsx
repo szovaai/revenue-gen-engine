@@ -38,13 +38,12 @@ function StrategyCallRedirect() {
             We've Simplified
           </span>
           <h1 className="mt-4 text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
-            The strategy call is now the{" "}
-            <span className="text-gradient-brand">$500 Setup.</span>
+            The strategy call is now the <span className="text-gradient-brand">$500 Setup.</span>
           </h1>
           <p className="mt-5 text-lg text-muted-foreground">
             Instead of a sales call, we hand you a working Revenue Engine — a done-for-you
-            contractor lead-gen website plus instant follow-up automation — for a one-time
-            $500 setup fee.
+            contractor lead-gen website plus instant follow-up automation — for a one-time $500
+            setup fee.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link

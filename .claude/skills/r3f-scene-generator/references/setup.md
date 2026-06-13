@@ -24,12 +24,12 @@ const ProductShowcase = lazy(() =>
 
 ## Dependency matrix
 
-| Package              | Why                                   | Notes                          |
-| -------------------- | ------------------------------------- | ------------------------------ |
-| `three`              | core engine                           | peer of fiber + drei           |
-| `@react-three/fiber` | React renderer for three.js           | **v9+ required for React 19**  |
-| `@react-three/drei`  | helpers: controls, loaders, env, etc. | optional but recommended       |
-| `@types/three`       | TS types (dev dep)                    | fiber/drei ship their own      |
+| Package              | Why                                   | Notes                         |
+| -------------------- | ------------------------------------- | ----------------------------- |
+| `three`              | core engine                           | peer of fiber + drei          |
+| `@react-three/fiber` | React renderer for three.js           | **v9+ required for React 19** |
+| `@react-three/drei`  | helpers: controls, loaders, env, etc. | optional but recommended      |
+| `@types/three`       | TS types (dev dep)                    | fiber/drei ship their own     |
 
 Install (bun, this repo's package manager):
 

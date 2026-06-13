@@ -49,7 +49,9 @@ Section components live in `src/components/<feature>/`, are PascalCase, and use
     <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
       …
     </span>
-    <h2 id="services-heading" className="mt-5 text-4xl font-semibold md:text-5xl">…</h2>
+    <h2 id="services-heading" className="mt-5 text-4xl font-semibold md:text-5xl">
+      …
+    </h2>
     {/* content: grid of glass-card tiles, etc. */}
   </div>
 </section>

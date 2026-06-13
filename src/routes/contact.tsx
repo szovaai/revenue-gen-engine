@@ -27,8 +27,7 @@ export const Route = createFileRoute("/contact")({
           "@type": "LocalBusiness",
           name: "ClickAdMedia",
           email: "hello@clickadmedia.co",
-          telephone: "+1-000-000-0000",
-          url: "https://revenue-gen-engine.lovable.app/contact",
+          url: "https://clickadmedia.co/contact",
           openingHours: "Mo-Fr 09:00-18:00",
         }),
       },
@@ -49,7 +48,8 @@ function ContactPage() {
             Let's plug in your <span className="text-gradient-brand">Revenue Engine.</span>
           </h1>
           <p className="mt-5 text-lg text-muted-foreground">
-            Fastest path: apply for the $500 Setup. Prefer to chat first? Email or call us.
+            Fastest path: apply for the $500 build. Prefer to chat first? Email us or book a quick
+            call.
           </p>
 
           <div className="mx-auto mt-10 grid max-w-xl gap-3 text-left">
@@ -65,18 +65,20 @@ function ContactPage() {
                 <p className="text-sm text-muted-foreground">hello@clickadmedia.co</p>
               </div>
             </a>
-            <a
-              href="tel:+10000000000"
+            <Link
+              to="/strategy-call"
               className="glass-card flex items-center gap-4 rounded-xl p-5 transition-all hover:border-primary/50"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary ring-1 ring-primary/30">
                 <Phone className="h-5 w-5" />
               </span>
               <div>
-                <p className="text-sm font-semibold text-foreground">Phone</p>
-                <p className="text-sm text-muted-foreground">Mon–Fri, 9am–6pm ET</p>
+                <p className="text-sm font-semibold text-foreground">Book a Call</p>
+                <p className="text-sm text-muted-foreground">
+                  Schedule a free website review, Mon–Fri
+                </p>
               </div>
-            </a>
+            </Link>
           </div>
 
           <div className="mt-10">

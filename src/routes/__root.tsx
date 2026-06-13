@@ -11,6 +11,10 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import logoAsset from "@/assets/logo.asset.json";
+
+// Production domain — used to build absolute URLs for social/OG tags.
+const SITE_URL = "https://clickadmedia.co";
 
 function NotFoundComponent() {
   return (
@@ -89,11 +93,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "ClickAdMedia — Websites That Turn Clicks Into Customers" },
       { name: "twitter:title", content: "ClickAdMedia — Websites That Turn Clicks Into Customers" },
-      { property: "og:description", content: "ClickAdMedia builds premium direct-response websites that turn local-business traffic into leads, calls, and customers." },
-      { name: "twitter:description", content: "ClickAdMedia builds premium direct-response websites that turn local-business traffic into leads, calls, and customers." },
+      {
+        property: "og:description",
+        content:
+          "ClickAdMedia builds premium direct-response websites that turn local-business traffic into leads, calls, and customers.",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "ClickAdMedia builds premium direct-response websites that turn local-business traffic into leads, calls, and customers.",
+      },
+      { property: "og:image", content: `${SITE_URL}${logoAsset.url}` },
+      { name: "twitter:image", content: `${SITE_URL}${logoAsset.url}` },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: logoAsset.content_type, href: logoAsset.url },
+      { rel: "apple-touch-icon", href: logoAsset.url },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
