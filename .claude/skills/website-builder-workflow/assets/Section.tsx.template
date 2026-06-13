@@ -1,0 +1,40 @@
+import { Sparkles } from "lucide-react";
+
+// House section component. Rename the export + file (PascalCase, named export)
+// and place under src/components/<feature>/. Mobile-first: base = phone, md: = up.
+export function __SectionName__() {
+  return (
+    <section
+      className="relative border-t border-border py-20 md:py-28"
+      aria-labelledby="__section-id__-heading"
+      id="__section-id__"
+    >
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          {/* eyebrow */}
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+            <Sparkles className="h-3.5 w-3.5" />
+            __Eyebrow__
+          </span>
+          <h2
+            id="__section-id__-heading"
+            className="mt-5 text-4xl font-semibold md:text-5xl"
+          >
+            __Headline__
+          </h2>
+          <p className="mt-4 text-base text-muted-foreground md:text-lg">
+            __Supporting copy.__
+          </p>
+        </div>
+
+        {/* content — e.g. a responsive grid of glass-card tiles */}
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article className="glass-card rounded-2xl p-6">
+            <h3 className="text-lg font-semibold">__Card title__</h3>
+            <p className="mt-2 text-sm text-muted-foreground">__Card body.__</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  );
+}
