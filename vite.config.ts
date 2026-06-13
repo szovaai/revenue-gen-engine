@@ -5,7 +5,6 @@
 //     error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
-import netlifyTanStackStart from "@netlify/vite-plugin-tanstack-start";
 
 export default defineConfig({
   tanstackStart: {
@@ -13,10 +12,11 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  // The base config defaults nitro's build target to Cloudflare. The official
-  // Netlify plugin for TanStack Start reconfigures the build to emit a Netlify
-  // SSR function (+ redirects) so server-rendered routes work on Netlify.
-  vite: {
-    plugins: [netlifyTanStackStart()],
+  // We deploy on Netlify, not Lovable/Cloudflare. The wrapper defaults nitro to
+  // the Cloudflare preset; hard-pin the Netlify preset so the build emits a
+  // Netlify SSR function + _redirects. Per the wrapper's API, this preset
+  // override applies outside a Lovable build (i.e. in Netlify CI).
+  nitro: {
+    preset: "netlify",
   },
 });
