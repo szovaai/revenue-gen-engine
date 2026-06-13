@@ -3,24 +3,28 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    q: "How does pricing work?",
-    a: "Every contractor's setup is a little different, so we quote per project. Share your trade, service area, and goals through the quote form and we'll send a tailored price within one business day — no surprise agency-style invoices.",
+    q: "How much does a website cost?",
+    a: "Websites start at just $500 for our Starter Growth Package — a 5-page, mobile-friendly site with a contact form and hosting setup. Growth ($997) adds SEO and Google Business optimization, and Dominate Your Market ($1,997) adds premium design, animations, an AI chatbot, and conversion optimization. One-time pricing, no hidden fees.",
+  },
+  {
+    q: "How fast can my website be ready?",
+    a: "Days, not months. Most builds go live within a week of your free website review, depending on the package and how quickly we get your content and photos.",
   },
   {
     q: "Is this monthly?",
-    a: "The build is a one-time setup fee, quoted per project. Optional monthly growth support — ads, hosting, CRM, or optimization — can be added later if you want help scaling the system.",
+    a: "No — the build is a one-time fee. Optional monthly add-ons (SEO, Google Ads, AI chatbot, reputation management) are available later if you want help scaling, but they're never required.",
   },
   {
     q: "Do I own the website?",
-    a: "Yes, the setup is built for your business. We can either hand it off or help maintain and optimize it through an optional monthly growth plan.",
+    a: "Yes. The website is built for your business and it's yours. We can hand it off or keep optimizing it for you — your call.",
   },
   {
     q: "Who is this for?",
-    a: "Roofers, electricians, HVAC companies, plumbers, landscapers, painters, general contractors, snow removal companies, and other local service businesses that want more quote requests and booked jobs.",
+    a: "Roofers, plumbers, HVAC, electricians, fencing, landscapers, dentists, general contractors, and other local businesses that want more calls, leads, and customers.",
   },
   {
-    q: "What happens after I request a quote?",
-    a: "We review your trade, service area, current website, and goals. If it is a fit, we send a tailored quote and map out your Revenue Engine before starting the setup process.",
+    q: "What's the Launch Guarantee?",
+    a: "If we don't deliver your website as promised, you don't pay. All the risk is on us — booking your free website review costs nothing.",
   },
 ];
 

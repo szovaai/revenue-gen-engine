@@ -1,34 +1,36 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/home/PageShell";
 import { Hero } from "@/components/home/Hero";
-import { WhyWebsitesFail } from "@/components/home/WhyWebsitesFail";
+import { SocialProofStrip } from "@/components/home/SocialProofStrip";
 import { Framework } from "@/components/home/Framework";
-import { Pricing } from "@/components/home/Pricing";
 import { BeforeAfter } from "@/components/home/BeforeAfter";
-import { Industries } from "@/components/home/Industries";
-import { Checklist } from "@/components/home/Checklist";
+import { IndustrySelector } from "@/components/home/IndustrySelector";
+import { GrowthPackages } from "@/components/home/GrowthPackages";
+import { ROICalculator } from "@/components/home/ROICalculator";
+import { Guarantee } from "@/components/home/Guarantee";
 import { Founder } from "@/components/home/Founder";
 import { FAQ } from "@/components/home/FAQ";
-import { AuditForm } from "@/components/home/AuditForm";
 import { FooterCTA } from "@/components/home/FooterCTA";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Revenue Engine for Contractors — Custom Quote | ClickAdMedia" },
+      {
+        title: "Websites That Get Local Businesses More Customers | ClickAdMedia",
+      },
       {
         name: "description",
         content:
-          "ClickAdMedia builds contractors a done-for-you lead-gen website plus instant follow-up automation. Request a custom quote tailored to your trade.",
+          "Professional local business websites built in days, not months — starting at $500 with no hidden fees. More calls, more leads, more customers. Book a free website review.",
       },
       {
         property: "og:title",
-        content: "Revenue Engine for Contractors — Custom Quote | ClickAdMedia",
+        content: "Websites That Get Local Businesses More Customers | ClickAdMedia",
       },
       {
         property: "og:description",
         content:
-          "Lead-gen website plus automated follow-up, quoted per project. Request a free quote today.",
+          "Professional websites built in days from $500. More calls, leads, and customers for your local business. Book a free website review.",
       },
       { property: "og:url", content: "/" },
     ],
@@ -41,9 +43,15 @@ export const Route = createFileRoute("/")({
           "@type": "ProfessionalService",
           name: "ClickAdMedia",
           description:
-            "Done-for-you lead-gen website plus automated follow-up system for contractors. Quoted per project.",
+            "Professional website design for local businesses, built in days. Lead-gen websites starting at $500 with no hidden fees.",
           areaServed: "United States, Canada",
-          serviceType: "Lead Generation Website & Follow-Up Setup for Contractors",
+          serviceType: "Website Design & Lead Generation for Local Businesses",
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "USD",
+            price: "500",
+            description: "Starter Growth Package — professional 5-page lead-gen website.",
+          },
         }),
       },
     ],
@@ -55,15 +63,15 @@ function HomePage() {
   return (
     <PageShell>
       <Hero />
-      <WhyWebsitesFail />
+      <SocialProofStrip />
       <Framework />
-      <Pricing />
       <BeforeAfter />
-      <Industries />
-      <Checklist />
+      <IndustrySelector />
+      <GrowthPackages />
+      <ROICalculator />
+      <Guarantee />
       <Founder />
       <FAQ />
-      <AuditForm />
       <FooterCTA />
     </PageShell>
   );

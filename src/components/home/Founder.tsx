@@ -27,9 +27,9 @@ export function Founder() {
                 id="founder-heading"
                 className="mt-3 text-xl font-medium leading-relaxed text-foreground sm:text-2xl"
               >
-                "Contractors don't need a $5k web design project. They need a clean,
-                conversion-focused Revenue Engine that captures leads and follows up fast.
-                That's why we quote each build per project — tailored to your trade and goals."
+                "Local businesses don't need a $5k web design project. They need a clean,
+                professional website that gets them more calls and customers — fast. That's why we
+                start at $500, build in days, and stand behind every launch."
               </blockquote>
               <footer className="mt-6">
                 <p className="text-base font-semibold text-foreground">Jason R. Szova</p>

@@ -1,10 +1,19 @@
-const before = ["Outdated website", "Low trust", "Confusing message", "Few leads", "Weak CTA"];
+import { X, Check, ArrowDown, ArrowRight } from "lucide-react";
+
+const before = [
+  "No website — or an outdated one",
+  "Facebook page only",
+  "No way to capture leads",
+  "Invisible on Google",
+  "Losing jobs to competitors",
+];
+
 const after = [
-  "Modern premium design",
-  "Crystal-clear offer",
-  "Built-in lead generation",
-  "Stronger trust signals",
-  "Steady stream of appointments",
+  "Professional website that builds trust",
+  "Contact forms that capture every lead",
+  "Mobile optimized for on-the-go customers",
+  "Google indexed and easy to find",
+  "Call tracking so you know what works",
 ];
 
 export function BeforeAfter() {
@@ -22,54 +31,51 @@ export function BeforeAfter() {
             id="before-after-heading"
             className="mt-3 text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
           >
-            Before &amp; After.
+            From invisible to in-demand.
           </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Here's what changes when your business gets a real online presence.
+          </p>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <div className="mt-14 grid items-center gap-6 lg:grid-cols-[1fr_auto_1fr]">
+          {/* Before */}
           <article className="rounded-2xl border border-border bg-secondary/30 p-8">
-            <header className="flex items-center justify-between">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                Before
-              </span>
-              <span className="rounded-full border border-border px-2.5 py-0.5 text-xs text-muted-foreground">
-                Status quo
-              </span>
-            </header>
-            <h3 className="mt-4 text-2xl font-semibold text-muted-foreground">
-              A site that exists, not one that earns.
-            </h3>
-            <ul className="mt-6 space-y-2.5 text-sm text-muted-foreground">
-              {before.map((b) => (
-                <li key={b} className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground/60" />
-                  {b}
+            <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              Business Before
+            </span>
+            <ul className="mt-5 space-y-3.5">
+              {before.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-base text-muted-foreground">
+                  <X className="mt-0.5 h-5 w-5 flex-none text-destructive" aria-hidden />
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
           </article>
 
+          {/* Arrow */}
+          <div className="flex justify-center" aria-hidden>
+            <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary ring-1 ring-primary/30">
+              <ArrowRight className="hidden h-5 w-5 lg:block" />
+              <ArrowDown className="h-5 w-5 lg:hidden" />
+            </span>
+          </div>
+
+          {/* After */}
           <article className="glass-card relative rounded-2xl p-8 ring-1 ring-primary/30">
             <div
               aria-hidden
               className="pointer-events-none absolute -inset-px -z-10 rounded-2xl bg-[radial-gradient(circle_at_70%_0%,var(--glow-blue),transparent_60%)] blur-xl"
             />
-            <header className="flex items-center justify-between">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                After
-              </span>
-              <span className="rounded-full bg-primary/15 px-2.5 py-0.5 text-xs text-primary ring-1 ring-primary/30">
-                ClickAdMedia build
-              </span>
-            </header>
-            <h3 className="mt-4 text-2xl font-semibold text-foreground">
-              A revenue system that compounds.
-            </h3>
-            <ul className="mt-6 space-y-2.5 text-sm text-foreground">
-              {after.map((a) => (
-                <li key={a} className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_10px_var(--glow-blue)]" />
-                  {a}
+            <span className="text-xs font-semibold uppercase tracking-wider text-primary">
+              Business After
+            </span>
+            <ul className="mt-5 space-y-3.5">
+              {after.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-base text-foreground">
+                  <Check className="mt-0.5 h-5 w-5 flex-none text-primary" aria-hidden />
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>

@@ -5,8 +5,8 @@ import logoAsset from "@/assets/logo.asset.json";
 
 const links = [
   { to: "/website-examples", label: "Examples" },
+  { to: "/", hash: "pricing", label: "Pricing" },
   { to: "/blog", label: "Blog" },
-  { to: "/free-audit", label: "Free Audit" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -37,8 +37,9 @@ export function Navbar() {
         <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
           {links.map((l) => (
             <Link
-              key={l.to}
+              key={l.label}
               to={l.to}
+              hash={"hash" in l ? l.hash : undefined}
               className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
               activeProps={{ className: "text-foreground" }}
             >
@@ -49,10 +50,10 @@ export function Navbar() {
 
         <div className="hidden md:block">
           <Link
-            to="/quote"
+            to="/strategy-call"
             className="group relative inline-flex h-11 items-center justify-center rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition-all hover:shadow-[0_0_30px_var(--glow-blue)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
-            Request a Quote
+            Book Free Review
           </Link>
         </div>
 
@@ -72,8 +73,9 @@ export function Navbar() {
           <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4" aria-label="Mobile">
             {links.map((l) => (
               <Link
-                key={l.to}
+                key={l.label}
                 to={l.to}
+                hash={"hash" in l ? l.hash : undefined}
                 onClick={() => setOpen(false)}
                 className="rounded-md px-3 py-3 text-base text-muted-foreground hover:bg-secondary hover:text-foreground"
               >
@@ -81,11 +83,11 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              to="/quote"
+              to="/strategy-call"
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex h-12 items-center justify-center rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground"
             >
-              Request a Quote
+              Book Free Review
             </Link>
           </nav>
         </div>
