@@ -1,0 +1,43 @@
+import { useRef } from "react";
+import { useFrame } from "@react-three/fiber";
+import { Environment, OrbitControls } from "@react-three/drei";
+import type { Mesh } from "three";
+import { ClientCanvas } from "@/components/three/ClientCanvas";
+
+const prefersReducedMotion = () =>
+  typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function Model() {
+  const ref = useRef<Mesh>(null);
+  const reduceMotion = prefersReducedMotion();
+
+  // delta-based rotation is frame-rate independent. Skip when the user has
+  // requested reduced motion.
+  useFrame((_, delta) => {
+    if (ref.current && !reduceMotion) ref.current.rotation.y += delta * 0.4;
+  });
+
+  return (
+    <mesh ref={ref}>
+      {/* TODO: swap this primitive for your geometry, or load a model:
+          const { scene } = useGLTF("/models/thing.glb");
+          return <primitive object={scene} />;  (see references/patterns.md) */}
+      <icosahedronGeometry args={[1, 0]} />
+      <meshStandardMaterial color="#3b82f6" roughness={0.25} metalness={0.6} />
+    </mesh>
+  );
+}
+
+// TODO: rename the component and the file (PascalCase, named export).
+export function __SceneName__() {
+  return (
+    <ClientCanvas className="h-[480px] w-full" camera={{ position: [0, 0, 4], fov: 45 }}>
+      <ambientLight intensity={0.4} />
+      <directionalLight position={[5, 5, 5]} intensity={1.2} />
+      <Model />
+      <Environment preset="city" />
+      {/* Drop OrbitControls for a non-interactive background scene. */}
+      <OrbitControls enablePan={false} enableZoom={false} />
+    </ClientCanvas>
+  );
+}
