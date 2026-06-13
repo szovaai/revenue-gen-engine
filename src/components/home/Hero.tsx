@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Sparkles, PlayCircle } from "lucide-react";
-import { WebsiteCarousel3D } from "./WebsiteCarousel3D";
 
 export function Hero() {
   return (
@@ -53,9 +52,27 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Animated 3D website carousel */}
+      {/* Cinematic hero video */}
       <div className="mt-14 sm:mt-16">
-        <WebsiteCarousel3D />
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="relative">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -inset-6 -z-10 bg-[radial-gradient(ellipse_60%_60%_at_50%_40%,var(--glow-blue),transparent_70%)] blur-3xl"
+            />
+            <video
+              className="w-full rounded-2xl border border-border shadow-[0_30px_90px_rgba(0,0,0,0.55)] ring-1 ring-primary/20"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label="Showcase of local business websites we build"
+            >
+              <source src="/hero-websites.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
       </div>
     </section>
   );

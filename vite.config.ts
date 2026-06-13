@@ -12,11 +12,4 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  // We deploy on Netlify, not Lovable/Cloudflare. The wrapper defaults nitro to
-  // the Cloudflare preset; hard-pin the Netlify preset so the build emits a
-  // Netlify SSR function + _redirects. Per the wrapper's API, this preset
-  // override applies outside a Lovable build (i.e. in Netlify CI).
-  nitro: {
-    preset: "netlify",
-  },
 });
