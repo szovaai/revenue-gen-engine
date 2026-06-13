@@ -36,8 +36,8 @@ export function WhyWebsitesFail() {
             Most contractor sites are a digital ghost town.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Your website exists, but it doesn't do anything. We turn it into a 24/7 salesperson
-            that books jobs while you're on the truck.
+            Your website exists, but it doesn't do anything. We turn it into a 24/7 salesperson that
+            books jobs while you're on the truck.
           </p>
         </div>
 

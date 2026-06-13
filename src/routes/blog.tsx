@@ -56,13 +56,15 @@ function BlogIndex() {
     <PageShell>
       <section className="px-4 pb-24 pt-32 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <p className="text-sm font-medium uppercase tracking-widest text-primary">ClickAdMedia Blog</p>
+          <p className="text-sm font-medium uppercase tracking-widest text-primary">
+            ClickAdMedia Blog
+          </p>
           <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
             Calgary web design and Alberta local SEO, demystified.
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-muted-foreground">
-            Practical guides for local business owners in Calgary, Airdrie, Cochrane, Okotoks, Edmonton, Red Deer
-            and across Alberta. No fluff — just what actually moves leads.
+            Practical guides for local business owners in Calgary, Airdrie, Cochrane, Okotoks,
+            Edmonton, Red Deer and across Alberta. No fluff — just what actually moves leads.
           </p>
 
           <div className="mt-12 space-y-6">

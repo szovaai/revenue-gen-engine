@@ -1,0 +1,37 @@
+import { Suspense, useEffect, useState, type ComponentProps, type ReactNode } from "react";
+import { Canvas } from "@react-three/fiber";
+
+type ClientCanvasProps = ComponentProps<typeof Canvas> & {
+  /**
+   * Tailwind classes for the wrapping element. You MUST give it a height
+   * (e.g. "h-[480px] w-full") — a canvas with no sized parent collapses to 0.
+   */
+  className?: string;
+  /** Optional placeholder shown on the server and before hydration. */
+  fallback?: ReactNode;
+};
+
+/**
+ * SSR-safe <Canvas/>.
+ *
+ * TanStack Start renders this app on the server, where `window` and WebGL do
+ * not exist. Mounting the canvas only after hydration avoids "window is not
+ * defined" / WebGL errors and a hydration mismatch. Always render R3F scenes
+ * through this wrapper instead of using <Canvas> directly.
+ */
+export function ClientCanvas({ children, className, fallback = null, ...props }: ClientCanvasProps) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  return (
+    <div className={className}>
+      {mounted ? (
+        <Canvas dpr={[1, 2]} {...props}>
+          <Suspense fallback={null}>{children}</Suspense>
+        </Canvas>
+      ) : (
+        fallback
+      )}
+    </div>
+  );
+}

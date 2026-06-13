@@ -46,10 +46,7 @@ export function Checklist() {
               How many of these does your current site have? Tick what applies — the missing ones
               are leads slipping through your fingers every day.
             </p>
-            <p
-              className="mt-6 font-mono text-sm text-muted-foreground"
-              aria-live="polite"
-            >
+            <p className="mt-6 font-mono text-sm text-muted-foreground" aria-live="polite">
               {checked.size}/{items.length} you already have
             </p>
           </div>

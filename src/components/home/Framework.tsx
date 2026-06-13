@@ -50,9 +50,7 @@ export function Framework() {
                     <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/30 transition-shadow group-hover:shadow-[0_0_24px_var(--glow-blue)]">
                       <Icon className="h-5 w-5" />
                     </span>
-                    <span className="font-mono text-xs text-muted-foreground">
-                      0{i + 1}
-                    </span>
+                    <span className="font-mono text-xs text-muted-foreground">0{i + 1}</span>
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">{s.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{s.body}</p>

@@ -61,8 +61,7 @@ export function Pricing() {
             </span>
             <h3 className="text-xl font-semibold text-foreground">Revenue Engine Setup</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              The done-for-you build that turns your site into a lead-capturing, follow-up
-              machine.
+              The done-for-you build that turns your site into a lead-capturing, follow-up machine.
             </p>
             <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-primary">
               Quoted per project
@@ -112,8 +111,8 @@ export function Pricing() {
           </article>
         </div>
         <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted-foreground">
-          Transparent, per-project quotes. No long contracts. Optional monthly growth support if
-          and when you want to scale.
+          Transparent, per-project quotes. No long contracts. Optional monthly growth support if and
+          when you want to scale.
         </p>
       </div>
     </section>

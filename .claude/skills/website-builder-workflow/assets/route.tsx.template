@@ -1,0 +1,30 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PageShell } from "@/components/home/PageShell";
+// import the section components this page is composed of:
+// import { __FeatureHero__ } from "@/components/__feature__/__FeatureHero__";
+import { FooterCTA } from "@/components/home/FooterCTA";
+
+// File path determines the URL — e.g. src/routes/services.tsx -> "/services".
+export const Route = createFileRoute("/__path__")({
+  head: () => ({
+    meta: [
+      { title: "__Page Title__ | ClickAdMedia" },
+      { name: "description", content: "__Concise SEO description (~150 chars)__" },
+      { property: "og:title", content: "__Page Title__ | ClickAdMedia" },
+      { property: "og:description", content: "__Concise SEO description__" },
+      { property: "og:url", content: "/__path__" },
+    ],
+    links: [{ rel: "canonical", href: "/__path__" }],
+  }),
+  component: __PageName__,
+});
+
+function __PageName__() {
+  return (
+    <PageShell>
+      {/* Stack section components in reading order. */}
+      {/* <__FeatureHero__ /> */}
+      <FooterCTA />
+    </PageShell>
+  );
+}

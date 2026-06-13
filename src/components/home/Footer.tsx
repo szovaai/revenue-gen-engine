@@ -14,8 +14,8 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-              Revenue Engines for contractors. Lead-gen websites plus automated follow-up
-              systems — quoted per project.
+              Revenue Engines for contractors. Lead-gen websites plus automated follow-up systems —
+              quoted per project.
             </p>
           </div>
           <div>

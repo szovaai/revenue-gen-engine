@@ -1,4 +1,3 @@
-
 # Pivot to "Revenue Engine" Subscription Model
 
 Rewrite copy + restructure pricing across the site. No business logic / no backend changes — purely content, CTAs, and a few component tweaks.
@@ -20,17 +19,18 @@ Rewrite copy + restructure pricing across the site. No business logic / no backe
 ## Page-by-page changes
 
 ### Home (`src/routes/index.tsx` + `src/components/home/*`)
+
 - `Hero`: New headline "We Build Your Revenue Engine For $0 Down." Subhead emphasizes contractors, monthly model, you only pay to scale. Primary CTA → Apply for the Pilot Program. Stats row reframed (e.g. "$0 Setup", "24/7 Sales", "Pilot Cities").
 - `WhyWebsitesFail` → reframe around "Digital Ghost Town" concept.
 - `Framework` → rewrite to the 3-Step Revenue Framework:
   1. Connect the Scraper (Traffic)
   2. The Site (Conversion)
   3. GHL (Automated Closing — SMS + email follow-up)
-  Reduce from 4 steps to 3; update icons/labels.
+     Reduce from 4 steps to 3; update icons/labels.
 - `Packages` → replace with two-tier pricing table:
   - Core Engine — $199/mo, $0 setup: lead-gen website, hosting, GHL CRM with auto SMS/email follow-up.
   - Growth Engine — $499/mo + ad spend: everything in Core plus managed ad traffic into the CRM.
-  Highlight "$0 Setup Fee" badge and "Apply for Pilot Program" CTA on each tier.
+    Highlight "$0 Setup Fee" badge and "Apply for Pilot Program" CTA on each tier.
 - `Industries` → tighten to HVAC, Roofing, Plumbing, Landscaping (and adjacent trades).
 - `Checklist` → reframe items as "what your Revenue Engine does for you."
 - `Founder` → light edit to match partnership / pilot framing.
@@ -40,24 +40,30 @@ Rewrite copy + restructure pricing across the site. No business logic / no backe
 - Update home `head()` title + description + JSON-LD to reflect subscription positioning.
 
 ### Apply page (new `src/routes/apply.tsx`)
+
 - Replaces "Strategy Call" as the primary conversion destination.
 - Copy: "Apply for the Pilot Program" — limited cities, $0 setup, qualification-style form (name, business, trade, city, website, monthly lead goal).
 - Reuses existing form patterns from `AuditForm` (zod + localStorage submission — no backend work).
 - SEO head() set appropriately.
 
 ### Strategy Call (`src/routes/strategy-call.tsx`)
+
 - Repoint content to the Pilot Program (or render a short "Now called the Pilot Program" panel with a link to `/apply`). Keeps URL alive for any external links / sitemap entry.
 
 ### Free Audit (`src/routes/free-audit.tsx`)
+
 - Rename hero to "Free Digital Ghost Town Audit." Update head() title/description accordingly.
 
 ### Website Examples (`src/routes/website-examples.tsx`)
+
 - Light copy tweak only: intro paragraph and bottom CTA reflect "Revenue Engine" framing and Apply CTA. Existing 4 examples untouched.
 
 ### Contact (`src/routes/contact.tsx`)
+
 - Update intro + CTA to mention Pilot Program; no structural changes.
 
 ### Sitemap (`src/routes/sitemap[.]xml.ts`)
+
 - Add `/apply`. Keep `/strategy-call`.
 
 ## Files touched
