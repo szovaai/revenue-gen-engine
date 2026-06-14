@@ -88,6 +88,7 @@ function ResearchStat({ value, label, source }: (typeof research)[number]) {
 
 export function AscentExperience() {
   const rootRef = useRef<HTMLDivElement>(null);
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
   const [act, setAct] = useState(1);
   const [progress, setProgress] = useState(0);
   const lite = useAscentMode();
@@ -202,7 +203,23 @@ export function AscentExperience() {
       };
     });
     return () => { cancelled = true; cleanup(); };
-  }, [lite]);
+    // Set up once on mount: the effect reads `reduce`/`finePointer` directly and
+    // never depends on `lite` (the 3D canvas mounts separately and is fixed +
+    // pointer-events-none, so it does not affect layout or ScrollTrigger).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Respect prefers-reduced-motion for the looping hero video (WCAG 2.2.2).
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const pause = () => video.pause();
+    video.removeAttribute("autoplay");
+    pause();
+    video.addEventListener("play", pause);
+    return () => video.removeEventListener("play", pause);
+  }, []);
 
   return (
     <div ref={rootRef} className="ascent relative overflow-clip bg-background">
@@ -237,6 +254,7 @@ export function AscentExperience() {
 
       <section data-ascent-act className="relative z-10 flex min-h-[110svh] items-center pt-24" aria-labelledby="ascent-hero">
         <video
+          ref={heroVideoRef}
           data-hero-video
           src={heroVideoAsset.url}
           poster={logoAsset.url}
