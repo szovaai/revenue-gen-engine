@@ -5,7 +5,7 @@ import logoAsset from "@/assets/logo.asset.json";
 
 const links = [
   { to: "/website-examples", label: "Examples" },
-  { to: "/", hash: "pricing", label: "Pricing" },
+  { to: "/", hash: "proof-ridge", label: "Proof" },
   { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
 ] as const;
@@ -53,7 +53,7 @@ export function Navbar() {
             to="/strategy-call"
             className="group relative inline-flex h-11 items-center justify-center rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition-all hover:shadow-[0_0_30px_var(--glow-blue)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
-            Book Free Review
+            Book Strategy Call
           </Link>
         </div>
 
@@ -87,7 +87,7 @@ export function Navbar() {
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex h-12 items-center justify-center rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground"
             >
-              Book Free Review
+              Book Strategy Call
             </Link>
           </nav>
         </div>
