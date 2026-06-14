@@ -1,83 +1,65 @@
-# Pivot to "Revenue Engine" Subscription Model
+# Build “The Ascent” immersive homepage
 
-Rewrite copy + restructure pricing across the site. No business logic / no backend changes — purely content, CTAs, and a few component tweaks.
+## Goal
+Transform the current homepage into a single continuous climb through a dark Rocky Mountain world: fog at the base, clear positioning and process on the ascent, cited proof on the ridge, and a glowing chrome-logo summit. Keep the rest of the site and existing routes intact.
 
-## Positioning shift
+## Experience structure
 
-- From: project-based web design, $997 / $2497 starting prices, "Book Strategy Call"
-- To: Revenue-as-a-Service for contractor trades (HVAC, Roofing, Plumbing, Landscaping), $0 setup, monthly subscription, "Apply for the Pilot Program"
-- Core message: We build your revenue engine for $0 down. You only pay to scale.
-- Hook: Most contractors run a "Digital Ghost Town." We turn the site into a 24/7 salesperson via website + GHL CRM automations + (optional) ad management.
+1. **Act I — The Fog**
+   - Full-viewport hero with the existing ClickAdMedia logo as an immediate static fallback.
+   - Hydrate a procedural 3D chrome “M” and floating violet gem behind it on capable devices.
+   - Add drifting fog, subtle particles, cursor-reactive chrome, “Scroll to climb,” and plain-language hero copy for Calgary trades.
+   - Primary CTA: **Book a free strategy call**. Secondary CTA scrolls to Proof.
 
-## Global CTA + nav changes
+2. **Act II — The Problem**
+   - Continue the visual ascent as fog thins.
+   - Present three trail-marker messages: invisible on Google, losing work to competitors, and a website that does not generate calls.
+   - Keep copy short, direct, and written for tradespeople.
 
-- Replace every "Book Strategy Call" / "Book A Strategy Call" CTA with "Apply for the Pilot Program" linking to `/apply` (new route, replaces `/strategy-call` usage in nav and buttons).
-- Keep `/strategy-call` route file as a redirect-style page that points users to `/apply` (avoids breaking sitemap / old links). Or repurpose its content — TBD in build.
-- Update Navbar + Footer links accordingly.
-- "Get a Free Audit" secondary CTA stays, but reframed as "Get a Free Digital Ghost Town Audit."
+3. **Act III — The Method**
+   - Show four faceted “base camp” platforms: Convert-First Design, Local SEO, Lead Capture, and Done-For-You Build.
+   - Illuminate each platform violet as its checkpoint becomes active.
+   - Include the simple process: Strategy call → We build it → You get leads.
 
-## Page-by-page changes
+4. **Act IV — Proof Ridge**
+   - Use existing real site/example assets as floating glass screens.
+   - Animate the current attributed research statistics into view; do not invent client metrics or testimonials.
+   - Preserve source attribution visibly and accessibly.
 
-### Home (`src/routes/index.tsx` + `src/components/home/*`)
+5. **Act V — The Summit**
+   - Clear the fog, open the sky, intensify the gem, and assemble/reveal the full mark.
+   - Lock in the wide-tracked tagline **WEBSITES THAT CONVERT**.
+   - Finish with a dominant strategy-call CTA and grounded Calgary/Alberta trust copy.
 
-- `Hero`: New headline "We Build Your Revenue Engine For $0 Down." Subhead emphasizes contractors, monthly model, you only pay to scale. Primary CTA → Apply for the Pilot Program. Stats row reframed (e.g. "$0 Setup", "24/7 Sales", "Pilot Cities").
-- `WhyWebsitesFail` → reframe around "Digital Ghost Town" concept.
-- `Framework` → rewrite to the 3-Step Revenue Framework:
-  1. Connect the Scraper (Traffic)
-  2. The Site (Conversion)
-  3. GHL (Automated Closing — SMS + email follow-up)
-     Reduce from 4 steps to 3; update icons/labels.
-- `Packages` → replace with two-tier pricing table:
-  - Core Engine — $199/mo, $0 setup: lead-gen website, hosting, GHL CRM with auto SMS/email follow-up.
-  - Growth Engine — $499/mo + ad spend: everything in Core plus managed ad traffic into the CRM.
-    Highlight "$0 Setup Fee" badge and "Apply for Pilot Program" CTA on each tier.
-- `Industries` → tighten to HVAC, Roofing, Plumbing, Landscaping (and adjacent trades).
-- `Checklist` → reframe items as "what your Revenue Engine does for you."
-- `Founder` → light edit to match partnership / pilot framing.
-- `AuditForm` heading → "Free Digital Ghost Town Audit."
-- `FooterCTA` → "Ready to plug in your Revenue Engine?" with Apply CTA.
-- Add a new `FAQ` component answering: Why $0? (We win when you win.) What's the pilot? Do I own the site? What's GHL? What if I already have a site? Cancel anytime?
-- Update home `head()` title + description + JSON-LD to reflect subscription positioning.
+## 3D and scroll implementation
 
-### Apply page (new `src/routes/apply.tsx`)
+- Restore/install the React 19-compatible Three.js stack from Step 1: Three, React Three Fiber, drei, postprocessing, and GSAP.
+- Recreate an SSR-safe `ClientCanvas` with a mounted guard and lazy client loading.
+- Build the mountain, chrome mark, gem, trail, lighting, and particles as lightweight procedural geometry so no large model download is required.
+- Use GSAP ScrollTrigger to normalize page scroll and drive camera altitude, fog density, trail progress, object lighting, and content timing.
+- Add restrained Bloom and Vignette; avoid heavy volumetric effects that would undermine conversion performance.
+- Add an ice-blue altitude meter showing Base Camp → Summit and the current act.
 
-- Replaces "Strategy Call" as the primary conversion destination.
-- Copy: "Apply for the Pilot Program" — limited cities, $0 setup, qualification-style form (name, business, trade, city, website, monthly lead goal).
-- Reuses existing form patterns from `AuditForm` (zod + localStorage submission — no backend work).
-- SEO head() set appropriately.
+## Lite mode and accessibility
 
-### Strategy Call (`src/routes/strategy-call.tsx`)
+- Build the complete semantic 2.5D version first, then layer WebGL over it as progressive enhancement.
+- Automatically use lite mode for reduced-motion users, touch/mobile low-power conditions, failed WebGL, or constrained hardware.
+- Lite mode retains all five acts using CSS mountain silhouettes, gradient fog, parallax, reveal transitions, and count-up stats.
+- Keep all content in the DOM and readable without canvas; mark 3D decoration as non-essential.
+- Ensure keyboard navigation, visible focus states, contrast, semantic heading order, and a persistent strategy-call CTA.
+- Disable count-up/parallax/camera motion under `prefers-reduced-motion`.
 
-- Repoint content to the Pilot Program (or render a short "Now called the Pilot Program" panel with a link to `/apply`). Keeps URL alive for any external links / sitemap entry.
+## Homepage and conversion cleanup
 
-### Free Audit (`src/routes/free-audit.tsx`)
+- Replace the current long collection of disconnected homepage components with the five-act narrative while retaining useful content inside the new acts.
+- Update homepage metadata and structured data for Calgary lead-generation web design, removing stale fixed-price/$500 claims.
+- Keep `/strategy-call` as the primary conversion destination and leave the quote route available elsewhere.
+- Update the persistent header CTA and final summit CTA to use consistent strategy-call wording.
+- Keep the existing footer, but visually blend its entrance with the summit ending.
 
-- Rename hero to "Free Digital Ghost Town Audit." Update head() title/description accordingly.
+## Validation
 
-### Website Examples (`src/routes/website-examples.tsx`)
-
-- Light copy tweak only: intro paragraph and bottom CTA reflect "Revenue Engine" framing and Apply CTA. Existing 4 examples untouched.
-
-### Contact (`src/routes/contact.tsx`)
-
-- Update intro + CTA to mention Pilot Program; no structural changes.
-
-### Sitemap (`src/routes/sitemap[.]xml.ts`)
-
-- Add `/apply`. Keep `/strategy-call`.
-
-## Files touched
-
-- New: `src/routes/apply.tsx`, `src/components/home/Pricing.tsx` (replaces `Packages` usage on home), `src/components/home/FAQ.tsx`
-- Edited: `src/components/home/Hero.tsx`, `WhyWebsitesFail.tsx`, `Framework.tsx`, `Industries.tsx`, `Checklist.tsx`, `Founder.tsx`, `AuditForm.tsx`, `FooterCTA.tsx`, `Navbar.tsx`, `Footer.tsx`, `src/routes/index.tsx`, `src/routes/strategy-call.tsx`, `src/routes/free-audit.tsx`, `src/routes/website-examples.tsx`, `src/routes/contact.tsx`, `src/routes/sitemap[.]xml.ts`
-- `Packages.tsx` either deleted or kept unused (will delete to avoid dead code).
-
-## Out of scope (not in this plan)
-
-- No GoHighLevel integration, no real form submission backend, no Stripe/Paddle billing wiring. Forms stay client-only like the current `AuditForm`.
-- No new images / screenshots.
-- No analytics or A/B testing setup.
-
-## Open question
-
-Per the user's closing question: do you already have a GoHighLevel account with a Lead Notification + SMS Follow-up automation, or should that be a follow-up task after the copy pivot ships? I'll proceed with copy-only changes now and we can scope the GHL snapshot work separately.
+- Check desktop and mobile layouts, scroll choreography, lite-mode fallback, reduced motion, keyboard focus, and CTA destinations.
+- Verify no SSR/window errors or browser console errors.
+- Profile the homepage for excessive canvas resolution, bundle/load regressions, layout shifts, and oversized assets; cap DPR and pause rendering when the canvas is not visible.
+- Confirm that cited statistics retain their sources and that no unverified business results are introduced.

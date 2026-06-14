@@ -1,37 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/home/PageShell";
-import { Reveal } from "@/components/home/Reveal";
-import { Hero } from "@/components/home/Hero";
-import { SocialProofStrip } from "@/components/home/SocialProofStrip";
-import { Framework } from "@/components/home/Framework";
-import { BeforeAfter } from "@/components/home/BeforeAfter";
-import { IndustrySelector } from "@/components/home/IndustrySelector";
-import { GrowthPackages } from "@/components/home/GrowthPackages";
-import { ROICalculator } from "@/components/home/ROICalculator";
-import { Guarantee } from "@/components/home/Guarantee";
-import { Founder } from "@/components/home/Founder";
-import { FAQ } from "@/components/home/FAQ";
-import { FooterCTA } from "@/components/home/FooterCTA";
+import { AscentExperience } from "@/components/home/AscentExperience";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Websites That Get Local Businesses More Customers | ClickAdMedia",
+        title: "Calgary Web Design for Trades | ClickAdMedia",
       },
       {
         name: "description",
         content:
-          "Professional local business websites built in days, not months — starting at $500 with no hidden fees. More calls, more leads, more customers. Book a free website review.",
+          "Calgary web design for contractors and trades. Get found, look credible, and turn more clicks into calls with a lead-generation website.",
       },
       {
         property: "og:title",
-        content: "Websites That Get Local Businesses More Customers | ClickAdMedia",
+        content: "Calgary Web Design for Trades | ClickAdMedia",
       },
       {
         property: "og:description",
         content:
-          "Professional websites built in days from $500. More calls, leads, and customers for your local business. Book a free website review.",
+          "Lead-generation websites for Calgary contractors and trades, built to turn local searches into calls and booked jobs.",
       },
       { property: "og:url", content: "/" },
     ],
@@ -44,15 +33,9 @@ export const Route = createFileRoute("/")({
           "@type": "ProfessionalService",
           name: "ClickAdMedia",
           description:
-            "Professional website design for local businesses, built in days. Lead-gen websites starting at $500 with no hidden fees.",
-          areaServed: "United States, Canada",
-          serviceType: "Website Design & Lead Generation for Local Businesses",
-          offers: {
-            "@type": "Offer",
-            priceCurrency: "USD",
-            price: "500",
-            description: "Starter Growth Package — professional 5-page lead-gen website.",
-          },
+            "Calgary web design and lead-generation websites for contractors and trades businesses.",
+          areaServed: ["Calgary", "Alberta"],
+          serviceType: "Website Design and Lead Generation for Trades",
         }),
       },
     ],
@@ -63,37 +46,7 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <PageShell>
-      <Hero />
-      <Reveal>
-        <SocialProofStrip />
-      </Reveal>
-      <Reveal>
-        <Framework />
-      </Reveal>
-      <Reveal>
-        <BeforeAfter />
-      </Reveal>
-      <Reveal>
-        <IndustrySelector />
-      </Reveal>
-      <Reveal>
-        <GrowthPackages />
-      </Reveal>
-      <Reveal>
-        <ROICalculator />
-      </Reveal>
-      <Reveal variant="scale">
-        <Guarantee />
-      </Reveal>
-      <Reveal>
-        <Founder />
-      </Reveal>
-      <Reveal>
-        <FAQ />
-      </Reveal>
-      <Reveal>
-        <FooterCTA />
-      </Reveal>
+      <AscentExperience />
     </PageShell>
   );
 }
