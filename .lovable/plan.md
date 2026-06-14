@@ -1,65 +1,53 @@
-# Build “The Ascent” immersive homepage
+# Full $50K Motion Upgrade
 
 ## Goal
-Transform the current homepage into a single continuous climb through a dark Rocky Mountain world: fog at the base, clear positioning and process on the ascent, cited proof on the ridge, and a glowing chrome-logo summit. Keep the rest of the site and existing routes intact.
+Elevate the existing five-act “Ascent” homepage through refined motion, cursor response, proof interactions, and smooth scrolling—without changing the established messaging, information architecture, or conversion path.
 
-## Experience structure
+## Implementation
 
-1. **Act I — The Fog**
-   - Full-viewport hero with the existing ClickAdMedia logo as an immediate static fallback.
-   - Hydrate a procedural 3D chrome “M” and floating violet gem behind it on capable devices.
-   - Add drifting fog, subtle particles, cursor-reactive chrome, “Scroll to climb,” and plain-language hero copy for Calgary trades.
-   - Primary CTA: **Book a free strategy call**. Secondary CTA scrolls to Proof.
+1. **Create a unified motion controller**
+   - Consolidate homepage GSAP setup into a scoped lifecycle tied to the Ascent root.
+   - Add Lenis smooth scrolling on capable desktop devices and synchronize it with GSAP ScrollTrigger.
+   - Disable smooth scrolling and nonessential effects for reduced-motion, coarse-pointer, and lite-mode visitors.
+   - Ensure all animation cleanup runs correctly during route changes and development remounts.
 
-2. **Act II — The Problem**
-   - Continue the visual ascent as fog thins.
-   - Present three trail-marker messages: invisible on Google, losing work to competitors, and a website that does not generate calls.
-   - Keep copy short, direct, and written for tradespeople.
+2. **Choreograph the hero entrance**
+   - Split the hero headline into accessible word groups while preserving a clean screen-reader sentence.
+   - Reveal the eyebrow, headline words, supporting copy, CTAs, and scroll cue in a deliberate cinematic sequence.
+   - Add a restrained scroll-driven video scale/position shift and overlay fade so the hero transitions naturally into Act II.
+   - Keep the full-width video, poster fallback, and existing copy intact.
 
-3. **Act III — The Method**
-   - Show four faceted “base camp” platforms: Convert-First Design, Local SEO, Lead Capture, and Done-For-You Build.
-   - Illuminate each platform violet as its checkpoint becomes active.
-   - Include the simple process: Strategy call → We build it → You get leads.
+3. **Add cursor-reactive depth**
+   - Add a subtle branded cursor glow that follows the pointer only on fine-pointer desktop devices.
+   - Let the hero media and nearby light field respond gently to pointer position without moving readable content.
+   - Add magnetic micro-movement to the primary homepage CTAs with conservative travel and immediate keyboard-safe behavior.
+   - Preserve the existing Three.js pointer response and avoid stacking competing transforms.
 
-4. **Act IV — Proof Ridge**
-   - Use existing real site/example assets as floating glass screens.
-   - Animate the current attributed research statistics into view; do not invent client metrics or testimonials.
-   - Preserve source attribution visibly and accessibly.
+4. **Animate each ascent act**
+   - Reveal section labels and headings with staggered, clipped motion as they enter.
+   - Sequence the pain cards as trail markers, with a traveling edge highlight and subtle depth response.
+   - Illuminate the four method platforms one at a time as the user climbs, then stage the three process steps in order.
+   - Animate portfolio screens from layered perspective positions and settle them into a clean readable grid.
+   - Build the summit reveal around the logo glow, tagline tracking, CTA, and trust points.
 
-5. **Act V — The Summit**
-   - Clear the fog, open the sky, intensify the gem, and assemble/reveal the full mark.
-   - Lock in the wide-tracked tagline **WEBSITES THAT CONVERT**.
-   - Finish with a dominant strategy-call CTA and grounded Calgary/Alberta trust copy.
+5. **Turn proof into an interaction**
+   - Retain the existing count-up behavior but coordinate it with the section timeline so each statistic lands intentionally.
+   - Add a brief highlight pulse at each final value and stagger labels/source citations afterward.
+   - Keep every source visible and static in the DOM; no invented metrics or testimonial content.
 
-## 3D and scroll implementation
+6. **Refine premium surfaces and micro-interactions**
+   - Strengthen glass depth using the existing semantic palette, blur, subtle inner highlights, and cursor-positioned sheen.
+   - Add polished hover/focus states to proof screens, cards, navigation, and CTAs without reducing legibility.
+   - Keep all visual values token-driven in the global design system.
 
-- Restore/install the React 19-compatible Three.js stack from Step 1: Three, React Three Fiber, drei, postprocessing, and GSAP.
-- Recreate an SSR-safe `ClientCanvas` with a mounted guard and lazy client loading.
-- Build the mountain, chrome mark, gem, trail, lighting, and particles as lightweight procedural geometry so no large model download is required.
-- Use GSAP ScrollTrigger to normalize page scroll and drive camera altitude, fog density, trail progress, object lighting, and content timing.
-- Add restrained Bloom and Vignette; avoid heavy volumetric effects that would undermine conversion performance.
-- Add an ice-blue altitude meter showing Base Camp → Summit and the current act.
+7. **Performance and accessibility safeguards**
+   - Use transform/opacity animation paths, requestAnimationFrame-backed pointer updates, and passive listeners.
+   - Avoid effects on touch/mobile and pause or simplify ambient work when appropriate.
+   - Preserve semantic headings, keyboard focus, readable content without JavaScript, and the complete reduced-motion experience.
+   - Validate desktop and mobile layout, CTA navigation, console/runtime health, animation cleanup, and homepage responsiveness after implementation.
 
-## Lite mode and accessibility
-
-- Build the complete semantic 2.5D version first, then layer WebGL over it as progressive enhancement.
-- Automatically use lite mode for reduced-motion users, touch/mobile low-power conditions, failed WebGL, or constrained hardware.
-- Lite mode retains all five acts using CSS mountain silhouettes, gradient fog, parallax, reveal transitions, and count-up stats.
-- Keep all content in the DOM and readable without canvas; mark 3D decoration as non-essential.
-- Ensure keyboard navigation, visible focus states, contrast, semantic heading order, and a persistent strategy-call CTA.
-- Disable count-up/parallax/camera motion under `prefers-reduced-motion`.
-
-## Homepage and conversion cleanup
-
-- Replace the current long collection of disconnected homepage components with the five-act narrative while retaining useful content inside the new acts.
-- Update homepage metadata and structured data for Calgary lead-generation web design, removing stale fixed-price/$500 claims.
-- Keep `/strategy-call` as the primary conversion destination and leave the quote route available elsewhere.
-- Update the persistent header CTA and final summit CTA to use consistent strategy-call wording.
-- Keep the existing footer, but visually blend its entrance with the summit ending.
-
-## Validation
-
-- Check desktop and mobile layouts, scroll choreography, lite-mode fallback, reduced motion, keyboard focus, and CTA destinations.
-- Verify no SSR/window errors or browser console errors.
-- Profile the homepage for excessive canvas resolution, bundle/load regressions, layout shifts, and oversized assets; cap DPR and pause rendering when the canvas is not visible.
-- Confirm that cited statistics retain their sources and that no unverified business results are introduced.
+## Technical details
+- Reuse the installed GSAP, ScrollTrigger, React Three Fiber, and existing lite-mode logic.
+- Add Lenis as the only new runtime dependency.
+- Keep the upgrade primarily inside `AscentExperience`, supported by small focused motion components/hooks and semantic tokens/utilities in the global stylesheet.
+- Do not alter backend data, other routes, business copy, or the current video asset.
