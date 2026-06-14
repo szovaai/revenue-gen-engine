@@ -43,10 +43,46 @@ function useAscentMode() {
     const coarse = window.matchMedia("(pointer: coarse)").matches;
     const memory = (navigator as Navigator & { deviceMemory?: number }).deviceMemory;
     const cores = navigator.hardwareConcurrency || 4;
-    setLite(reduce || coarse || (memory !== undefined && memory <= 4) || cores <= 4);
+    setLite(reduce || coarse || (memory !== undefined && memory <= 2) || cores <= 2);
   }, []);
 
   return lite;
+}
+
+function ResearchStat({ value, label, source }: (typeof research)[number]) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+    const target = Number.parseInt(value, 10);
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || !("IntersectionObserver" in window)) {
+      setDisplay(target);
+      return;
+    }
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry?.isIntersecting) return;
+      const started = performance.now();
+      const tick = (now: number) => {
+        const progress = Math.min(1, (now - started) / 900);
+        setDisplay(Math.round(target * (1 - Math.pow(1 - progress, 3))));
+        if (progress < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      observer.disconnect();
+    }, { threshold: 0.4 });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [value]);
+
+  return (
+    <div ref={ref}>
+      <dt className="font-display text-6xl font-bold tabular-nums text-gradient-brand">{display}%</dt>
+      <dd className="mt-3 text-base text-foreground">{label}<span className="mt-2 block text-xs text-muted-foreground">Source: {source}</span></dd>
+    </div>
+  );
 }
 
 export function AscentExperience() {
@@ -196,12 +232,7 @@ export function AscentExperience() {
             ))}
           </div>
           <dl className="mt-16 grid gap-8 border-t border-border pt-10 md:grid-cols-3">
-            {research.map((stat) => (
-              <div key={stat.value}>
-                <dt className="font-display text-6xl font-bold tabular-nums text-gradient-brand">{stat.value}</dt>
-                <dd className="mt-3 text-base text-foreground">{stat.label}<span className="mt-2 block text-xs text-muted-foreground">Source: {stat.source}</span></dd>
-              </div>
-            ))}
+            {research.map((stat) => <ResearchStat key={stat.value} {...stat} />)}
           </dl>
         </div>
       </section>
