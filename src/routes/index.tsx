@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/home/PageShell";
+import { Reveal } from "@/components/home/Reveal";
 import { Hero } from "@/components/home/Hero";
 import { SocialProofStrip } from "@/components/home/SocialProofStrip";
 import { Framework } from "@/components/home/Framework";
@@ -63,16 +64,36 @@ function HomePage() {
   return (
     <PageShell>
       <Hero />
-      <SocialProofStrip />
-      <Framework />
-      <BeforeAfter />
-      <IndustrySelector />
-      <GrowthPackages />
-      <ROICalculator />
-      <Guarantee />
-      <Founder />
-      <FAQ />
-      <FooterCTA />
+      <Reveal>
+        <SocialProofStrip />
+      </Reveal>
+      <Reveal>
+        <Framework />
+      </Reveal>
+      <Reveal>
+        <BeforeAfter />
+      </Reveal>
+      <Reveal>
+        <IndustrySelector />
+      </Reveal>
+      <Reveal>
+        <GrowthPackages />
+      </Reveal>
+      <Reveal>
+        <ROICalculator />
+      </Reveal>
+      <Reveal variant="scale">
+        <Guarantee />
+      </Reveal>
+      <Reveal>
+        <Founder />
+      </Reveal>
+      <Reveal>
+        <FAQ />
+      </Reveal>
+      <Reveal>
+        <FooterCTA />
+      </Reveal>
     </PageShell>
   );
 }
