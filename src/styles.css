@@ -31,17 +31,25 @@
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
+  --void: #07060f;
+  --deep-navy: #0d0b1f;
+  --chrome-hi: #f4f6ff;
+  --chrome-lo: #8a8fa8;
+  --violet: #7c3aed;
+  --electric: #8b00ff;
+  --ice-blue: #00b4ff;
+  --summit-glow: radial-gradient(circle, var(--violet) 0%, transparent 70%);
   --radius: 0.75rem;
-  --background: #050505;
-  --foreground: #ffffff;
-  --card: #0b0b0f;
-  --card-foreground: #ffffff;
-  --popover: #0b0b0f;
-  --popover-foreground: #ffffff;
+  --background: var(--void);
+  --foreground: var(--chrome-hi);
+  --card: var(--deep-navy);
+  --card-foreground: var(--chrome-hi);
+  --popover: var(--deep-navy);
+  --popover-foreground: var(--chrome-hi);
   --primary: #0066ff;
   --primary-foreground: #ffffff;
   --secondary: #1a1a22;
@@ -65,8 +73,8 @@
 }
 
 .dark {
-  --background: #050505;
-  --foreground: #ffffff;
+  --background: var(--void);
+  --foreground: var(--chrome-hi);
 }
 
 @layer base {
@@ -87,10 +95,26 @@
     text-rendering: optimizeLegibility;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+
   ::selection {
     background: var(--primary);
     color: white;
   }
+}
+
+@utility brand-lockup {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
 }
 
 @utility glass-card {
