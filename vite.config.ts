@@ -12,10 +12,4 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  // We deploy on Cloudflare Pages. Pin nitro's Cloudflare Pages preset so the
-  // build emits a Pages-compatible worker + assets in dist/. Per the wrapper's
-  // API, this preset override applies outside a Lovable build (i.e. in CI).
-  nitro: {
-    preset: "cloudflare-pages",
-  },
 });
