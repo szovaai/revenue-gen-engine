@@ -152,7 +152,20 @@ export function AscentExperience() {
       </Link>
 
       <section data-ascent-act className="relative z-10 flex min-h-[110svh] items-center pt-24" aria-labelledby="ascent-hero">
-        <div className="mx-auto grid w-full max-w-7xl items-center gap-8 px-5 py-16 lg:grid-cols-[1fr_0.85fr] lg:px-8">
+        <video
+          src={heroVideoAsset.url}
+          poster={logoAsset.url}
+          aria-label="ClickAdMedia digital mountain logo animation"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/25" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/35" aria-hidden />
+        <div className="relative mx-auto w-full max-w-7xl px-5 py-16 lg:px-8">
           <div className="max-w-3xl">
             <p className="brand-lockup text-xs text-[var(--ice-blue)]">Calgary · Alberta · Built for trades</p>
             <h1 id="ascent-hero" className="mt-6 text-[clamp(3.2rem,8vw,7.5rem)] font-bold leading-[0.88] tracking-[-0.055em] text-foreground">
@@ -169,20 +182,6 @@ export function AscentExperience() {
                 See the work <ArrowDown className="h-4 w-4" />
               </a>
             </div>
-          </div>
-          <div className="relative mx-auto flex min-h-80 w-full max-w-lg items-center justify-center lg:min-h-[34rem]">
-            <div className="absolute inset-0 bg-[var(--summit-glow)] opacity-50 blur-3xl" aria-hidden />
-            <video
-              src={heroVideoAsset.url}
-              poster={logoAsset.url}
-              aria-label="ClickAdMedia digital mountain logo animation"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              className={`relative aspect-video w-full rounded-3xl object-cover mix-blend-screen ${lite ? "ascent-logo-float" : "opacity-75"}`}
-            />
           </div>
         </div>
         <div className="absolute bottom-12 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
