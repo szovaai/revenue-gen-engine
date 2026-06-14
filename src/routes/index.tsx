@@ -1,41 +1,35 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageShell } from "@/components/home/PageShell";
-import { Reveal } from "@/components/home/Reveal";
-import { Hero } from "@/components/home/Hero";
-import { SocialProofStrip } from "@/components/home/SocialProofStrip";
-import { Framework } from "@/components/home/Framework";
-import { BeforeAfter } from "@/components/home/BeforeAfter";
-import { IndustrySelector } from "@/components/home/IndustrySelector";
-import { GrowthPackages } from "@/components/home/GrowthPackages";
-import { ROICalculator } from "@/components/home/ROICalculator";
-import { Guarantee } from "@/components/home/Guarantee";
-import { Founder } from "@/components/home/Founder";
-import { FAQ } from "@/components/home/FAQ";
-import { FooterCTA } from "@/components/home/FooterCTA";
+import { Ascent } from "@/components/ascent/Ascent";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Websites That Get Local Businesses More Customers | ClickAdMedia",
+        title: "Lead-Generation Websites for Calgary Trades | ClickAdMedia",
       },
       {
         name: "description",
         content:
-          "Professional local business websites built in days, not months — starting at $500 with no hidden fees. More calls, more leads, more customers. Book a free website review.",
+          "ClickAdMedia builds convert-first, locally-optimized websites for Calgary contractors — engineered to rank, convert, and book jobs. Quoted per project. Book a discovery call.",
       },
       {
         property: "og:title",
-        content: "Websites That Get Local Businesses More Customers | ClickAdMedia",
+        content: "Lead-Generation Websites for Calgary Trades | ClickAdMedia",
       },
       {
         property: "og:description",
         content:
-          "Professional websites built in days from $500. More calls, leads, and customers for your local business. Book a free website review.",
+          "Convert-first websites for Calgary contractors — built to rank, convert, and book jobs. Quoted per project, done-for-you. Book a discovery call.",
       },
       { property: "og:url", content: "/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: "/" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap",
+      },
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -44,15 +38,9 @@ export const Route = createFileRoute("/")({
           "@type": "ProfessionalService",
           name: "ClickAdMedia",
           description:
-            "Professional website design for local businesses, built in days. Lead-gen websites starting at $500 with no hidden fees.",
-          areaServed: "United States, Canada",
-          serviceType: "Website Design & Lead Generation for Local Businesses",
-          offers: {
-            "@type": "Offer",
-            priceCurrency: "USD",
-            price: "500",
-            description: "Starter Growth Package — professional 5-page lead-gen website.",
-          },
+            "Convert-first, locally-optimized lead-generation websites for Calgary trades and contractors. Done-for-you and quoted per project.",
+          areaServed: "Calgary, Alberta, Canada",
+          serviceType: "Website Design & Local SEO for Trades",
         }),
       },
     ],
@@ -61,39 +49,5 @@ export const Route = createFileRoute("/")({
 });
 
 function HomePage() {
-  return (
-    <PageShell>
-      <Hero />
-      <Reveal>
-        <SocialProofStrip />
-      </Reveal>
-      <Reveal>
-        <Framework />
-      </Reveal>
-      <Reveal>
-        <BeforeAfter />
-      </Reveal>
-      <Reveal>
-        <IndustrySelector />
-      </Reveal>
-      <Reveal>
-        <GrowthPackages />
-      </Reveal>
-      <Reveal>
-        <ROICalculator />
-      </Reveal>
-      <Reveal variant="scale">
-        <Guarantee />
-      </Reveal>
-      <Reveal>
-        <Founder />
-      </Reveal>
-      <Reveal>
-        <FAQ />
-      </Reveal>
-      <Reveal>
-        <FooterCTA />
-      </Reveal>
-    </PageShell>
-  );
+  return <Ascent />;
 }
