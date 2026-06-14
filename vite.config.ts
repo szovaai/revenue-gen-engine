@@ -16,6 +16,7 @@ export default defineConfig({
         "@supabase/supabase-js",
         "gsap",
         "gsap/ScrollTrigger",
+        "lenis",
         "three",
       ],
     },
