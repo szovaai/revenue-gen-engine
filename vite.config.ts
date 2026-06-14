@@ -13,6 +13,7 @@ export default defineConfig({
         "@react-three/drei",
         "@react-three/fiber",
         "@react-three/postprocessing",
+        "@supabase/supabase-js",
         "gsap",
         "gsap/ScrollTrigger",
         "three",
