@@ -5,6 +5,7 @@ import logoAsset from "@/assets/logo.asset.json";
 import truecanAsset from "@/assets/truecan.png.asset.json";
 import caminoAsset from "@/assets/camino.png.asset.json";
 import westlightsAsset from "@/assets/westlights.png.asset.json";
+import heroVideoAsset from "@/assets/clickadmedia-digital-effect.mp4.asset.json";
 
 const AscentScene = lazy(() =>
   import("@/components/three/AscentScene").then((module) => ({ default: module.AscentScene })),
@@ -171,7 +172,17 @@ export function AscentExperience() {
           </div>
           <div className="relative mx-auto flex min-h-80 w-full max-w-lg items-center justify-center lg:min-h-[34rem]">
             <div className="absolute inset-0 bg-[var(--summit-glow)] opacity-50 blur-3xl" aria-hidden />
-            <img src={logoAsset.url} alt="ClickAdMedia chrome mountain M with violet summit gem" fetchPriority="high" className={`relative w-64 rounded-3xl object-cover mix-blend-screen sm:w-80 ${lite ? "ascent-logo-float" : "opacity-30"}`} />
+            <video
+              src={heroVideoAsset.url}
+              poster={logoAsset.url}
+              aria-label="ClickAdMedia digital mountain logo animation"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className={`relative aspect-video w-full rounded-3xl object-cover mix-blend-screen ${lite ? "ascent-logo-float" : "opacity-75"}`}
+            />
           </div>
         </div>
         <div className="absolute bottom-12 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
