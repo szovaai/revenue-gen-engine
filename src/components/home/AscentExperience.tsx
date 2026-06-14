@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useRef, useState, type CSSProperties } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowDown, ArrowRight, Check, Compass, MapPin, Mountain, Search, Zap } from "lucide-react";
 import logoAsset from "@/assets/logo.asset.json";
@@ -282,11 +282,11 @@ export function AscentExperience() {
 
       <section data-ascent-act className="relative z-10 flex min-h-screen items-center py-28" aria-labelledby="problem-heading">
         <div className="mx-auto w-full max-w-7xl px-5 lg:px-8">
-          <p className="brand-lockup text-xs text-primary">Act II · The problem</p>
-          <h2 id="problem-heading" className="mt-5 max-w-3xl text-4xl font-bold tracking-tight sm:text-6xl">Great work means nothing if nobody can find you.</h2>
+          <p data-reveal className="brand-lockup text-xs text-primary">Act II · The problem</p>
+          <h2 data-reveal id="problem-heading" className="mt-5 max-w-3xl text-4xl font-bold tracking-tight sm:text-6xl">Great work means nothing if nobody can find you.</h2>
           <div className="mt-14 grid gap-5 lg:grid-cols-3">
             {painPoints.map((point, index) => (
-              <article key={point} className="trail-marker glass-card relative min-h-52 overflow-hidden rounded-2xl p-7 backdrop-blur-xl">
+              <article data-reveal key={point} className="trail-marker glass-card premium-sheen relative min-h-52 overflow-hidden rounded-2xl p-7 backdrop-blur-xl">
                 <span className="font-mono text-xs text-[var(--ice-blue)]">TRAIL 0{index + 1}</span>
                 <p className="mt-8 text-xl font-semibold leading-snug text-foreground">“{point}”</p>
               </article>
@@ -297,13 +297,13 @@ export function AscentExperience() {
 
       <section data-ascent-act className="relative z-10 min-h-screen py-28" aria-labelledby="method-heading">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <p className="brand-lockup text-xs text-primary">Act III · The method</p>
-          <h2 id="method-heading" className="mt-5 max-w-3xl text-4xl font-bold tracking-tight sm:text-6xl">Four base camps. One clear route to more leads.</h2>
+          <p data-reveal className="brand-lockup text-xs text-primary">Act III · The method</p>
+          <h2 data-reveal id="method-heading" className="mt-5 max-w-3xl text-4xl font-bold tracking-tight sm:text-6xl">Four base camps. One clear route to more leads.</h2>
           <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {camps.map((camp, index) => {
               const Icon = camp.icon;
               return (
-                <article key={camp.title} className="crystal-platform group relative overflow-hidden border border-border bg-card/55 p-6 backdrop-blur-xl">
+                <article data-reveal key={camp.title} className="crystal-platform premium-sheen group relative overflow-hidden border border-border bg-card/55 p-6 backdrop-blur-xl">
                   <span className="font-mono text-xs text-muted-foreground">ALT 0{index + 1}</span>
                   <Icon className="mt-10 h-7 w-7 text-primary transition-transform group-hover:scale-110" />
                   <h3 className="mt-5 text-xl font-semibold">{camp.title}</h3>
@@ -314,7 +314,7 @@ export function AscentExperience() {
           </div>
           <ol className="mt-20 grid gap-4 border-y border-border py-8 md:grid-cols-3">
             {["Strategy call", "We build it", "You get leads"].map((step, index) => (
-              <li key={step} className="flex items-center gap-4 text-lg font-semibold"><span className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/50 bg-primary/10 font-mono text-sm text-primary">{index + 1}</span>{step}</li>
+              <li data-reveal key={step} className="flex items-center gap-4 text-lg font-semibold"><span className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/50 bg-primary/10 font-mono text-sm text-primary">{index + 1}</span>{step}</li>
             ))}
           </ol>
         </div>
@@ -322,17 +322,17 @@ export function AscentExperience() {
 
       <section id="proof-ridge" data-ascent-act className="relative z-10 min-h-screen scroll-mt-24 py-28" aria-labelledby="proof-heading">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <p className="brand-lockup text-xs text-primary">Act IV · Proof ridge</p>
-          <h2 id="proof-heading" className="mt-5 max-w-3xl text-4xl font-bold tracking-tight sm:text-6xl">Built to look sharp. Engineered to move people.</h2>
+          <p data-reveal className="brand-lockup text-xs text-primary">Act IV · Proof ridge</p>
+          <h2 data-reveal id="proof-heading" className="mt-5 max-w-3xl text-4xl font-bold tracking-tight sm:text-6xl">Built to look sharp. Engineered to move people.</h2>
           <div className="mt-14 grid gap-5 lg:grid-cols-3">
             {work.map((item, index) => (
-              <figure key={item.name} className={`floating-screen overflow-hidden rounded-2xl border border-border bg-card/70 p-2 shadow-[0_30px_80px_rgba(0,0,0,0.45)] ${index === 1 ? "lg:-translate-y-8" : ""}`}>
+              <figure data-proof-screen key={item.name} className={`floating-screen premium-sheen overflow-hidden rounded-2xl border border-border bg-card/70 p-2 shadow-[0_30px_80px_rgba(0,0,0,0.45)] ${index === 1 ? "lg:-translate-y-8" : ""}`}>
                 <img src={item.src} alt={item.alt} loading="lazy" className="aspect-[4/3] w-full rounded-xl object-cover object-top" />
                 <figcaption className="px-3 py-3 text-sm font-semibold">{item.name}</figcaption>
               </figure>
             ))}
           </div>
-          <dl className="mt-16 grid gap-8 border-t border-border pt-10 md:grid-cols-3">
+          <dl data-proof-stats className="mt-16 grid gap-8 border-t border-border pt-10 md:grid-cols-3">
             {research.map((stat) => <ResearchStat key={stat.value} {...stat} />)}
           </dl>
         </div>
@@ -340,19 +340,19 @@ export function AscentExperience() {
 
       <section data-ascent-act className="relative z-10 flex min-h-[105svh] items-center py-28 text-center" aria-labelledby="summit-heading">
         <div className="mx-auto max-w-5xl px-5">
-          <div className="relative mx-auto w-fit">
+          <div data-reveal className="relative mx-auto w-fit">
             <div className="absolute inset-0 scale-[2.2] bg-[var(--summit-glow)] opacity-80 blur-3xl" aria-hidden />
             <img src={logoAsset.url} alt="ClickAdMedia summit mark" loading="lazy" className="relative mx-auto h-36 w-36 rounded-3xl object-cover mix-blend-screen sm:h-44 sm:w-44" />
           </div>
-          <p className="brand-lockup mt-10 text-xs text-[var(--ice-blue)]">Act V · The summit</p>
-          <h2 id="summit-heading" className="mt-5 text-[clamp(3rem,8vw,7rem)] font-bold leading-[0.9] tracking-[-0.05em]">Ready to rise above the competition?</h2>
-          <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground">Bring us your trade, service area, and goals. We'll show you a clear route from invisible online to a website that brings in real enquiries.</p>
-          <p className="brand-lockup mt-10 text-sm text-foreground sm:text-base">Websites that convert</p>
-          <Link to="/strategy-call" className="mt-10 inline-flex h-16 items-center justify-center gap-3 rounded-full bg-primary px-9 text-lg font-semibold text-primary-foreground shadow-[0_0_55px_var(--glow-purple)] transition-transform hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+          <p data-reveal className="brand-lockup mt-10 text-xs text-[var(--ice-blue)]">Act V · The summit</p>
+          <h2 data-reveal id="summit-heading" className="mt-5 text-[clamp(3rem,8vw,7rem)] font-bold leading-[0.9] tracking-[-0.05em]">Ready to rise above the competition?</h2>
+          <p data-reveal className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground">Bring us your trade, service area, and goals. We'll show you a clear route from invisible online to a website that brings in real enquiries.</p>
+          <p data-reveal className="brand-lockup mt-10 text-sm text-foreground sm:text-base">Websites that convert</p>
+          <Link data-reveal data-magnetic to="/strategy-call" className="mt-10 inline-flex h-16 items-center justify-center gap-3 rounded-full bg-primary px-9 text-lg font-semibold text-primary-foreground shadow-[0_0_55px_var(--glow-purple)] transition-shadow hover:shadow-[0_0_70px_var(--glow-purple)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
             Book a free strategy call <ArrowRight className="h-5 w-5" />
           </Link>
-          <p className="mt-6 inline-flex items-center gap-2 text-sm text-muted-foreground"><MapPin className="h-4 w-4 text-[var(--ice-blue)]" /> Calgary-built. Alberta focused. Trades first.</p>
-          <div className="mx-auto mt-12 flex max-w-lg flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
+          <p data-reveal className="mt-6 inline-flex items-center gap-2 text-sm text-muted-foreground"><MapPin className="h-4 w-4 text-[var(--ice-blue)]" /> Calgary-built. Alberta focused. Trades first.</p>
+          <div data-reveal className="mx-auto mt-12 flex max-w-lg flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
             {["No pressure", "Clear next steps", "Built around your trade"].map((item) => <span key={item} className="inline-flex items-center gap-2"><Check className="h-4 w-4 text-primary" />{item}</span>)}
           </div>
         </div>
