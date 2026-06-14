@@ -121,3 +121,121 @@
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ---------- Motion system (zero-dependency, reduced-motion safe) ---------- */
+
+/* Scroll reveal: the `.reveal` hidden state is added by JS only (below the fold),
+   so SSR / no-JS content stays fully visible. `.reveal-in` plays the entrance. */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  will-change: opacity, transform;
+}
+.reveal.reveal-left {
+  transform: translateX(-36px);
+}
+.reveal.reveal-right {
+  transform: translateX(36px);
+}
+.reveal.reveal-scale {
+  transform: scale(0.96);
+}
+.reveal.reveal-in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.7s ease,
+    transform 0.85s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* Hero entrance (CSS-only, works without JS) */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-rise {
+  opacity: 0;
+  animation: rise-in 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation-delay: var(--rise-delay, 0ms);
+}
+
+/* Ambient drifting glows */
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(12px, -20px);
+  }
+}
+@keyframes float-slower {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-16px, 16px);
+  }
+}
+.animate-float-slow {
+  animation: float-slow 13s ease-in-out infinite;
+}
+.animate-float-slower {
+  animation: float-slower 17s ease-in-out infinite;
+}
+
+/* Hero video gentle bob */
+@keyframes video-bob {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-9px) scale(1.006);
+  }
+}
+.animate-video-bob {
+  animation: video-bob 7s ease-in-out infinite;
+}
+
+/* Scroll cue */
+@keyframes cue-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(7px);
+    opacity: 1;
+  }
+}
+.animate-cue {
+  animation: cue-bounce 1.8s ease-in-out infinite;
+}
+
+/* Animated sheen sweep for the brand gradient text */
+@keyframes sheen {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+.text-gradient-animated {
+  background: linear-gradient(110deg, #ffffff 0%, #8050ff 30%, #0066ff 55%, #ffffff 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: sheen 6s linear infinite;
+}
