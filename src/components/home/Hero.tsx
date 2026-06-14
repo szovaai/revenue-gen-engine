@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Sparkles, PlayCircle } from "lucide-react";
 import { WebsiteCarousel3D } from "./WebsiteCarousel3D";
+import { PlaceholderScene } from "@/components/three/PlaceholderScene";
 
 export function Hero() {
   return (
@@ -51,6 +52,7 @@ export function Hero() {
             See Live Examples
           </Link>
         </div>
+        <PlaceholderScene />
       </div>
 
       {/* Animated 3D website carousel */}
