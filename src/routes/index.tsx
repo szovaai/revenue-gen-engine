@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, type ReactNode } from "react";
 import { WaitlistForm } from "@/components/waitlist/WaitlistForm";
 import markAsset from "@/assets/clickadmedia-mark.png.asset.json";
+import fullLogo from "@/assets/clickadmedia-full-logo.png.asset.json";
 import heroVideo from "@/assets/scene-seconds.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -97,12 +98,8 @@ function TopBar() {
         borderColor: "var(--color-border-soft)",
       }}
     >
-      <a href="#waitlist" className="flex items-center gap-2.5 text-lg font-bold tracking-tight text-white">
-        <img src={markAsset.url} alt="" aria-hidden="true" className="h-8 w-auto" />
-        <span>
-          Click<span className="font-bold">Ad</span>
-          <span className="cam-text-gradient">Media</span>
-        </span>
+      <a href="#waitlist" aria-label="ClickAdMedia" className="flex items-center">
+        <img src={fullLogo.url} alt="ClickAdMedia" className="h-14 w-auto sm:h-16" />
       </a>
       <div
         className="flex items-center gap-2 rounded-full border px-3 py-1.5"
@@ -514,10 +511,11 @@ function Footer() {
       style={{ borderColor: "var(--color-border-soft)" }}
     >
       <div
-        className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 text-[13px] sm:flex-row"
+        className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-[13px] sm:flex-row"
         style={{ color: "var(--color-muted-soft)" }}
       >
-        <p>© 2026 ClickAdMedia.co — All rights reserved.</p>
+        <img src={fullLogo.url} alt="ClickAdMedia" className="h-12 w-auto sm:h-14" />
+        <p>© 2026 All rights reserved.</p>
         <div className="flex items-center gap-5">
           <a href="#" className="transition hover:text-white">
             Privacy Policy
