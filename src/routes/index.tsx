@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, type ReactNode } from "react";
 import { WaitlistForm } from "@/components/waitlist/WaitlistForm";
+import markAsset from "@/assets/clickadmedia-mark.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
