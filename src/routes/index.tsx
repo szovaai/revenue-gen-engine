@@ -96,9 +96,12 @@ function TopBar() {
         borderColor: "var(--color-border-soft)",
       }}
     >
-      <a href="#waitlist" className="text-lg font-bold tracking-tight text-white">
-        Click<span className="font-bold">Ad</span>
-        <span className="cam-text-gradient">Media</span>
+      <a href="#waitlist" className="flex items-center gap-2.5 text-lg font-bold tracking-tight text-white">
+        <img src={markAsset.url} alt="" aria-hidden="true" className="h-8 w-auto" />
+        <span>
+          Click<span className="font-bold">Ad</span>
+          <span className="cam-text-gradient">Media</span>
+        </span>
       </a>
       <div
         className="flex items-center gap-2 rounded-full border px-3 py-1.5"
