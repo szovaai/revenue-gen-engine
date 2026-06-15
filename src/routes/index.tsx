@@ -163,6 +163,17 @@ function Hero() {
       </div>
 
       <div className="mx-auto flex w-full max-w-[820px] flex-col items-center text-center">
+        {/* Logo mark */}
+        <img
+          src={markAsset.url}
+          alt="ClickAdMedia"
+          className="cam-fade-up ascent-logo-float mb-8 h-28 w-auto sm:h-32"
+          style={{
+            ["--cam-delay" as string]: "100ms",
+            filter: "drop-shadow(0 12px 40px rgba(139,0,255,0.35))",
+          }}
+        />
+
         {/* COMING SOON pill */}
         <div
           className="cam-fade-up cam-gradient-border relative inline-flex rounded-full"
