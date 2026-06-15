@@ -166,7 +166,7 @@ function Hero() {
       <div className="mx-auto flex w-full max-w-[820px] flex-col items-center text-center">
         {/* Hero video */}
         <div
-          className="cam-fade-up mb-8 w-full max-w-[560px] overflow-hidden rounded-2xl border"
+          className="cam-fade-up mb-8 w-full max-w-[960px] overflow-hidden rounded-2xl border"
           style={{
             ["--cam-delay" as string]: "100ms",
             borderColor: "var(--color-border-soft)",
