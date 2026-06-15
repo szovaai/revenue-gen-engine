@@ -94,8 +94,8 @@ function TopBar() {
     <header
       className="sticky top-0 z-50 flex h-32 items-center justify-between border-b px-4 sm:px-8"
       style={{
-        background: "var(--color-ink)",
-        borderColor: "var(--color-border-soft)",
+        background: "#ffffff",
+        borderColor: "rgba(0,0,0,0.08)",
       }}
     >
       <a href="#waitlist" aria-label="ClickAdMedia" className="flex items-center">
