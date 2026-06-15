@@ -104,8 +104,8 @@ function TopBar() {
       <div
         className="flex items-center gap-2 rounded-full border px-3 py-1.5"
         style={{
-          borderColor: "var(--color-border-soft)",
-          background: "rgba(255,255,255,0.02)",
+          borderColor: "rgba(0,0,0,0.1)",
+          background: "rgba(0,0,0,0.03)",
         }}
       >
         <span
@@ -118,7 +118,7 @@ function TopBar() {
           style={{
             fontFamily: "var(--font-mono)",
             letterSpacing: "0.2em",
-            color: "var(--color-muted-soft)",
+            color: "#1a1a2e",
           }}
         >
           Repositioning in Progress
