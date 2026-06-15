@@ -131,7 +131,7 @@ function TopBar() {
 // ---------- Hero ----------
 function Hero() {
   return (
-    <section className="relative isolate flex min-h-[calc(100dvh-64px)] items-center justify-center overflow-hidden px-4 py-20 sm:px-8">
+    <section className="relative isolate flex min-h-[calc(100dvh-128px)] items-center justify-center overflow-hidden px-4 py-20 sm:px-8">
       {/* Ambient radial glows */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
         <div
