@@ -92,7 +92,7 @@ function WaitlistPage() {
 function TopBar() {
   return (
     <header
-      className="sticky top-0 z-50 flex h-16 items-center justify-between border-b px-4 sm:px-8"
+      className="sticky top-0 z-50 flex h-32 items-center justify-between border-b px-4 sm:px-8"
       style={{
         background: "var(--color-ink)",
         borderColor: "var(--color-border-soft)",
