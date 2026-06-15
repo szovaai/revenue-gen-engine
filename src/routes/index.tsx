@@ -99,7 +99,7 @@ function TopBar() {
       }}
     >
       <a href="#waitlist" aria-label="ClickAdMedia" className="flex items-center">
-        <img src={fullLogo.url} alt="ClickAdMedia" className="h-14 w-auto sm:h-16" />
+        <img src={fullLogo.url} alt="ClickAdMedia" className="h-28 w-auto sm:h-32" />
       </a>
       <div
         className="flex items-center gap-2 rounded-full border px-3 py-1.5"
