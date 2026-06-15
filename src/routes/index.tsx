@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, type ReactNode } from "react";
 import { WaitlistForm } from "@/components/waitlist/WaitlistForm";
 import markAsset from "@/assets/clickadmedia-mark.png.asset.json";
+import heroVideo from "@/assets/scene-seconds.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -163,16 +164,26 @@ function Hero() {
       </div>
 
       <div className="mx-auto flex w-full max-w-[820px] flex-col items-center text-center">
-        {/* Logo mark */}
-        <img
-          src={markAsset.url}
-          alt="ClickAdMedia"
-          className="cam-fade-up ascent-logo-float mb-8 h-28 w-auto sm:h-32"
+        {/* Hero video */}
+        <div
+          className="cam-fade-up mb-8 w-full max-w-[560px] overflow-hidden rounded-2xl border"
           style={{
             ["--cam-delay" as string]: "100ms",
-            filter: "drop-shadow(0 12px 40px rgba(139,0,255,0.35))",
+            borderColor: "var(--color-border-soft)",
+            boxShadow: "0 20px 80px rgba(139,0,255,0.25), 0 0 0 1px rgba(0,180,255,0.15)",
           }}
-        />
+        >
+          <video
+            src={heroVideo.url}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label="ClickAdMedia visual"
+            className="block h-auto w-full"
+          />
+        </div>
 
         {/* COMING SOON pill */}
         <div
