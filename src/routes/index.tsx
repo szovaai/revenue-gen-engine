@@ -92,14 +92,14 @@ function WaitlistPage() {
 function TopBar() {
   return (
     <header
-      className="sticky top-0 z-50 flex h-16 items-center justify-between border-b px-4 sm:px-8"
+      className="sticky top-0 z-50 flex h-32 items-center justify-between border-b px-4 sm:px-8"
       style={{
         background: "var(--color-ink)",
         borderColor: "var(--color-border-soft)",
       }}
     >
       <a href="#waitlist" aria-label="ClickAdMedia" className="flex items-center">
-        <img src={fullLogo.url} alt="ClickAdMedia" className="h-14 w-auto sm:h-16" />
+        <img src={fullLogo.url} alt="ClickAdMedia" className="h-28 w-auto sm:h-32" />
       </a>
       <div
         className="flex items-center gap-2 rounded-full border px-3 py-1.5"
@@ -131,7 +131,7 @@ function TopBar() {
 // ---------- Hero ----------
 function Hero() {
   return (
-    <section className="relative isolate flex min-h-[calc(100dvh-64px)] items-center justify-center overflow-hidden px-4 py-20 sm:px-8">
+    <section className="relative isolate flex min-h-[calc(100dvh-128px)] items-center justify-center overflow-hidden px-4 py-20 sm:px-8">
       {/* Ambient radial glows */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
         <div
