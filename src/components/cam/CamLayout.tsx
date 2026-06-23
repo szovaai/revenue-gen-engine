@@ -39,7 +39,7 @@ export function CamLayout() {
 
         <div className="max-w-[1280px] mx-auto h-full flex items-center justify-between px-6">
           <Link to="/" className="relative z-10">
-            <img src={camLogo} alt="ClickAdMedia" className="h-[72px] md:h-[88px] w-auto" />
+            <img src={camLogo} alt="ClickAdMedia" className="h-[96px] md:h-[124px] w-auto" />
           </Link>
 
           <div className="hidden md:flex items-center gap-6">
