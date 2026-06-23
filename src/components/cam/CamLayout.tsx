@@ -34,6 +34,7 @@ export function CamLayout() {
 
   return (
     <div className="cam-root relative min-h-screen flex flex-col">
+      <PaymentTestModeBanner />
       <nav className="fixed top-0 left-0 right-0 z-50 h-[84px] md:h-[100px] bg-white/95 backdrop-blur-md border-b border-gray-200/60 shadow-sm">
         <div className="max-w-[1280px] mx-auto h-full flex items-center justify-between px-6">
           <Link to="/" className="relative z-10">
