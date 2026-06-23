@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
-import { getPaddleEnvironment } from "@/lib/paddle";
+import { getStripeEnvironment } from "@/lib/stripe";
 import { useAuth } from "./use-auth";
 
 export function useSubscription() {
   const { user } = useAuth();
-  const env = getPaddleEnvironment();
+  const env = getStripeEnvironment();
 
   return useQuery({
     queryKey: ["subscription", user?.id, env],

@@ -26,7 +26,6 @@ import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesWebsiteDesignRouteImport } from './routes/services.website-design'
 import { Route as ServicesSeoRouteImport } from './routes/services.seo'
 import { Route as ServicesPaidAdsRouteImport } from './routes/services.paid-ads'
-import { Route as ApiPublicPaymentsWebhookRouteImport } from './routes/api/public/payments/webhook'
 
 const ThankYouRoute = ThankYouRouteImport.update({
   id: '/thank-you',
@@ -113,12 +112,6 @@ const ServicesPaidAdsRoute = ServicesPaidAdsRouteImport.update({
   path: '/paid-ads',
   getParentRoute: () => ServicesRoute,
 } as any)
-const ApiPublicPaymentsWebhookRoute =
-  ApiPublicPaymentsWebhookRouteImport.update({
-    id: '/api/public/payments/webhook',
-    path: '/api/public/payments/webhook',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -138,7 +131,6 @@ export interface FileRoutesByFullPath {
   '/services/seo': typeof ServicesSeoRoute
   '/services/website-design': typeof ServicesWebsiteDesignRoute
   '/services/': typeof ServicesIndexRoute
-  '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -157,7 +149,6 @@ export interface FileRoutesByTo {
   '/services/seo': typeof ServicesSeoRoute
   '/services/website-design': typeof ServicesWebsiteDesignRoute
   '/services': typeof ServicesIndexRoute
-  '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -178,7 +169,6 @@ export interface FileRoutesById {
   '/services/seo': typeof ServicesSeoRoute
   '/services/website-design': typeof ServicesWebsiteDesignRoute
   '/services/': typeof ServicesIndexRoute
-  '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -200,7 +190,6 @@ export interface FileRouteTypes {
     | '/services/seo'
     | '/services/website-design'
     | '/services/'
-    | '/api/public/payments/webhook'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -219,7 +208,6 @@ export interface FileRouteTypes {
     | '/services/seo'
     | '/services/website-design'
     | '/services'
-    | '/api/public/payments/webhook'
   id:
     | '__root__'
     | '/'
@@ -239,7 +227,6 @@ export interface FileRouteTypes {
     | '/services/seo'
     | '/services/website-design'
     | '/services/'
-    | '/api/public/payments/webhook'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -256,7 +243,6 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   ThankYouRoute: typeof ThankYouRoute
-  ApiPublicPaymentsWebhookRoute: typeof ApiPublicPaymentsWebhookRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -380,13 +366,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesPaidAdsRouteImport
       parentRoute: typeof ServicesRoute
     }
-    '/api/public/payments/webhook': {
-      id: '/api/public/payments/webhook'
-      path: '/api/public/payments/webhook'
-      fullPath: '/api/public/payments/webhook'
-      preLoaderRoute: typeof ApiPublicPaymentsWebhookRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -422,7 +401,6 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   ThankYouRoute: ThankYouRoute,
-  ApiPublicPaymentsWebhookRoute: ApiPublicPaymentsWebhookRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
