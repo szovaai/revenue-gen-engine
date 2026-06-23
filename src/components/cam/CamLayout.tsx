@@ -222,10 +222,6 @@ export function CamLayout() {
                 </Link>
               ))}
             </nav>
-            <div className="text-center text-sm text-gray-400 mb-2">
-              <span className="mr-4">(555) 123-4567</span>
-              <span>hello@clickadmedia.co</span>
-            </div>
           </div>
           <div className="text-center text-xs text-gray-400 tracking-wider">
             &copy; 2026 ClickAdMedia &middot; Jason R Szova Consulting &middot; Website Design, SEO &amp; Paid Ads for Contractors
