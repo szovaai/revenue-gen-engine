@@ -46,6 +46,8 @@ export const Route = createFileRoute("/book-a-call")({
 
 function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [form, setForm] = useState({
     name: "",
     business: "",
@@ -140,12 +142,31 @@ function ContactPage() {
                     website within 24 hours.
                   </p>
                   <form
-                    onSubmit={(e) => {
+                    onSubmit={async (e) => {
                       e.preventDefault();
-                      setSubmitted(true);
+                      if (submitting) return;
+                      setSubmitting(true);
+                      setErrorMsg(null);
+                      try {
+                        const res = await fetch("/api/public/free-preview-request", {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify(form),
+                        });
+                        if (!res.ok) {
+                          const data = await res.json().catch(() => ({}));
+                          throw new Error(data.error || "Something went wrong");
+                        }
+                        setSubmitted(true);
+                      } catch (err) {
+                        setErrorMsg(err instanceof Error ? err.message : "Something went wrong");
+                      } finally {
+                        setSubmitting(false);
+                      }
                     }}
                     className="space-y-4"
                   >
+
                     {fields.map((f) => (
                       <div key={f.key}>
                         <label className="text-[11px] font-mono uppercase tracking-wider text-[rgba(255,255,255,0.5)] block mb-1.5">
