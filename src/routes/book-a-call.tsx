@@ -15,7 +15,10 @@ function CalEmbed({ calLink }: { calLink: string }) {
       });
       cal("ui", {
         theme: "dark",
-        cssVarsPerTheme: { dark: { "cal-brand": "#007bff" } },
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#007bff" },
+          dark: { "cal-brand": "#007bff" },
+        },
         hideEventTypeDetails: false,
         layout: "month_view",
       });
