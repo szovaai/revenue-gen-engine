@@ -38,6 +38,51 @@ export type Database = {
         }
         Relationships: []
       }
+      purchases: {
+        Row: {
+          amount_total: number | null
+          created_at: string
+          currency: string | null
+          customer_email: string | null
+          environment: string
+          id: string
+          price_id: string
+          product_id: string
+          stripe_checkout_session_id: string
+          stripe_customer_id: string
+          stripe_payment_intent_id: string | null
+          user_id: string
+        }
+        Insert: {
+          amount_total?: number | null
+          created_at?: string
+          currency?: string | null
+          customer_email?: string | null
+          environment?: string
+          id?: string
+          price_id: string
+          product_id: string
+          stripe_checkout_session_id: string
+          stripe_customer_id: string
+          stripe_payment_intent_id?: string | null
+          user_id: string
+        }
+        Update: {
+          amount_total?: number | null
+          created_at?: string
+          currency?: string | null
+          customer_email?: string | null
+          environment?: string
+          id?: string
+          price_id?: string
+          product_id?: string
+          stripe_checkout_session_id?: string
+          stripe_customer_id?: string
+          stripe_payment_intent_id?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       subscriptions: {
         Row: {
           cancel_at_period_end: boolean | null

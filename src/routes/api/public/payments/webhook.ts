@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { createClient } from "@supabase/supabase-js";
 import type { Database } from "@/integrations/supabase/types";
-import { type StripeEnv, verifyWebhook } from "@/lib/stripe.server";
+import { type StripeEnv, createStripeClient, verifyWebhook } from "@/lib/stripe.server";
 
 let _supabase: ReturnType<typeof createClient<Database>> | null = null;
 function getSupabase() {
@@ -12,6 +12,34 @@ function getSupabase() {
     );
   }
   return _supabase;
+}
+
+const PRODUCT_LABELS: Record<string, string> = {
+  starter_site: "Starter Site ($500 one-time)",
+  growth_plan: "Growth Plan ($297/mo)",
+  dominate_plan: "Dominate Plan ($997/mo)",
+};
+
+async function notifyOwnerAndCustomer(args: {
+  customerEmail: string | null | undefined;
+  priceId: string | null | undefined;
+  amountTotal: number | null | undefined;
+  currency: string | null | undefined;
+  kind: "subscription" | "one_time";
+}) {
+  // Email infrastructure is not yet configured for this project. Once the
+  // email domain is attached and the transactional email templates are
+  // scaffolded, swap these console logs for calls to
+  // sendTransactionalEmail({ templateName: 'new-customer-owner', ... })
+  // and ({ templateName: 'customer-welcome', ... }).
+  const label = (args.priceId && PRODUCT_LABELS[args.priceId]) ?? args.priceId ?? "Unknown product";
+  console.log("[purchase] new customer", {
+    customerEmail: args.customerEmail,
+    product: label,
+    amount: args.amountTotal,
+    currency: args.currency,
+    kind: args.kind,
+  });
 }
 
 async function handleSubscriptionCreated(subscription: any, env: StripeEnv) {
@@ -44,6 +72,14 @@ async function handleSubscriptionCreated(subscription: any, env: StripeEnv) {
       },
       { onConflict: "stripe_subscription_id" },
     );
+
+  await notifyOwnerAndCustomer({
+    customerEmail: subscription.customer_email ?? null,
+    priceId,
+    amountTotal: item?.price?.unit_amount ?? null,
+    currency: item?.price?.currency ?? null,
+    kind: "subscription",
+  });
 }
 
 async function handleSubscriptionUpdated(subscription: any, env: StripeEnv) {
@@ -70,11 +106,70 @@ async function handleSubscriptionUpdated(subscription: any, env: StripeEnv) {
 }
 
 async function handleSubscriptionDeleted(subscription: any, env: StripeEnv) {
+  // Cancel-at-period-end: status flips to 'canceled' but
+  // has_active_subscription keeps access until current_period_end.
   await getSupabase()
     .from("subscriptions")
     .update({ status: "canceled", updated_at: new Date().toISOString() })
     .eq("stripe_subscription_id", subscription.id)
     .eq("environment", env);
+}
+
+async function handleCheckoutCompleted(session: any, env: StripeEnv) {
+  // Subscriptions are written from customer.subscription.* — ignore here.
+  if (session.mode !== "payment") return;
+
+  const userId = session.metadata?.userId;
+  if (!userId) {
+    console.error("checkout.session.completed without userId metadata");
+    return;
+  }
+
+  // Resolve human-readable price id via line items.
+  let priceId: string | null = null;
+  let productId: string | null = null;
+  try {
+    const stripe = createStripeClient(env);
+    const lineItems = await stripe.checkout.sessions.listLineItems(session.id, { limit: 1 });
+    const li = lineItems.data[0];
+    priceId =
+      li?.price?.lookup_key ||
+      (li?.price?.metadata as Record<string, string> | undefined)?.lovable_external_id ||
+      li?.price?.id ||
+      null;
+    productId =
+      typeof li?.price?.product === "string"
+        ? li.price.product
+        : (li?.price?.product?.id ?? null);
+  } catch (e) {
+    console.error("Failed to fetch line items for session", session.id, e);
+  }
+
+  await getSupabase()
+    .from("purchases")
+    .upsert(
+      {
+        user_id: userId,
+        stripe_checkout_session_id: session.id,
+        stripe_customer_id: session.customer,
+        stripe_payment_intent_id: session.payment_intent ?? null,
+        product_id: productId ?? "unknown",
+        price_id: priceId ?? "unknown",
+        amount_total: session.amount_total ?? null,
+        currency: session.currency ?? null,
+        customer_email: session.customer_details?.email ?? session.customer_email ?? null,
+        environment: env,
+      },
+      { onConflict: "stripe_checkout_session_id" },
+    );
+
+  await notifyOwnerAndCustomer({
+    customerEmail: session.customer_details?.email ?? session.customer_email ?? null,
+    priceId,
+    amountTotal: session.amount_total ?? null,
+    currency: session.currency ?? null,
+    kind: "one_time",
+  });
 }
 
 async function handleWebhook(req: Request, env: StripeEnv) {
@@ -88,6 +183,9 @@ async function handleWebhook(req: Request, env: StripeEnv) {
       break;
     case "customer.subscription.deleted":
       await handleSubscriptionDeleted(event.data.object, env);
+      break;
+    case "checkout.session.completed":
+      await handleCheckoutCompleted(event.data.object, env);
       break;
     default:
       console.log("Unhandled event:", event.type);
