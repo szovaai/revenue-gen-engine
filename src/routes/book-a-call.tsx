@@ -1,5 +1,34 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+function CalEmbed({ calLink }: { calLink: string }) {
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const { getCalApi } = await import("@calcom/embed-react");
+      const cal = await getCalApi();
+      if (cancelled) return;
+      cal("inline", {
+        elementOrSelector: "#cal-inline",
+        calLink,
+        config: { layout: "month_view", theme: "dark" },
+      });
+      cal("ui", {
+        theme: "dark",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#007bff" },
+          dark: { "cal-brand": "#007bff" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [calLink]);
+  return <div id="cal-inline" style={{ width: "100%", minHeight: "650px", overflow: "scroll" }} />;
+}
 
 export const Route = createFileRoute("/book-a-call")({
   head: () => ({
@@ -60,46 +89,12 @@ function ContactPage() {
               </p>
               <div
                 className="rounded-lg overflow-hidden border border-[rgba(255,255,255,0.1)]"
-                style={{ background: "#0f1f38", minHeight: "400px" }}
+                style={{ background: "#0f1f38" }}
               >
-                <div className="flex flex-col items-center justify-center h-full min-h-[400px] p-8 text-center">
-                  <div
-                    className="w-16 h-16 rounded-full flex items-center justify-center mb-4"
-                    style={{ background: "rgba(0,123,255,0.1)" }}
-                  >
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                      <rect
-                        x="3"
-                        y="4"
-                        width="18"
-                        height="18"
-                        rx="2"
-                        stroke="#007bff"
-                        strokeWidth="2"
-                      />
-                      <path
-                        d="M16 2v4M8 2v4M3 10h18"
-                        stroke="#007bff"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-[rgba(255,255,255,0.6)] mb-2">Calendly Booking Embed</p>
-                  <p className="text-xs text-[rgba(255,255,255,0.4)] mb-4">
-                    Replace this with your Calendly inline embed code
-                  </p>
-                  <a
-                    href="https://calendly.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary text-sm py-3 px-6"
-                  >
-                    Open Calendly →
-                  </a>
-                </div>
+                <CalEmbed calLink="clickadmedia" />
               </div>
             </div>
+
 
             <div className="grid sm:grid-cols-1 gap-4">
               <div className="glass-card p-6 text-center">
