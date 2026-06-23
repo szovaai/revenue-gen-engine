@@ -5,19 +5,17 @@ function CalEmbed({ calLink }: { calLink: string }) {
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      const Cal = (await import("@calcom/embed-react")).default;
+      const { getCalApi } = await import("@calcom/embed-react");
+      const cal = await getCalApi();
       if (cancelled) return;
-      Cal("init", { origin: "https://cal.com" });
-      Cal("inline", {
+      cal("inline", {
         elementOrSelector: "#cal-inline",
         calLink,
         config: { layout: "month_view", theme: "dark" },
       });
-      Cal("ui", {
+      cal("ui", {
         theme: "dark",
-        cssVarsPerTheme: {
-          dark: { "cal-brand": "#007bff" },
-        },
+        cssVarsPerTheme: { dark: { "cal-brand": "#007bff" } },
         hideEventTypeDetails: false,
         layout: "month_view",
       });
@@ -26,12 +24,7 @@ function CalEmbed({ calLink }: { calLink: string }) {
       cancelled = true;
     };
   }, [calLink]);
-  return (
-    <div
-      id="cal-inline"
-      style={{ width: "100%", minHeight: "650px", overflow: "scroll" }}
-    />
-  );
+  return <div id="cal-inline" style={{ width: "100%", minHeight: "650px", overflow: "scroll" }} />;
 }
 
 export const Route = createFileRoute("/book-a-call")({
