@@ -100,6 +100,7 @@ async function handleSubscriptionCreated(subscription: any, env: StripeEnv) {
     amountTotal: item?.price?.unit_amount ?? null,
     currency: item?.price?.currency ?? null,
     kind: "subscription",
+    idempotencyKey: `sub-${subscription.id}`,
   });
 }
 
