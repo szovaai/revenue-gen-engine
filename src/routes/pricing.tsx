@@ -1,5 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { usePaddleCheckout } from "@/hooks/use-paddle-checkout";
+import { useStripeCheckout } from "@/hooks/use-stripe-checkout";
 import { useAuth } from "@/hooks/use-auth";
 
 export const Route = createFileRoute("/pricing")({
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/pricing")({
 function PricingPage() {
   const { user } = useAuth();
   const navigate = useNavigate();
-  const { openCheckout, loading } = usePaddleCheckout();
+  const { openCheckout, closeCheckout, isOpen, checkoutElement } = useStripeCheckout();
 
   const buy = (priceId: string) => {
     if (!user) {
@@ -29,8 +29,8 @@ function PricingPage() {
     openCheckout({
       priceId,
       customerEmail: user.email,
-      customData: { userId: user.id },
-      successUrl: `${window.location.origin}/thank-you`,
+      userId: user.id,
+      returnUrl: `${window.location.origin}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
     });
   };
   const rows = [
