@@ -5,6 +5,9 @@
 //     error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import path from "node:path";
+
+const entitiesRoot = path.resolve(process.cwd(), "node_modules/entities");
 
 export default defineConfig({
   vite: {
@@ -18,6 +21,13 @@ export default defineConfig({
         "gsap/ScrollTrigger",
         "lenis",
         "three",
+      ],
+    },
+    resolve: {
+      alias: [
+        { find: /^entities\/lib\/decode\.js$/, replacement: path.join(entitiesRoot, "lib/decode.js") },
+        { find: /^entities\/lib\/encode\.js$/, replacement: path.join(entitiesRoot, "lib/encode.js") },
+        { find: /^entities$/, replacement: entitiesRoot },
       ],
     },
   },
