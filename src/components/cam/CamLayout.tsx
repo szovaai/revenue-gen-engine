@@ -168,7 +168,7 @@ export function CamLayout() {
         )}
       </nav>
 
-      <main className="flex-1 pt-[84px] md:pt-[100px]">
+      <main className="flex-1 pt-[110px] md:pt-[140px]">
         <Outlet />
       </main>
 
