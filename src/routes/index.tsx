@@ -105,13 +105,6 @@ function HomePage() {
                 See Your Free Preview &rarr;
               </Link>
             </div>
-            <p
-              className="hero-fade-in text-sm text-[rgba(255,255,255,0.45)]"
-              style={{ animationDelay: "1.3s" }}
-            >
-              Or text <span className="text-white">&ldquo;WEBSITE&rdquo;</span> to{" "}
-              <span className="text-white">(555) 123-4567</span>
-            </p>
           </div>
         </div>
       </section>
