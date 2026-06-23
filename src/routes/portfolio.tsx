@@ -48,16 +48,16 @@ function PortfolioPage() {
 
       <section ref={gridRef} className="px-6 pb-16">
         <div className="max-w-[1280px] mx-auto">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {demos.map((d, i) => (
               <div
-                key={d.name}
+                key={d.niche}
                 className={`reveal reveal-delay-${(i % 4) + 1} glass-card overflow-hidden group`}
               >
                 <div className="relative overflow-hidden">
                   <img
                     src={d.img}
-                    alt={d.name}
+                    alt={`${d.niche} website demo`}
                     className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div
@@ -68,19 +68,22 @@ function PortfolioPage() {
                       color: "#007bff",
                     }}
                   >
-                    {d.niche}
+                    DEMO
                   </div>
                 </div>
                 <div className="p-4">
-                  <h4 className="font-bold text-sm mb-0.5">{d.name}</h4>
-                  <p className="text-[11px] text-[rgba(255,255,255,0.4)] mb-3">{d.city}</p>
+                  <h4 className="font-bold text-base mb-1">{d.niche}</h4>
+                  <p className="text-[12px] text-[rgba(255,255,255,0.5)] mb-3">{d.tagline}</p>
                   <div className="flex gap-2">
-                    <button
+                    <a
+                      href={d.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex-1 py-2 rounded-lg text-xs font-semibold text-center"
                       style={{ background: "var(--cam-gradient)" }}
                     >
-                      Live Preview
-                    </button>
+                      View Live Demo →
+                    </a>
                     <Link
                       to="/book-a-call"
                       className="flex-1 py-2 rounded-lg text-xs font-semibold text-center border border-[rgba(255,255,255,0.15)] text-[rgba(255,255,255,0.8)] hover:border-[#007bff] transition-colors"
@@ -92,6 +95,9 @@ function PortfolioPage() {
               </div>
             ))}
           </div>
+          <p className="text-center text-[rgba(255,255,255,0.5)] text-sm mt-10 max-w-[600px] mx-auto">
+            These are generic demos. We&apos;ll customize yours with your business name, logo, and photos.
+          </p>
         </div>
       </section>
 
