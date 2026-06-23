@@ -210,8 +210,15 @@ function ContactPage() {
                         ))}
                       </select>
                     </div>
-                    <button type="submit" className="btn-primary w-full text-center py-4 mt-2">
-                      Send Me My Free Preview →
+                    {errorMsg && (
+                      <p className="text-sm text-red-400" role="alert">{errorMsg}</p>
+                    )}
+                    <button
+                      type="submit"
+                      disabled={submitting}
+                      className="btn-primary w-full text-center py-4 mt-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                    >
+                      {submitting ? "Sending..." : "Send Me My Free Preview →"}
                     </button>
                   </form>
                 </>
