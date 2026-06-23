@@ -1,5 +1,38 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+function CalEmbed({ calLink }: { calLink: string }) {
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const Cal = (await import("@calcom/embed-react")).default;
+      if (cancelled) return;
+      Cal("init", { origin: "https://cal.com" });
+      Cal("inline", {
+        elementOrSelector: "#cal-inline",
+        calLink,
+        config: { layout: "month_view", theme: "dark" },
+      });
+      Cal("ui", {
+        theme: "dark",
+        cssVarsPerTheme: {
+          dark: { "cal-brand": "#007bff" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [calLink]);
+  return (
+    <div
+      id="cal-inline"
+      style={{ width: "100%", minHeight: "650px", overflow: "scroll" }}
+    />
+  );
+}
 
 export const Route = createFileRoute("/book-a-call")({
   head: () => ({
