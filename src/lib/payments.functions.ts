@@ -102,7 +102,10 @@ export const createPortalSession = createServerFn({ method: "POST" })
   .inputValidator((data: { returnUrl?: string; environment: StripeEnv }) => data)
   .handler(async ({ data, context }): Promise<PortalSessionResult> => {
     const { supabase, userId } = context;
-    const { data: sub, error: subError } = await supabase
+
+    // Find the customer id from either a subscription (Growth/Dominate)
+    // or a one-time purchase (Starter).
+    const { data: sub } = await supabase
       .from("subscriptions")
       .select("stripe_customer_id")
       .eq("user_id", userId)
@@ -110,12 +113,26 @@ export const createPortalSession = createServerFn({ method: "POST" })
       .order("created_at", { ascending: false })
       .limit(1)
       .maybeSingle();
-    if (subError || !sub?.stripe_customer_id) throw new Error("No subscription found");
+    let customerId = (sub?.stripe_customer_id as string | undefined) ?? undefined;
+    if (!customerId) {
+      const { data: purchase } = await supabase
+        .from("purchases")
+        .select("stripe_customer_id")
+        .eq("user_id", userId)
+        .eq("environment", data.environment)
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      customerId = (purchase?.stripe_customer_id as string | undefined) ?? undefined;
+    }
+    if (!customerId) throw new Error("No billing record found for this account");
 
     try {
       const stripe = createStripeClient(data.environment);
+      // Use the Stripe-account default portal configuration. Upgrade/downgrade
+      // proration is configured on that default (immediate with prorations).
       const portal = await stripe.billingPortal.sessions.create({
-        customer: sub.stripe_customer_id as string,
+        customer: customerId,
         ...(data.returnUrl && { return_url: data.returnUrl }),
       });
       return { url: portal.url };
