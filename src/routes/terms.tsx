@@ -90,14 +90,11 @@ function TermsPage() {
         <section>
           <h2 className="text-xl font-semibold text-gray-900 mb-3">8. Payments, billing &amp; subscriptions</h2>
           <p>
-            Our order process is conducted by our online reseller <strong>Paddle.com</strong>.
-            Paddle.com is the Merchant of Record for all our orders. Paddle provides all customer
-            service inquiries and handles returns. Payment, billing, taxes, subscription renewal,
-            cancellation, and refund mechanics are governed by{" "}
-            <a className="text-blue-600 underline" href="https://www.paddle.com/legal/checkout-buyer-terms" target="_blank" rel="noreferrer">
-              Paddle's Buyer Terms
-            </a>
-            . Subscriptions renew automatically for successive billing periods until cancelled.
+            Payments are processed by Stripe, our payment processor. By purchasing, you authorize us
+            (through Stripe) to charge your payment method for the amounts shown at checkout,
+            including any applicable taxes. Subscription plans renew automatically for successive
+            billing periods at the then-current price until cancelled. You can cancel a subscription
+            at any time from your account or by contacting us.
           </p>
         </section>
 
@@ -105,10 +102,10 @@ function TermsPage() {
           <h2 className="text-xl font-semibold text-gray-900 mb-3">9. Refunds</h2>
           <p>
             Refund requests are handled in accordance with our{" "}
-            <Link to="/refund-policy" className="text-blue-600 underline">Refund Policy</Link>{" "}
-            and Paddle's refund process.
+            <Link to="/refund-policy" className="text-blue-600 underline">Refund Policy</Link>.
           </p>
         </section>
+
 
         <section>
           <h2 className="text-xl font-semibold text-gray-900 mb-3">10. Service level</h2>
