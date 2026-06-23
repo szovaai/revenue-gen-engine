@@ -1,4 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { usePaddleCheckout } from "@/hooks/use-paddle-checkout";
+import { useAuth } from "@/hooks/use-auth";
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({
@@ -15,6 +17,22 @@ export const Route = createFileRoute("/pricing")({
 });
 
 function PricingPage() {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const { openCheckout, loading } = usePaddleCheckout();
+
+  const buy = (priceId: string) => {
+    if (!user) {
+      navigate({ to: "/auth", search: { next: "/pricing" } as never });
+      return;
+    }
+    openCheckout({
+      priceId,
+      customerEmail: user.email,
+      customData: { userId: user.id },
+      successUrl: `${window.location.origin}/thank-you`,
+    });
+  };
   const rows = [
     { label: "Price", starter: "$500", growth: "$297/mo", dominate: "$997/mo" },
     { label: "Website (5 pages)", starter: "✅", growth: "✅ (if needed)", dominate: "✅ (if needed)" },
