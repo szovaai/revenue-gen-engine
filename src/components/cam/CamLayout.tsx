@@ -213,7 +213,7 @@ export function CamLayout() {
             </nav>
           </div>
           <div className="text-center text-xs text-gray-400 tracking-wider">
-            &copy; 2026 ClickAdMedia &middot; Jason R Szova Consulting &middot; Website Design, SEO &amp; Paid Ads for Contractors
+            &copy; 2026 ClickAdMedia.co &middot; Website Design, SEO &amp; Paid Ads for Contractors
           </div>
 
         </div>
