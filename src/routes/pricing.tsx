@@ -1,4 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { usePaddleCheckout } from "@/hooks/use-paddle-checkout";
+import { useAuth } from "@/hooks/use-auth";
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({
@@ -15,6 +17,22 @@ export const Route = createFileRoute("/pricing")({
 });
 
 function PricingPage() {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const { openCheckout, loading } = usePaddleCheckout();
+
+  const buy = (priceId: string) => {
+    if (!user) {
+      navigate({ to: "/auth", search: { next: "/pricing" } as never });
+      return;
+    }
+    openCheckout({
+      priceId,
+      customerEmail: user.email,
+      customData: { userId: user.id },
+      successUrl: `${window.location.origin}/thank-you`,
+    });
+  };
   const rows = [
     { label: "Price", starter: "$500", growth: "$297/mo", dominate: "$997/mo" },
     { label: "Website (5 pages)", starter: "✅", growth: "✅ (if needed)", dominate: "✅ (if needed)" },
@@ -122,20 +140,34 @@ function PricingPage() {
 
       <section className="px-6 pb-16">
         <div className="max-w-[900px] mx-auto grid sm:grid-cols-3 gap-4">
-          <Link to="/services/website-design" className="btn-primary text-center text-sm py-3">
-            Get Starter →
-          </Link>
-          <Link to="/services/seo" className="btn-secondary text-center text-sm py-3">
-            Get Growth →
-          </Link>
-          <Link
-            to="/book-a-call"
-            className="btn-primary text-center text-sm py-3"
+          <button
+            onClick={() => buy("starter_onetime")}
+            disabled={loading}
+            className="btn-primary text-center text-sm py-3 disabled:opacity-60"
+          >
+            Get Starter — $500 →
+          </button>
+          <button
+            onClick={() => buy("growth_monthly")}
+            disabled={loading}
+            className="btn-secondary text-center text-sm py-3 disabled:opacity-60"
+          >
+            Get Growth — $297/mo →
+          </button>
+          <button
+            onClick={() => buy("dominate_monthly")}
+            disabled={loading}
+            className="btn-primary text-center text-sm py-3 disabled:opacity-60"
             style={{ boxShadow: "var(--cam-glow-strong)" }}
           >
-            Get Dominate →
-          </Link>
+            Get Dominate — $997/mo →
+          </button>
         </div>
+        {!user && (
+          <p className="text-center text-xs text-[rgba(255,255,255,0.45)] mt-4">
+            You&apos;ll be asked to sign in first so we can link your purchase to your account.
+          </p>
+        )}
       </section>
 
       <section className="relative py-20 px-6">

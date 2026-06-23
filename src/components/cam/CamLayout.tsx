@@ -1,11 +1,14 @@
 import { Link, Outlet, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { camLogo } from "@/lib/cam-assets";
+import { PaymentTestModeBanner } from "@/components/PaymentTestModeBanner";
+import { useAuth } from "@/hooks/use-auth";
 
 export function CamLayout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const location = useLocation();
+  const { user } = useAuth();
 
   useEffect(() => {
     setMenuOpen(false);
@@ -31,6 +34,7 @@ export function CamLayout() {
 
   return (
     <div className="cam-root relative min-h-screen flex flex-col">
+      <PaymentTestModeBanner />
       <nav className="fixed top-0 left-0 right-0 z-50 h-[84px] md:h-[100px] bg-white/95 backdrop-blur-md border-b border-gray-200/60 shadow-sm">
         <div className="max-w-[1280px] mx-auto h-full flex items-center justify-between px-6">
           <Link to="/" className="relative z-10">
@@ -89,6 +93,14 @@ export function CamLayout() {
                 {l.label}
               </Link>
             ))}
+            <Link
+              to={user ? "/dashboard" : "/auth"}
+              className={`text-sm font-medium transition-colors ${
+                isActive("/dashboard") || isActive("/auth") ? "text-gray-900" : "text-gray-600 hover:text-gray-900"
+              }`}
+            >
+              {user ? "Account" : "Sign in"}
+            </Link>
             <Link to="/book-a-call" className="cam-btn-primary text-xs !py-3 !px-5">
               Get Free Preview &#8594;
             </Link>
