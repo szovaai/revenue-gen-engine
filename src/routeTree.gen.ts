@@ -29,6 +29,7 @@ import { Route as ServicesSeoRouteImport } from './routes/services.seo'
 import { Route as ServicesPaidAdsRouteImport } from './routes/services.paid-ads'
 import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
 import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
+import { Route as ApiPublicFreePreviewRequestRouteImport } from './routes/api/public/free-preview-request'
 import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lovable/email/transactional/send'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
 import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
@@ -134,6 +135,12 @@ const LovableEmailSuppressionRoute = LovableEmailSuppressionRouteImport.update({
   path: '/lovable/email/suppression',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicFreePreviewRequestRoute =
+  ApiPublicFreePreviewRequestRouteImport.update({
+    id: '/api/public/free-preview-request',
+    path: '/api/public/free-preview-request',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const LovableEmailTransactionalSendRoute =
   LovableEmailTransactionalSendRouteImport.update({
     id: '/lovable/email/transactional/send',
@@ -179,6 +186,7 @@ export interface FileRoutesByFullPath {
   '/services/seo': typeof ServicesSeoRoute
   '/services/website-design': typeof ServicesWebsiteDesignRoute
   '/services/': typeof ServicesIndexRoute
+  '/api/public/free-preview-request': typeof ApiPublicFreePreviewRequestRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
@@ -204,6 +212,7 @@ export interface FileRoutesByTo {
   '/services/seo': typeof ServicesSeoRoute
   '/services/website-design': typeof ServicesWebsiteDesignRoute
   '/services': typeof ServicesIndexRoute
+  '/api/public/free-preview-request': typeof ApiPublicFreePreviewRequestRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
@@ -231,6 +240,7 @@ export interface FileRoutesById {
   '/services/seo': typeof ServicesSeoRoute
   '/services/website-design': typeof ServicesWebsiteDesignRoute
   '/services/': typeof ServicesIndexRoute
+  '/api/public/free-preview-request': typeof ApiPublicFreePreviewRequestRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
@@ -259,6 +269,7 @@ export interface FileRouteTypes {
     | '/services/seo'
     | '/services/website-design'
     | '/services/'
+    | '/api/public/free-preview-request'
     | '/lovable/email/suppression'
     | '/api/public/payments/webhook'
     | '/lovable/email/queue/process'
@@ -284,6 +295,7 @@ export interface FileRouteTypes {
     | '/services/seo'
     | '/services/website-design'
     | '/services'
+    | '/api/public/free-preview-request'
     | '/lovable/email/suppression'
     | '/api/public/payments/webhook'
     | '/lovable/email/queue/process'
@@ -310,6 +322,7 @@ export interface FileRouteTypes {
     | '/services/seo'
     | '/services/website-design'
     | '/services/'
+    | '/api/public/free-preview-request'
     | '/lovable/email/suppression'
     | '/api/public/payments/webhook'
     | '/lovable/email/queue/process'
@@ -333,6 +346,7 @@ export interface RootRouteChildren {
   ThankYouRoute: typeof ThankYouRoute
   UnsubscribeRoute: typeof UnsubscribeRoute
   EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
+  ApiPublicFreePreviewRequestRoute: typeof ApiPublicFreePreviewRequestRoute
   LovableEmailSuppressionRoute: typeof LovableEmailSuppressionRoute
   ApiPublicPaymentsWebhookRoute: typeof ApiPublicPaymentsWebhookRoute
   LovableEmailQueueProcessRoute: typeof LovableEmailQueueProcessRoute
@@ -482,6 +496,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LovableEmailSuppressionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/free-preview-request': {
+      id: '/api/public/free-preview-request'
+      path: '/api/public/free-preview-request'
+      fullPath: '/api/public/free-preview-request'
+      preLoaderRoute: typeof ApiPublicFreePreviewRequestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lovable/email/transactional/send': {
       id: '/lovable/email/transactional/send'
       path: '/lovable/email/transactional/send'
@@ -547,6 +568,7 @@ const rootRouteChildren: RootRouteChildren = {
   ThankYouRoute: ThankYouRoute,
   UnsubscribeRoute: UnsubscribeRoute,
   EmailUnsubscribeRoute: EmailUnsubscribeRoute,
+  ApiPublicFreePreviewRequestRoute: ApiPublicFreePreviewRequestRoute,
   LovableEmailSuppressionRoute: LovableEmailSuppressionRoute,
   ApiPublicPaymentsWebhookRoute: ApiPublicPaymentsWebhookRoute,
   LovableEmailQueueProcessRoute: LovableEmailQueueProcessRoute,
