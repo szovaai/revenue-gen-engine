@@ -1,6 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
-  Outlet,
   Link,
   createRootRouteWithContext,
   useRouter,
@@ -12,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import logoAsset from "@/assets/logo.asset.json";
+import { CamLayout } from "@/components/cam/CamLayout";
 
 // Production domain — used to build absolute URLs for social/OG tags.
 const SITE_URL = "https://clickadmedia.co";
@@ -157,7 +157,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <CamLayout />
     </QueryClientProvider>
   );
 }
