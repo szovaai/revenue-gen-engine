@@ -26,20 +26,41 @@ async function notifyOwnerAndCustomer(args: {
   amountTotal: number | null | undefined;
   currency: string | null | undefined;
   kind: "subscription" | "one_time";
+  idempotencyKey: string;
 }) {
-  // Email infrastructure is not yet configured for this project. Once the
-  // email domain is attached and the transactional email templates are
-  // scaffolded, swap these console logs for calls to
-  // sendTransactionalEmail({ templateName: 'new-customer-owner', ... })
-  // and ({ templateName: 'customer-welcome', ... }).
-  const label = (args.priceId && PRODUCT_LABELS[args.priceId]) ?? args.priceId ?? "Unknown product";
-  console.log("[purchase] new customer", {
-    customerEmail: args.customerEmail,
-    product: label,
-    amount: args.amountTotal,
-    currency: args.currency,
+  const { sendTransactionalEmail } = await import("@/lib/email/send.server");
+  const productLabel =
+    (args.priceId && PRODUCT_LABELS[args.priceId]) ?? args.priceId ?? "your purchase";
+  const amountFormatted =
+    args.amountTotal != null && args.currency
+      ? (args.amountTotal / 100).toLocaleString(undefined, {
+          style: "currency",
+          currency: args.currency.toUpperCase(),
+        })
+      : undefined;
+  const data = {
+    customerEmail: args.customerEmail ?? undefined,
+    productLabel,
+    amountFormatted,
     kind: args.kind,
+  };
+
+  // Owner notification — recipient is fixed in the template (`to`).
+  await sendTransactionalEmail({
+    templateName: "new-customer-owner",
+    templateData: data,
+    idempotencyKey: `owner-${args.idempotencyKey}`,
   });
+
+  // Customer welcome
+  if (args.customerEmail) {
+    await sendTransactionalEmail({
+      templateName: "customer-welcome",
+      recipientEmail: args.customerEmail,
+      templateData: data,
+      idempotencyKey: `welcome-${args.idempotencyKey}`,
+    });
+  }
 }
 
 async function handleSubscriptionCreated(subscription: any, env: StripeEnv) {
