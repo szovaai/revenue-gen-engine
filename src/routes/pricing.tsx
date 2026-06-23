@@ -140,20 +140,34 @@ function PricingPage() {
 
       <section className="px-6 pb-16">
         <div className="max-w-[900px] mx-auto grid sm:grid-cols-3 gap-4">
-          <Link to="/services/website-design" className="btn-primary text-center text-sm py-3">
-            Get Starter →
-          </Link>
-          <Link to="/services/seo" className="btn-secondary text-center text-sm py-3">
-            Get Growth →
-          </Link>
-          <Link
-            to="/book-a-call"
-            className="btn-primary text-center text-sm py-3"
+          <button
+            onClick={() => buy("starter_onetime")}
+            disabled={loading}
+            className="btn-primary text-center text-sm py-3 disabled:opacity-60"
+          >
+            Get Starter — $500 →
+          </button>
+          <button
+            onClick={() => buy("growth_monthly")}
+            disabled={loading}
+            className="btn-secondary text-center text-sm py-3 disabled:opacity-60"
+          >
+            Get Growth — $297/mo →
+          </button>
+          <button
+            onClick={() => buy("dominate_monthly")}
+            disabled={loading}
+            className="btn-primary text-center text-sm py-3 disabled:opacity-60"
             style={{ boxShadow: "var(--cam-glow-strong)" }}
           >
-            Get Dominate →
-          </Link>
+            Get Dominate — $997/mo →
+          </button>
         </div>
+        {!user && (
+          <p className="text-center text-xs text-[rgba(255,255,255,0.45)] mt-4">
+            You&apos;ll be asked to sign in first so we can link your purchase to your account.
+          </p>
+        )}
       </section>
 
       <section className="relative py-20 px-6">
