@@ -1,5 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { usePaddleCheckout } from "@/hooks/use-paddle-checkout";
+import { useStripeCheckout } from "@/hooks/use-stripe-checkout";
 import { useAuth } from "@/hooks/use-auth";
 
 export const Route = createFileRoute("/pricing")({
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/pricing")({
 function PricingPage() {
   const { user } = useAuth();
   const navigate = useNavigate();
-  const { openCheckout, loading } = usePaddleCheckout();
+  const { openCheckout, closeCheckout, isOpen, checkoutElement } = useStripeCheckout();
 
   const buy = (priceId: string) => {
     if (!user) {
@@ -29,8 +29,8 @@ function PricingPage() {
     openCheckout({
       priceId,
       customerEmail: user.email,
-      customData: { userId: user.id },
-      successUrl: `${window.location.origin}/thank-you`,
+      userId: user.id,
+      returnUrl: `${window.location.origin}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
     });
   };
   const rows = [
@@ -142,21 +142,18 @@ function PricingPage() {
         <div className="max-w-[900px] mx-auto grid sm:grid-cols-3 gap-4">
           <button
             onClick={() => buy("starter_onetime")}
-            disabled={loading}
             className="btn-primary text-center text-sm py-3 disabled:opacity-60"
           >
             Get Starter — $500 →
           </button>
           <button
             onClick={() => buy("growth_monthly")}
-            disabled={loading}
             className="btn-secondary text-center text-sm py-3 disabled:opacity-60"
           >
             Get Growth — $297/mo →
           </button>
           <button
             onClick={() => buy("dominate_monthly")}
-            disabled={loading}
             className="btn-primary text-center text-sm py-3 disabled:opacity-60"
             style={{ boxShadow: "var(--cam-glow-strong)" }}
           >
@@ -169,6 +166,23 @@ function PricingPage() {
           </p>
         )}
       </section>
+
+      {isOpen && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm overflow-y-auto">
+          <div className="min-h-screen flex items-start justify-center p-4 pt-10">
+            <div className="bg-white rounded-lg w-full max-w-2xl relative">
+              <button
+                onClick={closeCheckout}
+                className="absolute -top-10 right-0 text-white text-sm hover:underline"
+              >
+                ← Cancel
+              </button>
+              {checkoutElement}
+            </div>
+          </div>
+        </div>
+      )}
+
 
       <section className="relative py-20 px-6">
         <div

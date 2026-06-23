@@ -41,7 +41,7 @@ function PrivacyPage() {
             <li><strong>Cookies &amp; similar technologies:</strong> session cookies, authentication tokens, and analytics identifiers.</li>
           </ul>
           <p className="mt-2 text-sm text-gray-600">
-            Payment card details are collected and processed by our payment provider (Paddle) and
+            Payment card details are collected and processed by our payment processor (Stripe) and
             are never stored on our systems.
           </p>
         </section>
@@ -50,7 +50,7 @@ function PrivacyPage() {
           <h2 className="text-xl font-semibold text-gray-900 mb-3">3. Purposes and legal basis</h2>
           <ul className="list-disc pl-6 space-y-1">
             <li><strong>Provide the service</strong> (account creation, project delivery) — performance of a contract.</li>
-            <li><strong>Process payments &amp; subscriptions</strong> via Paddle — performance of a contract / legal obligation.</li>
+            <li><strong>Process payments &amp; subscriptions</strong> via Stripe — performance of a contract / legal obligation.</li>
             <li><strong>Customer support</strong> — performance of a contract / legitimate interests.</li>
             <li><strong>Security &amp; fraud prevention</strong> — legitimate interests and legal obligations.</li>
             <li><strong>Service improvement &amp; analytics</strong> — legitimate interests.</li>
@@ -61,7 +61,8 @@ function PrivacyPage() {
         <section>
           <h2 className="text-xl font-semibold text-gray-900 mb-3">4. Who we share data with</h2>
           <ul className="list-disc pl-6 space-y-1">
-            <li><strong>Paddle.com Market Ltd.</strong> — Merchant of Record for all orders. Paddle handles payment, billing, tax, invoicing, subscription management, and refund processing.</li>
+            <li><strong>Stripe Payments</strong> — payment processor. Stripe handles card processing, billing, invoicing, fraud detection, and tax calculation on our behalf.</li>
+
             <li><strong>Hosting &amp; infrastructure providers</strong> that operate our application and database.</li>
             <li><strong>Analytics &amp; support tooling</strong> used to operate and improve the service.</li>
             <li><strong>Professional advisers</strong> (legal, accounting) where reasonably necessary.</li>
