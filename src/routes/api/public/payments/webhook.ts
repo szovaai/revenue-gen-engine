@@ -191,6 +191,7 @@ async function handleCheckoutCompleted(session: any, env: StripeEnv) {
     amountTotal: session.amount_total ?? null,
     currency: session.currency ?? null,
     kind: "one_time",
+    idempotencyKey: `session-${session.id}`,
   });
 }
 
