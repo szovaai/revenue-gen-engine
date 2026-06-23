@@ -220,10 +220,6 @@ function ContactPage() {
                     <button type="submit" className="btn-primary w-full text-center py-4 mt-2">
                       Send Me My Free Preview →
                     </button>
-                    <p className="text-center text-xs text-[rgba(255,255,255,0.35)] mt-3">
-                      Or text <span className="text-white">&quot;WEBSITE&quot;</span> to{" "}
-                      <span className="text-white">(555) 123-4567</span>
-                    </p>
                   </form>
                 </>
               ) : (
