@@ -36,30 +36,19 @@ function RefundPage() {
         <section>
           <h2 className="text-xl font-semibold text-gray-900 mb-2">How to request a refund</h2>
           <p>
-            All payments are processed by our Merchant of Record, <strong>Paddle</strong>. To
-            request a refund:
+            To request a refund, email us at{" "}
+            <a className="text-blue-600 underline" href="mailto:hello@clickadmedia.co">
+              hello@clickadmedia.co
+            </a>{" "}
+            with your order number and the reason for the refund. We process refunds within 5
+            business days of receiving your request.
           </p>
-          <ol className="list-decimal pl-6 space-y-1 mt-2">
-            <li>
-              Visit{" "}
-              <a className="text-blue-600 underline" href="https://paddle.net" target="_blank" rel="noreferrer">
-                paddle.net
-              </a>{" "}
-              and locate your order using the email address you used at checkout, or
-            </li>
-            <li>
-              Email us at{" "}
-              <a className="text-blue-600 underline" href="mailto:hello@clickadmedia.co">
-                hello@clickadmedia.co
-              </a>{" "}
-              with your order number and we will help you through the process.
-            </li>
-          </ol>
           <p className="mt-2">
-            Refunds are returned to your original payment method by Paddle. Processing times depend
-            on your bank or card issuer.
+            Payments are processed by Stripe, our payment processor. Refunds are returned to your
+            original payment method; processing times depend on your bank or card issuer.
           </p>
         </section>
+
 
         <section>
           <h2 className="text-xl font-semibold text-gray-900 mb-2">Subscription cancellations</h2>
