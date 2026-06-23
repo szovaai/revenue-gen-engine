@@ -93,6 +93,14 @@ export function CamLayout() {
                 {l.label}
               </Link>
             ))}
+            <Link
+              to={user ? "/dashboard" : "/auth"}
+              className={`text-sm font-medium transition-colors ${
+                isActive("/dashboard") || isActive("/auth") ? "text-gray-900" : "text-gray-600 hover:text-gray-900"
+              }`}
+            >
+              {user ? "Account" : "Sign in"}
+            </Link>
             <Link to="/book-a-call" className="cam-btn-primary text-xs !py-3 !px-5">
               Get Free Preview &#8594;
             </Link>
