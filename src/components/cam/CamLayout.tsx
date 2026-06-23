@@ -205,14 +205,32 @@ export function CamLayout() {
                 </Link>
               ))}
             </nav>
+            <nav className="flex flex-wrap justify-center gap-6 mb-4">
+              {(
+                [
+                  { label: "Privacy", to: "/privacy" },
+                  { label: "Terms", to: "/terms" },
+                  { label: "Refund Policy", to: "/refund-policy" },
+                ] as const
+              ).map((l) => (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  className="text-xs text-gray-400 hover:text-gray-700 transition-colors"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </nav>
             <div className="text-center text-sm text-gray-400 mb-2">
               <span className="mr-4">(555) 123-4567</span>
               <span>hello@clickadmedia.co</span>
             </div>
           </div>
           <div className="text-center text-xs text-gray-400 tracking-wider">
-            &copy; 2026 ClickAdMedia &middot; Website Design, SEO &amp; Paid Ads for Contractors
+            &copy; 2026 ClickAdMedia &middot; Jason R Szova Consulting &middot; Website Design, SEO &amp; Paid Ads for Contractors
           </div>
+
         </div>
       </footer>
     </div>
