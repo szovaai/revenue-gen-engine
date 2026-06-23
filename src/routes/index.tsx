@@ -594,9 +594,6 @@ function HomePage() {
               Get Your Free Preview &rarr;
             </Link>
           </div>
-          <p className="reveal reveal-delay-3 text-sm text-[rgba(255,255,255,0.35)] mt-4">
-            Text &ldquo;WEBSITE&rdquo; to (555) 123-4567
-          </p>
         </div>
       </section>
 
