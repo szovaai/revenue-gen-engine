@@ -1,6 +1,8 @@
 import { Link, Outlet, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { camLogo } from "@/lib/cam-assets";
+import { PaymentTestModeBanner } from "@/components/PaymentTestModeBanner";
+import { useAuth } from "@/hooks/use-auth";
 
 export function CamLayout() {
   const [menuOpen, setMenuOpen] = useState(false);
