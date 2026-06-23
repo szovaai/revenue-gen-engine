@@ -174,18 +174,6 @@ export function CamLayout() {
       <footer className="relative py-14 px-6 bg-white border-t border-gray-200">
         <div className="max-w-[1280px] mx-auto">
           <div className="flex flex-col items-center mb-8">
-            <div
-              className="mb-6 inline-flex items-center"
-              style={{
-                background: "#f8fafc",
-                border: "1px solid rgba(0,0,0,0.06)",
-                borderRadius: "var(--cam-radius-card)",
-                padding: "14px 28px",
-                boxShadow: "0 1px 8px rgba(0,0,0,0.06)",
-              }}
-            >
-              <img src={camLogo} alt="ClickAdMedia" className="h-24 md:h-32 w-auto" />
-            </div>
             <nav className="flex flex-wrap justify-center gap-6 mb-4">
               {(
                 [
