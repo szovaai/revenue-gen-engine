@@ -1,0 +1,164 @@
+/* ClickAdMedia design system - ported from source */
+.cam-root {
+  --cam-bg: #0a1628;
+  --cam-bg-light: #0f1f38;
+  --cam-surface: rgba(255, 255, 255, 0.03);
+  --cam-surface-hover: rgba(255, 255, 255, 0.06);
+  --cam-border: rgba(255, 255, 255, 0.06);
+  --cam-border-hover: rgba(255, 255, 255, 0.12);
+  --cam-text: #ffffff;
+  --cam-text-secondary: rgba(255, 255, 255, 0.7);
+  --cam-text-muted: rgba(255, 255, 255, 0.45);
+  --cam-accent: #007bff;
+  --cam-accent-light: #00c6ff;
+  --cam-gradient: linear-gradient(135deg, #007bff 0%, #00c6ff 100%);
+  --cam-glow: 0 0 40px rgba(0, 123, 255, 0.15);
+  --cam-glow-strong: 0 0 60px rgba(0, 123, 255, 0.25);
+  --cam-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --cam-ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
+  --cam-radius-card: 16px;
+  --cam-radius-button: 10px;
+  --cam-radius-badge: 8px;
+
+  background: var(--cam-bg);
+  color: var(--cam-text);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cam-root .text-gradient {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cam-root .glass-card {
+  background: var(--cam-surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--cam-border);
+  border-radius: var(--cam-radius-card);
+  transition: transform 0.3s var(--cam-ease-out),
+    border-color 0.3s var(--cam-ease-out), background-color 0.3s var(--cam-ease-out);
+}
+.cam-root .glass-card:hover {
+  background: var(--cam-surface-hover);
+  border-color: var(--cam-border-hover);
+  transform: translateY(-4px);
+}
+
+.cam-btn-primary {
+  background: var(--cam-gradient, linear-gradient(135deg, #007bff, #00c6ff));
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 14px 28px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 0 40px rgba(0, 123, 255, 0.15);
+  display: inline-block;
+  user-select: none;
+}
+.cam-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 60px rgba(0, 123, 255, 0.25);
+}
+.cam-btn-primary:active {
+  transform: scale(0.97);
+  transition-duration: 0.1s;
+}
+.cam-root .btn-primary {
+  background: var(--cam-gradient);
+  color: #fff;
+  border-radius: var(--cam-radius-button);
+  padding: 14px 28px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.15s var(--cam-ease-out), box-shadow 0.3s var(--cam-ease-out);
+  box-shadow: var(--cam-glow);
+  display: inline-block;
+  user-select: none;
+}
+.cam-root .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--cam-glow-strong);
+}
+.cam-root .btn-primary:active {
+  transform: scale(0.97);
+  transition-duration: 0.1s;
+}
+.cam-root .btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--cam-radius-button);
+  padding: 14px 28px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.15s var(--cam-ease-out),
+    border-color 0.3s var(--cam-ease-out), box-shadow 0.3s var(--cam-ease-out);
+  display: inline-block;
+  user-select: none;
+}
+.cam-root .btn-secondary:hover {
+  border-color: rgba(0, 123, 255, 0.5);
+  box-shadow: var(--cam-glow);
+}
+.cam-root .btn-secondary:active {
+  transform: scale(0.97);
+  transition-duration: 0.1s;
+}
+
+.cam-root .label-tag {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.cam-root .section-label {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.cam-root .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--cam-ease-reveal),
+    transform 0.6s var(--cam-ease-reveal);
+}
+.cam-root .reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.cam-root .reveal-delay-1 { transition-delay: 0.08s; }
+.cam-root .reveal-delay-2 { transition-delay: 0.16s; }
+.cam-root .reveal-delay-3 { transition-delay: 0.24s; }
+
+.cam-root .hero-fade-in {
+  opacity: 0;
+  animation: cam-hero-fade-in 0.7s var(--cam-ease-out) forwards;
+}
+@keyframes cam-hero-fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cam-root .reveal { opacity: 1; transform: none; transition: none; }
+  .cam-root .hero-fade-in { opacity: 1; animation: none; transform: none; }
+  .cam-root .glass-card:hover { transform: none; }
+  .cam-root .btn-primary:hover,
+  .cam-root .btn-secondary:hover,
+  .cam-btn-primary:hover { transform: none; }
+}

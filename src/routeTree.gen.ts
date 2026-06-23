@@ -9,55 +9,46 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WebsiteExamplesRouteImport } from './routes/website-examples'
-import { Route as StrategyCallRouteImport } from './routes/strategy-call'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as QuoteRouteImport } from './routes/quote'
-import { Route as FreeAuditRouteImport } from './routes/free-audit'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as BlogRouteImport } from './routes/blog'
-import { Route as ApplyRouteImport } from './routes/apply'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ProcessRouteImport } from './routes/process'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as BookACallRouteImport } from './routes/book-a-call'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesWebsiteDesignRouteImport } from './routes/services.website-design'
+import { Route as ServicesSeoRouteImport } from './routes/services.seo'
+import { Route as ServicesPaidAdsRouteImport } from './routes/services.paid-ads'
 
-const WebsiteExamplesRoute = WebsiteExamplesRouteImport.update({
-  id: '/website-examples',
-  path: '/website-examples',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const StrategyCallRoute = StrategyCallRouteImport.update({
-  id: '/strategy-call',
-  path: '/strategy-call',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const QuoteRoute = QuoteRouteImport.update({
-  id: '/quote',
-  path: '/quote',
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FreeAuditRoute = FreeAuditRouteImport.update({
-  id: '/free-audit',
-  path: '/free-audit',
+const ProcessRoute = ProcessRouteImport.update({
+  id: '/process',
+  path: '/process',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApplyRoute = ApplyRouteImport.update({
-  id: '/apply',
-  path: '/apply',
+const BookACallRoute = BookACallRouteImport.update({
+  id: '/book-a-call',
+  path: '/book-a-call',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -65,116 +56,119 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => BlogRoute,
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesWebsiteDesignRoute = ServicesWebsiteDesignRouteImport.update({
+  id: '/website-design',
+  path: '/website-design',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesSeoRoute = ServicesSeoRouteImport.update({
+  id: '/seo',
+  path: '/seo',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesPaidAdsRoute = ServicesPaidAdsRouteImport.update({
+  id: '/paid-ads',
+  path: '/paid-ads',
+  getParentRoute: () => ServicesRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/apply': typeof ApplyRoute
-  '/blog': typeof BlogRouteWithChildren
-  '/contact': typeof ContactRoute
-  '/free-audit': typeof FreeAuditRoute
-  '/quote': typeof QuoteRoute
+  '/book-a-call': typeof BookACallRoute
+  '/portfolio': typeof PortfolioRoute
+  '/pricing': typeof PricingRoute
+  '/process': typeof ProcessRoute
+  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/strategy-call': typeof StrategyCallRoute
-  '/website-examples': typeof WebsiteExamplesRoute
-  '/blog/$slug': typeof BlogSlugRoute
+  '/services/paid-ads': typeof ServicesPaidAdsRoute
+  '/services/seo': typeof ServicesSeoRoute
+  '/services/website-design': typeof ServicesWebsiteDesignRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/apply': typeof ApplyRoute
-  '/blog': typeof BlogRouteWithChildren
-  '/contact': typeof ContactRoute
-  '/free-audit': typeof FreeAuditRoute
-  '/quote': typeof QuoteRoute
+  '/book-a-call': typeof BookACallRoute
+  '/portfolio': typeof PortfolioRoute
+  '/pricing': typeof PricingRoute
+  '/process': typeof ProcessRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/strategy-call': typeof StrategyCallRoute
-  '/website-examples': typeof WebsiteExamplesRoute
-  '/blog/$slug': typeof BlogSlugRoute
+  '/services/paid-ads': typeof ServicesPaidAdsRoute
+  '/services/seo': typeof ServicesSeoRoute
+  '/services/website-design': typeof ServicesWebsiteDesignRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/apply': typeof ApplyRoute
-  '/blog': typeof BlogRouteWithChildren
-  '/contact': typeof ContactRoute
-  '/free-audit': typeof FreeAuditRoute
-  '/quote': typeof QuoteRoute
+  '/book-a-call': typeof BookACallRoute
+  '/portfolio': typeof PortfolioRoute
+  '/pricing': typeof PricingRoute
+  '/process': typeof ProcessRoute
+  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/strategy-call': typeof StrategyCallRoute
-  '/website-examples': typeof WebsiteExamplesRoute
-  '/blog/$slug': typeof BlogSlugRoute
+  '/services/paid-ads': typeof ServicesPaidAdsRoute
+  '/services/seo': typeof ServicesSeoRoute
+  '/services/website-design': typeof ServicesWebsiteDesignRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/apply'
-    | '/blog'
-    | '/contact'
-    | '/free-audit'
-    | '/quote'
+    | '/book-a-call'
+    | '/portfolio'
+    | '/pricing'
+    | '/process'
+    | '/services'
     | '/sitemap.xml'
-    | '/strategy-call'
-    | '/website-examples'
-    | '/blog/$slug'
+    | '/services/paid-ads'
+    | '/services/seo'
+    | '/services/website-design'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/apply'
-    | '/blog'
-    | '/contact'
-    | '/free-audit'
-    | '/quote'
+    | '/book-a-call'
+    | '/portfolio'
+    | '/pricing'
+    | '/process'
     | '/sitemap.xml'
-    | '/strategy-call'
-    | '/website-examples'
-    | '/blog/$slug'
+    | '/services/paid-ads'
+    | '/services/seo'
+    | '/services/website-design'
+    | '/services'
   id:
     | '__root__'
     | '/'
-    | '/apply'
-    | '/blog'
-    | '/contact'
-    | '/free-audit'
-    | '/quote'
+    | '/book-a-call'
+    | '/portfolio'
+    | '/pricing'
+    | '/process'
+    | '/services'
     | '/sitemap.xml'
-    | '/strategy-call'
-    | '/website-examples'
-    | '/blog/$slug'
+    | '/services/paid-ads'
+    | '/services/seo'
+    | '/services/website-design'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ApplyRoute: typeof ApplyRoute
-  BlogRoute: typeof BlogRouteWithChildren
-  ContactRoute: typeof ContactRoute
-  FreeAuditRoute: typeof FreeAuditRoute
-  QuoteRoute: typeof QuoteRoute
+  BookACallRoute: typeof BookACallRoute
+  PortfolioRoute: typeof PortfolioRoute
+  PricingRoute: typeof PricingRoute
+  ProcessRoute: typeof ProcessRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  StrategyCallRoute: typeof StrategyCallRoute
-  WebsiteExamplesRoute: typeof WebsiteExamplesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/website-examples': {
-      id: '/website-examples'
-      path: '/website-examples'
-      fullPath: '/website-examples'
-      preLoaderRoute: typeof WebsiteExamplesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/strategy-call': {
-      id: '/strategy-call'
-      path: '/strategy-call'
-      fullPath: '/strategy-call'
-      preLoaderRoute: typeof StrategyCallRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -182,39 +176,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/quote': {
-      id: '/quote'
-      path: '/quote'
-      fullPath: '/quote'
-      preLoaderRoute: typeof QuoteRouteImport
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/free-audit': {
-      id: '/free-audit'
-      path: '/free-audit'
-      fullPath: '/free-audit'
-      preLoaderRoute: typeof FreeAuditRouteImport
+    '/process': {
+      id: '/process'
+      path: '/process'
+      fullPath: '/process'
+      preLoaderRoute: typeof ProcessRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/apply': {
-      id: '/apply'
-      path: '/apply'
-      fullPath: '/apply'
-      preLoaderRoute: typeof ApplyRouteImport
+    '/book-a-call': {
+      id: '/book-a-call'
+      path: '/book-a-call'
+      fullPath: '/book-a-call'
+      preLoaderRoute: typeof BookACallRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -224,36 +218,63 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/$slug': {
-      id: '/blog/$slug'
-      path: '/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
-      parentRoute: typeof BlogRoute
+    '/services/': {
+      id: '/services/'
+      path: '/'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/website-design': {
+      id: '/services/website-design'
+      path: '/website-design'
+      fullPath: '/services/website-design'
+      preLoaderRoute: typeof ServicesWebsiteDesignRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/seo': {
+      id: '/services/seo'
+      path: '/seo'
+      fullPath: '/services/seo'
+      preLoaderRoute: typeof ServicesSeoRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/paid-ads': {
+      id: '/services/paid-ads'
+      path: '/paid-ads'
+      fullPath: '/services/paid-ads'
+      preLoaderRoute: typeof ServicesPaidAdsRouteImport
+      parentRoute: typeof ServicesRoute
     }
   }
 }
 
-interface BlogRouteChildren {
-  BlogSlugRoute: typeof BlogSlugRoute
+interface ServicesRouteChildren {
+  ServicesPaidAdsRoute: typeof ServicesPaidAdsRoute
+  ServicesSeoRoute: typeof ServicesSeoRoute
+  ServicesWebsiteDesignRoute: typeof ServicesWebsiteDesignRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
-const BlogRouteChildren: BlogRouteChildren = {
-  BlogSlugRoute: BlogSlugRoute,
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesPaidAdsRoute: ServicesPaidAdsRoute,
+  ServicesSeoRoute: ServicesSeoRoute,
+  ServicesWebsiteDesignRoute: ServicesWebsiteDesignRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 
-const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ApplyRoute: ApplyRoute,
-  BlogRoute: BlogRouteWithChildren,
-  ContactRoute: ContactRoute,
-  FreeAuditRoute: FreeAuditRoute,
-  QuoteRoute: QuoteRoute,
+  BookACallRoute: BookACallRoute,
+  PortfolioRoute: PortfolioRoute,
+  PricingRoute: PricingRoute,
+  ProcessRoute: ProcessRoute,
+  ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  StrategyCallRoute: StrategyCallRoute,
-  WebsiteExamplesRoute: WebsiteExamplesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
