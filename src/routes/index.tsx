@@ -629,9 +629,6 @@ function HomePage() {
               Get Your Free Preview &rarr;
             </Link>
           </div>
-          <p className="reveal reveal-delay-2 text-sm text-[rgba(255,255,255,0.35)] mb-5">
-            Or call/text: <span className="text-[rgba(255,255,255,0.6)]">(555) 123-4567</span>
-          </p>
           <div className="reveal reveal-delay-3 flex flex-wrap justify-center gap-5 text-xs text-[rgba(255,255,255,0.4)]">
             <span>48-hour delivery</span>
             <span>100% ownership</span>
