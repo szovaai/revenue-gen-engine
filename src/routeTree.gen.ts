@@ -10,9 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ThankYouRouteImport } from './routes/thank-you'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as ProcessRouteImport } from './routes/process'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as DashboardRouteImport } from './routes/dashboard'
@@ -30,6 +33,11 @@ const ThankYouRoute = ThankYouRouteImport.update({
   path: '/thank-you',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -40,9 +48,19 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RefundPolicyRoute = RefundPolicyRouteImport.update({
+  id: '/refund-policy',
+  path: '/refund-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProcessRoute = ProcessRouteImport.update({
   id: '/process',
   path: '/process',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PricingRoute = PricingRouteImport.update({
@@ -109,9 +127,12 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof DashboardRoute
   '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
+  '/refund-policy': typeof RefundPolicyRoute
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
   '/services/paid-ads': typeof ServicesPaidAdsRoute
   '/services/seo': typeof ServicesSeoRoute
@@ -126,8 +147,11 @@ export interface FileRoutesByTo {
   '/dashboard': typeof DashboardRoute
   '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
+  '/refund-policy': typeof RefundPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
   '/services/paid-ads': typeof ServicesPaidAdsRoute
   '/services/seo': typeof ServicesSeoRoute
@@ -143,9 +167,12 @@ export interface FileRoutesById {
   '/dashboard': typeof DashboardRoute
   '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
+  '/refund-policy': typeof RefundPolicyRoute
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
   '/services/paid-ads': typeof ServicesPaidAdsRoute
   '/services/seo': typeof ServicesSeoRoute
@@ -162,9 +189,12 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/portfolio'
     | '/pricing'
+    | '/privacy'
     | '/process'
+    | '/refund-policy'
     | '/services'
     | '/sitemap.xml'
+    | '/terms'
     | '/thank-you'
     | '/services/paid-ads'
     | '/services/seo'
@@ -179,8 +209,11 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/portfolio'
     | '/pricing'
+    | '/privacy'
     | '/process'
+    | '/refund-policy'
     | '/sitemap.xml'
+    | '/terms'
     | '/thank-you'
     | '/services/paid-ads'
     | '/services/seo'
@@ -195,9 +228,12 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/portfolio'
     | '/pricing'
+    | '/privacy'
     | '/process'
+    | '/refund-policy'
     | '/services'
     | '/sitemap.xml'
+    | '/terms'
     | '/thank-you'
     | '/services/paid-ads'
     | '/services/seo'
@@ -213,9 +249,12 @@ export interface RootRouteChildren {
   DashboardRoute: typeof DashboardRoute
   PortfolioRoute: typeof PortfolioRoute
   PricingRoute: typeof PricingRoute
+  PrivacyRoute: typeof PrivacyRoute
   ProcessRoute: typeof ProcessRoute
+  RefundPolicyRoute: typeof RefundPolicyRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TermsRoute: typeof TermsRoute
   ThankYouRoute: typeof ThankYouRoute
   ApiPublicPaymentsWebhookRoute: typeof ApiPublicPaymentsWebhookRoute
 }
@@ -227,6 +266,13 @@ declare module '@tanstack/react-router' {
       path: '/thank-you'
       fullPath: '/thank-you'
       preLoaderRoute: typeof ThankYouRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -243,11 +289,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/refund-policy': {
+      id: '/refund-policy'
+      path: '/refund-policy'
+      fullPath: '/refund-policy'
+      preLoaderRoute: typeof RefundPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/process': {
       id: '/process'
       path: '/process'
       fullPath: '/process'
       preLoaderRoute: typeof ProcessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pricing': {
@@ -355,9 +415,12 @@ const rootRouteChildren: RootRouteChildren = {
   DashboardRoute: DashboardRoute,
   PortfolioRoute: PortfolioRoute,
   PricingRoute: PricingRoute,
+  PrivacyRoute: PrivacyRoute,
   ProcessRoute: ProcessRoute,
+  RefundPolicyRoute: RefundPolicyRoute,
   ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TermsRoute: TermsRoute,
   ThankYouRoute: ThankYouRoute,
   ApiPublicPaymentsWebhookRoute: ApiPublicPaymentsWebhookRoute,
 }
