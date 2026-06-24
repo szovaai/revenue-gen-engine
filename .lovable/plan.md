@@ -1,28 +1,26 @@
-## Add Batches 2 & 3 to the blog (Articles 11–30)
+## Add Batch 4 (Articles 31–40) to Blog
 
-Extend the existing static blog with 20 more articles using the same pattern established for Batch 1.
+Same pattern as Batches 1–3. Adds 10 more articles to the existing static blog.
 
-### Scope
-- Parse both uploaded files and split into 20 individual articles (11–20 and 21–30).
-- For each article, extract: title, target keyword, secondary keywords, meta description, slug, and body markdown.
+### Files to create (20)
+10 markdown bodies in `src/content/blog/<slug>.md` and 10 AI-generated hero images in `src/assets/blog/<slug>.jpg` (1536×864, dark navy + blue/cyan glow, no text — matches existing 30).
 
-### Files to create
-- `src/content/blog/<slug>.md` × 20 — body copy only (matches Batch 1 format).
-- `src/assets/blog/<slug>.jpg` × 20 — AI-generated hero images (1536×864, premium tier, same dark navy + blue/cyan glow brand style as Batch 1, no text in image).
+Slugs:
+1. `how-to-scope-your-website-project-before-hiring-a-designer`
+2. `best-platforms-to-find-affordable-web-designers`
+3. `what-to-expect-when-you-hire-a-web-designer`
+4. `how-to-check-references-for-a-web-designer`
+5. `why-local-web-designers-are-better-than-offshore-options`
+6. `how-much-does-a-website-cost-from-a-professional-designer`
+7. `what-should-i-have-ready-before-hiring-a-web-designer`
+8. `how-to-find-a-web-designer-who-understands-my-industry`
+9. `can-i-pay-a-web-designer-in-installments`
+10. `how-to-avoid-getting-ripped-off-by-web-designers`
 
-### Files to edit
-- `src/content/blog/posts.ts` — append 20 new entries (slug, title, description, keyword, readMinutes, image import, body import). Order: newest batch first at top of listing, or keep chronological 1→30 — I'll keep chronological so Batch 1 stays at top and 11–30 follow.
-- `src/routes/sitemap[.]xml.ts` — picks up new posts automatically since it maps over `posts`. No change needed if already dynamic (will verify).
-- `public/llms.txt` — append the 20 new article URLs.
+### Files to edit (3)
+- `src/content/blog/posts.ts` — append 10 entries (img31–img40 imports, getPost entries) parsed from the upload (title, meta description, keyword, readMinutes derived from ~word count).
+- `src/routes/sitemap[.]xml.ts` — append 10 new blog URLs.
+- `public/llms.txt` — append 10 entries.
 
 ### Out of scope
-- No new routes, no design changes, no listing-page redesign (pagination not needed at 30 cards; grid handles it).
-- No CMS, search, tags, or RSS.
-- No changes to nav/footer.
-
-### Slugs (derived from titles)
-Batch 2: `how-to-find-a-web-designer-in-my-area`, `best-web-designers-for-small-business-canada`, `how-to-vet-a-web-designer-before-hiring`, `red-flags-when-hiring-a-web-designer`, `freelance-vs-agency-web-designer`, `what-to-expect-from-a-web-designer`, `web-designer-vs-web-developer`, `how-web-designers-charge-hourly-vs-flat-fee`, `do-web-designers-include-hosting`, `what-does-a-web-designer-actually-do` (final titles confirmed when parsing the file).
-
-Batch 3: `how-to-find-web-designers-on-dribbble-and-behance`, plus the next 9 titles parsed from the upload.
-
-Final slugs will be normalized (lowercase, hyphenated, no stopwords stripped) when the markdown files are written.
+No route, listing, design, nav, or CMS changes. No publish — user republishes when ready.
