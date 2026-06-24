@@ -44,6 +44,16 @@ export const Route = createFileRoute("/sitemap.xml")({
           "how-to-find-a-trustworthy-web-designer",
           "can-i-hire-a-web-designer-for-ongoing-maintenance",
           "what-s-the-difference-between-web-design-and-web-development",
+          "how-to-scope-your-website-project-before-hiring-a-designer",
+          "best-platforms-to-find-affordable-web-designers",
+          "what-to-expect-when-you-hire-a-web-designer",
+          "how-to-check-references-for-a-web-designer",
+          "why-local-web-designers-are-better-than-offshore-options",
+          "how-much-does-a-website-cost-from-a-professional-designer",
+          "what-should-i-have-ready-before-hiring-a-web-designer",
+          "how-to-find-a-web-designer-who-understands-my-industry",
+          "can-i-pay-a-web-designer-in-installments",
+          "how-to-avoid-getting-ripped-off-by-web-designers",
         ];
 
         const entries: SitemapEntry[] = [

@@ -28,6 +28,16 @@ import img27 from "@/assets/blog/what-do-web-designers-charge-for-revisions.jpg"
 import img28 from "@/assets/blog/how-to-find-a-trustworthy-web-designer.jpg";
 import img29 from "@/assets/blog/can-i-hire-a-web-designer-for-ongoing-maintenance.jpg";
 import img30 from "@/assets/blog/what-s-the-difference-between-web-design-and-web-development.jpg";
+import img31 from "@/assets/blog/how-to-scope-your-website-project-before-hiring-a-designer.jpg";
+import img32 from "@/assets/blog/best-platforms-to-find-affordable-web-designers.jpg";
+import img33 from "@/assets/blog/what-to-expect-when-you-hire-a-web-designer.jpg";
+import img34 from "@/assets/blog/how-to-check-references-for-a-web-designer.jpg";
+import img35 from "@/assets/blog/why-local-web-designers-are-better-than-offshore-options.jpg";
+import img36 from "@/assets/blog/how-much-does-a-website-cost-from-a-professional-designer.jpg";
+import img37 from "@/assets/blog/what-should-i-have-ready-before-hiring-a-web-designer.jpg";
+import img38 from "@/assets/blog/how-to-find-a-web-designer-who-understands-my-industry.jpg";
+import img39 from "@/assets/blog/can-i-pay-a-web-designer-in-installments.jpg";
+import img40 from "@/assets/blog/how-to-avoid-getting-ripped-off-by-web-designers.jpg";
 
 import body1 from "./how-much-should-i-pay-for-a-website-designer.md?raw";
 import body2 from "./can-i-hire-someone-to-design-my-website.md?raw";
@@ -59,6 +69,16 @@ import body27 from "./what-do-web-designers-charge-for-revisions.md?raw";
 import body28 from "./how-to-find-a-trustworthy-web-designer.md?raw";
 import body29 from "./can-i-hire-a-web-designer-for-ongoing-maintenance.md?raw";
 import body30 from "./what-s-the-difference-between-web-design-and-web-development.md?raw";
+import body31 from "./how-to-scope-your-website-project-before-hiring-a-designer.md?raw";
+import body32 from "./best-platforms-to-find-affordable-web-designers.md?raw";
+import body33 from "./what-to-expect-when-you-hire-a-web-designer.md?raw";
+import body34 from "./how-to-check-references-for-a-web-designer.md?raw";
+import body35 from "./why-local-web-designers-are-better-than-offshore-options.md?raw";
+import body36 from "./how-much-does-a-website-cost-from-a-professional-designer.md?raw";
+import body37 from "./what-should-i-have-ready-before-hiring-a-web-designer.md?raw";
+import body38 from "./how-to-find-a-web-designer-who-understands-my-industry.md?raw";
+import body39 from "./can-i-pay-a-web-designer-in-installments.md?raw";
+import body40 from "./how-to-avoid-getting-ripped-off-by-web-designers.md?raw";
 
 export type Post = {
   slug: string;
@@ -400,6 +420,116 @@ export const posts: Post[] = [
     readMinutes: 5,
     image: img30,
     body: body30,
+    publishedAt: "2026-06-24",
+  },
+  {
+    slug: "how-to-scope-your-website-project-before-hiring-a-designer",
+    title: "How to Scope Your Website Project Before Hiring a Designer",
+    description:
+      "The single biggest cause of web design delays and cost overruns is a poorly scoped project. Here's how Canadian small business owners can scope their website properly before hiring anyone.",
+    keyword: "how to scope a website project before hiring",
+    readMinutes: 5,
+    image: img31,
+    body: body31,
+    publishedAt: "2026-06-24",
+  },
+  {
+    slug: "best-platforms-to-find-affordable-web-designers",
+    title: "Best Platforms to Find Affordable Web Designers",
+    description:
+      "Looking for an affordable web designer without sacrificing quality? Here's a practical guide to the best platforms for finding skilled designers at reasonable prices — for Canadian small businesses.",
+    keyword: "best platforms to find affordable web designers",
+    readMinutes: 5,
+    image: img32,
+    body: body32,
+    publishedAt: "2026-06-24",
+  },
+  {
+    slug: "what-to-expect-when-you-hire-a-web-designer",
+    title: "What to Expect When You Hire a Web Designer",
+    description:
+      "Not sure what happens after you hire a web designer? This step-by-step guide walks Canadian small business owners through the entire web design process — from first call to launch day.",
+    keyword: "what to expect when you hire a web designer",
+    readMinutes: 5,
+    image: img33,
+    body: body33,
+    publishedAt: "2026-06-24",
+  },
+  {
+    slug: "how-to-check-references-for-a-web-designer",
+    title: "How to Check References for a Web Designer",
+    description:
+      "Checking references before hiring a web designer is one of the most powerful things you can do. Here's exactly how to do it — what to ask, what to listen for, and what it tells you.",
+    keyword: "how to check references for a web designer",
+    readMinutes: 5,
+    image: img34,
+    body: body34,
+    publishedAt: "2026-06-24",
+  },
+  {
+    slug: "why-local-web-designers-are-better-than-offshore-options",
+    title: "Why Local Web Designers Are Better Than Offshore Options",
+    description:
+      "Offshore web design might look cheaper — but for most Canadian small businesses, local is the smarter choice. Here's an honest look at what you gain and what you give up.",
+    keyword: "why local web designers are better than offshore",
+    readMinutes: 5,
+    image: img35,
+    body: body35,
+    publishedAt: "2026-06-24",
+  },
+  {
+    slug: "how-much-does-a-website-cost-from-a-professional-designer",
+    title: "How Much Does a Website Cost From a Professional Designer?",
+    description:
+      "What does a professionally designed website actually cost in Canada? Here's an honest, detailed breakdown of professional website pricing — so you can budget with confidence.",
+    keyword: "how much does a website cost from a professional designer",
+    readMinutes: 5,
+    image: img36,
+    body: body36,
+    publishedAt: "2026-06-24",
+  },
+  {
+    slug: "what-should-i-have-ready-before-hiring-a-web-designer",
+    title: "What Should I Have Ready Before Hiring a Web Designer?",
+    description:
+      "The more prepared you are before hiring a web designer, the faster and smoother your project goes. Here's the complete checklist of what Canadian small business owners should have ready.",
+    keyword: "what to prepare before hiring a web designer",
+    readMinutes: 5,
+    image: img37,
+    body: body37,
+    publishedAt: "2026-06-24",
+  },
+  {
+    slug: "how-to-find-a-web-designer-who-understands-my-industry",
+    title: "How to Find a Web Designer Who Understands My Industry",
+    description:
+      "Industry experience matters when hiring a web designer. Here's how Canadian small business owners can find a designer who already understands their customers, their competitors, and their sector.",
+    keyword: "how to find a web designer who understands my industry",
+    readMinutes: 5,
+    image: img38,
+    body: body38,
+    publishedAt: "2026-06-24",
+  },
+  {
+    slug: "can-i-pay-a-web-designer-in-installments",
+    title: "Can I Pay a Web Designer in Installments?",
+    description:
+      "Need to spread the cost of your website build? Many web designers offer payment plans. Here's what's standard, what to ask for, and how to structure a payment agreement that works for both sides.",
+    keyword: "can I pay a web designer in installments",
+    readMinutes: 4,
+    image: img39,
+    body: body39,
+    publishedAt: "2026-06-24",
+  },
+  {
+    slug: "how-to-avoid-getting-ripped-off-by-web-designers",
+    title: "How to Avoid Getting Ripped Off by Web Designers",
+    description:
+      "Web design scams and bad actors are real. Here's exactly how Canadian small business owners can protect themselves when hiring a web designer — before, during, and after the project.",
+    keyword: "how to avoid getting ripped off by web designers",
+    readMinutes: 5,
+    image: img40,
+    body: body40,
     publishedAt: "2026-06-24",
   },
 ];
