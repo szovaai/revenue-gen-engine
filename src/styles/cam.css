@@ -162,3 +162,64 @@
   .cam-root .btn-secondary:hover,
   .cam-btn-primary:hover { transform: none; }
 }
+
+/* Long-form article prose */
+.cam-root .prose-cam {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 17px;
+  line-height: 1.75;
+}
+.cam-root .prose-cam > * + * { margin-top: 1.1em; }
+.cam-root .prose-cam h2 {
+  margin-top: 2.5em;
+  margin-bottom: 0.6em;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.cam-root .prose-cam h3 {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+.cam-root .prose-cam p { color: rgba(255, 255, 255, 0.72); }
+.cam-root .prose-cam strong { color: #fff; font-weight: 600; }
+.cam-root .prose-cam a {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(0, 198, 255, 0.4);
+}
+.cam-root .prose-cam a:hover { border-bottom-color: #00c6ff; }
+.cam-root .prose-cam ul,
+.cam-root .prose-cam ol {
+  padding-left: 1.4em;
+  color: rgba(255, 255, 255, 0.72);
+}
+.cam-root .prose-cam ul { list-style: disc; }
+.cam-root .prose-cam ol { list-style: decimal; }
+.cam-root .prose-cam li { margin: 0.35em 0; }
+.cam-root .prose-cam li::marker { color: #00c6ff; }
+.cam-root .prose-cam blockquote {
+  border-left: 3px solid #007bff;
+  padding-left: 1em;
+  color: rgba(255, 255, 255, 0.85);
+  font-style: italic;
+}
+.cam-root .prose-cam code {
+  background: rgba(0, 123, 255, 0.12);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+.cam-root .prose-cam hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  margin: 2.5em 0;
+}

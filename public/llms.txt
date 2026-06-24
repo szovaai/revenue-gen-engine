@@ -9,3 +9,16 @@
 - [Book a Strategy Call](/strategy-call): Book a strategy call to plan your growth.
 - [Website Examples](/website-examples): Examples of websites we've built.
 - [Contact](/contact): Get in touch with ClickAdMedia.
+
+## Blog
+
+- [How Much Should I Pay for a Website Designer?](/blog/how-much-should-i-pay-for-a-website-designer)
+- [Can I Hire Someone to Design My Website for Me?](/blog/can-i-hire-someone-to-design-my-website)
+- [Where to Find a Good Web Designer for Your Small Business](/blog/where-to-find-a-good-web-designer-for-small-business)
+- [How to Hire a Web Designer Without Overspending](/blog/how-to-hire-a-web-designer-without-overspending)
+- [What Questions Should I Ask a Web Designer Before Hiring?](/blog/questions-to-ask-a-web-designer-before-hiring)
+- [Local Web Designer vs. Freelance Platform](/blog/local-web-designer-vs-freelance-platform)
+- [How to Check a Web Designer's Portfolio Before Hiring](/blog/how-to-check-a-web-designers-portfolio)
+- [Do I Really Need a Professional Web Designer?](/blog/do-i-need-a-professional-web-designer)
+- [How Long Does It Take to Get a Website Designed?](/blog/how-long-does-it-take-to-get-a-website-designed)
+- [Web Designer Cost vs. Website Builder](/blog/web-designer-cost-vs-website-builder)

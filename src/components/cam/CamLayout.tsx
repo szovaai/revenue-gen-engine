@@ -22,6 +22,7 @@ export function CamLayout() {
     { label: "Portfolio", to: "/portfolio" },
     { label: "Pricing", to: "/pricing" },
     { label: "Process", to: "/process" },
+    { label: "Blog", to: "/blog" },
     { label: "Book a Call", to: "/book-a-call" },
   ] as const;
 
@@ -182,6 +183,7 @@ export function CamLayout() {
                   { label: "Portfolio", to: "/portfolio" },
                   { label: "Pricing", to: "/pricing" },
                   { label: "Process", to: "/process" },
+                  { label: "Blog", to: "/blog" },
                   { label: "Book a Call", to: "/book-a-call" },
                 ] as const
               ).map((l) => (

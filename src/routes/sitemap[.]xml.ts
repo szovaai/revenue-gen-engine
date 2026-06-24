@@ -13,6 +13,19 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
+        const blogSlugs = [
+          "how-much-should-i-pay-for-a-website-designer",
+          "can-i-hire-someone-to-design-my-website",
+          "where-to-find-a-good-web-designer-for-small-business",
+          "how-to-hire-a-web-designer-without-overspending",
+          "questions-to-ask-a-web-designer-before-hiring",
+          "local-web-designer-vs-freelance-platform",
+          "how-to-check-a-web-designers-portfolio",
+          "do-i-need-a-professional-web-designer",
+          "how-long-does-it-take-to-get-a-website-designed",
+          "web-designer-cost-vs-website-builder",
+        ];
+
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/services", changefreq: "monthly", priority: "0.9" },
@@ -22,7 +35,13 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/portfolio", changefreq: "monthly", priority: "0.8" },
           { path: "/pricing", changefreq: "monthly", priority: "0.8" },
           { path: "/process", changefreq: "monthly", priority: "0.7" },
+          { path: "/blog", changefreq: "weekly", priority: "0.8" },
           { path: "/book-a-call", changefreq: "monthly", priority: "0.9" },
+          ...blogSlugs.map((slug) => ({
+            path: `/blog/${slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.7",
+          })),
         ];
 
         const urls = entries.map((e) =>
