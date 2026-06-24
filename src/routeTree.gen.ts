@@ -21,13 +21,16 @@ import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as BookACallRouteImport } from './routes/book-a-call'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as ServicesWebsiteDesignRouteImport } from './routes/services.website-design'
 import { Route as ServicesSeoRouteImport } from './routes/services.seo'
 import { Route as ServicesPaidAdsRouteImport } from './routes/services.paid-ads'
 import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
 import { Route as ApiPublicFreePreviewRequestRouteImport } from './routes/api/public/free-preview-request'
 import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lovable/email/transactional/send'
@@ -95,6 +98,11 @@ const BookACallRoute = BookACallRouteImport.update({
   path: '/book-a-call',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
@@ -109,6 +117,11 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => ServicesRoute,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BlogRoute,
 } as any)
 const ServicesWebsiteDesignRoute = ServicesWebsiteDesignRouteImport.update({
   id: '/website-design',
@@ -129,6 +142,11 @@ const EmailUnsubscribeRoute = EmailUnsubscribeRouteImport.update({
   id: '/email/unsubscribe',
   path: '/email/unsubscribe',
   getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
 } as any)
 const LovableEmailSuppressionRoute = LovableEmailSuppressionRouteImport.update({
   id: '/lovable/email/suppression',
@@ -169,6 +187,7 @@ const ApiPublicPaymentsWebhookRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/blog': typeof BlogRouteWithChildren
   '/book-a-call': typeof BookACallRoute
   '/dashboard': typeof DashboardRoute
   '/portfolio': typeof PortfolioRoute
@@ -181,10 +200,12 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
   '/unsubscribe': typeof UnsubscribeRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/services/paid-ads': typeof ServicesPaidAdsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/website-design': typeof ServicesWebsiteDesignRoute
+  '/blog/': typeof BlogIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/api/public/free-preview-request': typeof ApiPublicFreePreviewRequestRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -207,10 +228,12 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
   '/unsubscribe': typeof UnsubscribeRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/services/paid-ads': typeof ServicesPaidAdsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/website-design': typeof ServicesWebsiteDesignRoute
+  '/blog': typeof BlogIndexRoute
   '/services': typeof ServicesIndexRoute
   '/api/public/free-preview-request': typeof ApiPublicFreePreviewRequestRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -223,6 +246,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/blog': typeof BlogRouteWithChildren
   '/book-a-call': typeof BookACallRoute
   '/dashboard': typeof DashboardRoute
   '/portfolio': typeof PortfolioRoute
@@ -235,10 +259,12 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
   '/unsubscribe': typeof UnsubscribeRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/services/paid-ads': typeof ServicesPaidAdsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/website-design': typeof ServicesWebsiteDesignRoute
+  '/blog/': typeof BlogIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/api/public/free-preview-request': typeof ApiPublicFreePreviewRequestRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -252,6 +278,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/auth'
+    | '/blog'
     | '/book-a-call'
     | '/dashboard'
     | '/portfolio'
@@ -264,10 +291,12 @@ export interface FileRouteTypes {
     | '/terms'
     | '/thank-you'
     | '/unsubscribe'
+    | '/blog/$slug'
     | '/email/unsubscribe'
     | '/services/paid-ads'
     | '/services/seo'
     | '/services/website-design'
+    | '/blog/'
     | '/services/'
     | '/api/public/free-preview-request'
     | '/lovable/email/suppression'
@@ -290,10 +319,12 @@ export interface FileRouteTypes {
     | '/terms'
     | '/thank-you'
     | '/unsubscribe'
+    | '/blog/$slug'
     | '/email/unsubscribe'
     | '/services/paid-ads'
     | '/services/seo'
     | '/services/website-design'
+    | '/blog'
     | '/services'
     | '/api/public/free-preview-request'
     | '/lovable/email/suppression'
@@ -305,6 +336,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/auth'
+    | '/blog'
     | '/book-a-call'
     | '/dashboard'
     | '/portfolio'
@@ -317,10 +349,12 @@ export interface FileRouteTypes {
     | '/terms'
     | '/thank-you'
     | '/unsubscribe'
+    | '/blog/$slug'
     | '/email/unsubscribe'
     | '/services/paid-ads'
     | '/services/seo'
     | '/services/website-design'
+    | '/blog/'
     | '/services/'
     | '/api/public/free-preview-request'
     | '/lovable/email/suppression'
@@ -333,6 +367,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthRoute: typeof AuthRoute
+  BlogRoute: typeof BlogRouteWithChildren
   BookACallRoute: typeof BookACallRoute
   DashboardRoute: typeof DashboardRoute
   PortfolioRoute: typeof PortfolioRoute
@@ -440,6 +475,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BookACallRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/auth': {
       id: '/auth'
       path: '/auth'
@@ -460,6 +502,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/services/'
       preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof ServicesRoute
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof BlogRoute
     }
     '/services/website-design': {
       id: '/services/website-design'
@@ -488,6 +537,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/email/unsubscribe'
       preLoaderRoute: typeof EmailUnsubscribeRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
     }
     '/lovable/email/suppression': {
       id: '/lovable/email/suppression'
@@ -534,6 +590,18 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
 interface ServicesRouteChildren {
   ServicesPaidAdsRoute: typeof ServicesPaidAdsRoute
   ServicesSeoRoute: typeof ServicesSeoRoute
@@ -555,6 +623,7 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthRoute: AuthRoute,
+  BlogRoute: BlogRouteWithChildren,
   BookACallRoute: BookACallRoute,
   DashboardRoute: DashboardRoute,
   PortfolioRoute: PortfolioRoute,
