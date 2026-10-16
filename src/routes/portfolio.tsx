@@ -9,7 +9,7 @@ export const Route = createFileRoute("/portfolio")({
       {
         name: "description",
         content:
-          "Browse contractor and home service website demos. Like what you see? We'll build yours for $500.",
+          "Browse contractor and home service website demos. Like what you see? We'll build yours for $997.",
       },
     ],
   }),
@@ -41,7 +41,7 @@ function PortfolioPage() {
           </h1>
           <p className="text-[rgba(255,255,255,0.55)] text-lg max-w-[600px] mx-auto">
             Browse demos built for contractors and home service businesses. Like what you see?
-            We&apos;ll build yours for $500.
+            We&apos;ll build yours for $997.
           </p>
         </div>
       </section>

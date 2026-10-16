@@ -8,7 +8,7 @@ export const Route = createFileRoute("/process")({
       { title: "Process — ClickAdMedia" },
       {
         name: "description",
-        content: "From nothing to live in 48 hours. Here's exactly how we get your website online.",
+        content: "Free preview first, then the full build once you approve. Here's exactly how it works.",
       },
     ],
   }),
@@ -41,7 +41,7 @@ const steps = [
     num: "04",
     title: "Go Live",
     desc:
-      "We connect your domain, set up hosting, and launch your site. You get a 5-page website that looks like you spent $5,000 — for $500. Done.",
+      "We connect your domain, set up hosting, and launch your site. You get a 5-page website that looks professional — for a flat $997. Done.",
     detail: "Same day",
   },
 ];

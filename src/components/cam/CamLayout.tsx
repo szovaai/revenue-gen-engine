@@ -27,7 +27,7 @@ export function CamLayout() {
   ] as const;
 
   const serviceItems = [
-    { label: "Website Design", desc: "$500 flat, 48 hours", to: "/services/website-design" },
+    { label: "Website Design", desc: "$997 flat, free preview", to: "/services/website-design" },
     { label: "SEO", desc: "Rank in local search", to: "/services/seo" },
     { label: "Paid Ads", desc: "Google + Facebook", to: "/services/paid-ads" },
     { label: "All Services", desc: "See everything", to: "/services" },

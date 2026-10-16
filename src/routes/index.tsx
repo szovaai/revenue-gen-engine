@@ -9,12 +9,12 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "$500 flat. Live in 48 hours. No contract. Websites, SEO, and paid ads built for contractors and home service businesses.",
+          "$997 flat. Free personalized preview first. You don't pay for a website you don't approve. Websites, SEO, and paid ads built for contractors and home service businesses.",
       },
       { property: "og:title", content: "ClickAdMedia — Websites, SEO & Paid Ads for Contractors" },
       {
         property: "og:description",
-        content: "$500 flat. Live in 48 hours. No contract.",
+        content: "$997 flat. Free personalized preview first. You don't pay for a website you don't approve.",
       },
     ],
   }),
@@ -94,15 +94,14 @@ function HomePage() {
               className="hero-fade-in text-base lg:text-lg text-[rgba(255,255,255,0.7)] max-w-[480px] mb-6 leading-relaxed"
               style={{ animationDelay: "0.9s", textShadow: "0 1px 10px rgba(0,0,0,0.5)" }}
             >
-              $500 flat. Live in 48 hours. No contract. We handle everything so you can handle the
-              jobs.
+              Professional, mobile-friendly websites for contractors who want to look credible online and make it easy for customers to request a quote. One flat price: $997. You don&apos;t pay for a website you don&apos;t approve.
             </p>
             <div
               className="hero-fade-in flex flex-col sm:flex-row gap-3 mb-4"
               style={{ animationDelay: "1.1s" }}
             >
               <Link to="/book-a-call" className="btn-primary text-center">
-                See Your Free Preview &rarr;
+                Get my free website preview &rarr;
               </Link>
             </div>
           </div>
@@ -154,8 +153,8 @@ function HomePage() {
               {
                 icon: "🖥️",
                 title: "Website Design",
-                price: "$500 flat",
-                desc: "Live in 48 hours. A site built for your trade, not some generic template.",
+                price: "$997 flat",
+                desc: "Free preview first. You don't pay for a website you don't approve.",
                 cta: "Get Your Preview →",
                 to: "/services/website-design" as const,
               },
@@ -332,7 +331,7 @@ function HomePage() {
               <span className="text-[#007bff] font-bold">
                 89% of homeowners never even consider you.
               </span>{" "}
-              A $500 website isn&apos;t an expense - it&apos;s the difference between getting the
+              A $997 website isn&apos;t an expense - it&apos;s the difference between getting the
               call or watching your competitor drive away in their truck.
             </p>
           </div>
@@ -421,7 +420,7 @@ function HomePage() {
                   num: "3",
                   title: "You Go Live",
                   desc:
-                    "$500 flat. No contract. Want us to maintain it? $97/month. Want SEO? $297/month. Want ads? $997/month. You control the speed.",
+                    "$997 flat. No contract. Want us to maintain it? $97/month. Want SEO? $297/month. Want ads? $997/month. You control the speed.",
                 },
               ].map((step, i) => (
                 <div key={step.num} className={`reveal ${delays[i]} text-center`}>
@@ -465,16 +464,16 @@ function HomePage() {
               We Don&apos;t.
             </h2>
             <p className="reveal reveal-delay-2 text-[rgba(255,255,255,0.55)]">
-              Start with a $500 site. See it work. Then grow.
+              Start with a $997 site. See it work. Then grow.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                name: "Starter",
-                price: "$500",
+                name: "Website Build",
+                price: "$997",
                 period: "one-time",
-                desc: "Site only. 5 pages. Live in 48 hours. You own it.",
+                desc: "Custom, mobile-friendly site. Quote forms, click-to-call, basic on-page SEO. Free preview first.",
                 cta: "Get Preview →",
                 to: "/services/website-design" as const,
               },

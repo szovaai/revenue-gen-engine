@@ -15,7 +15,7 @@ function getSupabase() {
 }
 
 const PRODUCT_LABELS: Record<string, string> = {
-  starter_site: "Starter Site ($500 one-time)",
+  starter_site: "Website Build ($997 one-time)",
   growth_plan: "Growth Plan ($297/mo)",
   dominate_plan: "Dominate Plan ($997/mo)",
 };
