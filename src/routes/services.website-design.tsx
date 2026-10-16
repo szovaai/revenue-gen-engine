@@ -111,25 +111,15 @@ function WebsiteDesignPage() {
       <section className="px-6 pb-16">
         <div className="max-w-[800px] mx-auto">
           <h2 className="text-2xl font-bold mb-6">Pricing</h2>
-          <div className="grid sm:grid-cols-2 gap-5 mb-6">
+          <div className="grid gap-5 mb-6">
             <div className="glass-card p-6">
-              <h3 className="text-lg font-bold mb-1">Starter</h3>
+              <h3 className="text-lg font-bold mb-1">Website Build</h3>
               <div className="text-3xl font-extrabold text-gradient mb-3">$997</div>
               <ul className="space-y-2 text-sm text-[rgba(255,255,255,0.7)]">
                 <li>5 pages</li>
                 <li>Mobile-ready</li>
                 <li>Contact form</li>
                 <li>Click-to-call</li>
-              </ul>
-            </div>
-            <div className="glass-card p-6" style={{ border: "1px solid rgba(0,123,255,0.3)" }}>
-              <h3 className="text-lg font-bold mb-1">Pro</h3>
-              <div className="text-3xl font-extrabold text-gradient mb-3">$750</div>
-              <ul className="space-y-2 text-sm text-[rgba(255,255,255,0.7)]">
-                <li>Everything in Starter</li>
-                <li>Booking integration</li>
-                <li>Photo gallery</li>
-                <li>Reviews widget</li>
               </ul>
             </div>
           </div>

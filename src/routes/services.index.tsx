@@ -41,7 +41,7 @@ function ServicesPage() {
               title: "Website Design",
               price: "$997 flat",
               desc:
-                "$997 flat. Live in 48 hours. Mobile-first, built for contractors — not generic templates.",
+                "$997 flat. Free personalized preview first. Mobile-first, built for contractors — not generic templates.",
               cta: "Learn More →",
               to: "/services/website-design" as const,
             },
