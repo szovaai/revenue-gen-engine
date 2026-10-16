@@ -9,7 +9,7 @@ export const Route = createFileRoute("/pricing")({
       {
         name: "description",
         content:
-          "Start with a $500 site. Grow into Growth or Dominate. Simple pricing, no surprises.",
+          "Start with a $997 site. Grow into Growth or Dominate. Simple pricing, no surprises.",
       },
     ],
   }),
@@ -34,7 +34,7 @@ function PricingPage() {
     });
   };
   const rows = [
-    { label: "Price", starter: "$500", growth: "$297/mo", dominate: "$997/mo" },
+    { label: "Price", starter: "$997", growth: "$297/mo", dominate: "$997/mo" },
     { label: "Website (5 pages)", starter: "✅", growth: "✅ (if needed)", dominate: "✅ (if needed)" },
     { label: "Hosting", starter: "+$97/mo", growth: "✅ Included", dominate: "✅ Included" },
     { label: "Local SEO", starter: "❌", growth: "✅", dominate: "✅ Advanced" },
@@ -52,7 +52,7 @@ function PricingPage() {
         <div className="max-w-[1280px] mx-auto text-center">
           <span className="section-label">Simple Pricing. No Surprises.</span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.02em] mb-4">
-            Start With a $500 Site.
+            Lead With a $997 Website.
             <br />
             <span className="text-gradient">Grow Into Everything.</span>
           </h1>
@@ -69,8 +69,8 @@ function PricingPage() {
               <tr className="border-b border-[rgba(255,255,255,0.1)]">
                 <th className="text-left py-4 pr-4 text-sm text-[rgba(255,255,255,0.5)] font-medium"></th>
                 <th className="py-4 px-4 text-center">
-                  <div className="text-lg font-bold">Starter</div>
-                  <div className="text-2xl font-extrabold text-gradient">$500</div>
+                  <div className="text-lg font-bold">Website Build</div>
+                  <div className="text-2xl font-extrabold text-gradient">$997</div>
                   <div className="text-[11px] text-[rgba(255,255,255,0.4)]">one-time</div>
                 </th>
                 <th
@@ -144,7 +144,7 @@ function PricingPage() {
             onClick={() => buy("starter_onetime")}
             className="btn-primary text-center text-sm py-3 disabled:opacity-60"
           >
-            Get Starter — $500 →
+            Get My Website Build — $997 →
           </button>
           <button
             onClick={() => buy("growth_monthly")}

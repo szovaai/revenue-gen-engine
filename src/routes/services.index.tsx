@@ -7,7 +7,7 @@ export const Route = createFileRoute("/services/")({
       {
         name: "description",
         content:
-          "Websites, SEO, and Paid Ads built for contractors. From $500 sites to $997/mo full domination.",
+          "Websites, SEO, and Paid Ads built for contractors. From $997 sites to $997/mo full domination.",
       },
       { property: "og:title", content: "Services — ClickAdMedia" },
       { property: "og:description", content: "Websites, SEO, and Paid Ads for contractors." },
@@ -27,7 +27,7 @@ function ServicesPage() {
             <span className="text-gradient">Built for Your Trade</span>
           </h1>
           <p className="text-[rgba(255,255,255,0.55)] text-lg max-w-[600px] mx-auto">
-            Most agencies build pretty sites. We build systems that make your phone ring. From $500
+            Most agencies build pretty sites. We build systems that make your phone ring. From $997
             sites to $997/month full domination.
           </p>
         </div>
@@ -39,9 +39,9 @@ function ServicesPage() {
             {
               icon: "🖥️",
               title: "Website Design",
-              price: "$500 flat",
+              price: "$997 flat",
               desc:
-                "$500 flat. Live in 48 hours. Mobile-first, built for contractors — not generic templates.",
+                "$997 flat. Live in 48 hours. Mobile-first, built for contractors — not generic templates.",
               cta: "Learn More →",
               to: "/services/website-design" as const,
             },

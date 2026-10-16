@@ -19,7 +19,7 @@ export const Route = createFileRoute("/dashboard")({
 });
 
 const PRODUCT_NAMES: Record<string, string> = {
-  starter_site: "Starter Website",
+  starter_site: "Website Build",
   growth_plan: "Growth Plan",
   dominate_plan: "Dominate Plan",
 };

@@ -8,7 +8,7 @@ export const Route = createFileRoute("/services/website-design")({
       {
         name: "description",
         content:
-          "$500 flat. Live in 48 hours. A website built for your trade — not a generic template.",
+          "$997 flat. Free personalized preview first. A website built for your trade.",
       },
     ],
   }),
@@ -37,7 +37,7 @@ function WebsiteDesignPage() {
   const faqs = [
     { q: "Do I own the site?", a: "Yes, 100%. We hand over all files." },
     { q: "What if I don't like it?", a: "We revise until you do. No extra charge." },
-    { q: "How fast?", a: "Preview in 24 hours. Live in 48 hours after approval." },
+    { q: "How fast?", a: "We build your free preview first. Once you approve the direction, we complete the full build under the agreed scope." },
     { q: "What about updates?", a: "$97/month Care Plan handles everything." },
   ];
 
@@ -51,8 +51,7 @@ function WebsiteDesignPage() {
             <span className="text-gradient">Not Just Looks Pretty</span>
           </h1>
           <p className="text-[rgba(255,255,255,0.55)] text-lg max-w-[550px] mb-6">
-            $500 flat. No templates from 2012. No hidden fees. A site built for your specific
-            trade, live in 48 hours.
+            $997 flat. No hidden fees. We build a free personalized preview first — you don&apos;t pay for a website you don&apos;t approve.
           </p>
           <Link to="/book-a-call" className="btn-primary">
             See Your Free Preview
@@ -115,7 +114,7 @@ function WebsiteDesignPage() {
           <div className="grid sm:grid-cols-2 gap-5 mb-6">
             <div className="glass-card p-6">
               <h3 className="text-lg font-bold mb-1">Starter</h3>
-              <div className="text-3xl font-extrabold text-gradient mb-3">$500</div>
+              <div className="text-3xl font-extrabold text-gradient mb-3">$997</div>
               <ul className="space-y-2 text-sm text-[rgba(255,255,255,0.7)]">
                 <li>5 pages</li>
                 <li>Mobile-ready</li>
