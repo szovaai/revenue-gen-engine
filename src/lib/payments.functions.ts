@@ -42,6 +42,7 @@ export const createCheckoutSession = createServerFn({ method: "POST" })
   .inputValidator(
     (data: {
       priceId: string;
+      setupPriceId?: string;
       quantity?: number;
       customerEmail?: string;
       userId?: string;
@@ -49,6 +50,8 @@ export const createCheckoutSession = createServerFn({ method: "POST" })
       environment: StripeEnv;
     }) => {
       if (!/^[a-zA-Z0-9_-]+$/.test(data.priceId)) throw new Error("Invalid priceId");
+      if (data.setupPriceId && !/^[a-zA-Z0-9_-]+$/.test(data.setupPriceId))
+        throw new Error("Invalid setupPriceId");
       return data;
     },
   )
@@ -69,6 +72,13 @@ export const createCheckoutSession = createServerFn({ method: "POST" })
             })
           : undefined;
 
+      let setupStripePriceId: string | undefined;
+      if (data.setupPriceId && isRecurring) {
+        const setup = await stripe.prices.list({ lookup_keys: [data.setupPriceId] });
+        if (!setup.data.length) throw new Error("Setup price not found");
+        setupStripePriceId = setup.data[0].id;
+      }
+
       let productDescription: string | undefined;
       if (!isRecurring) {
         const productId =
@@ -78,7 +88,10 @@ export const createCheckoutSession = createServerFn({ method: "POST" })
       }
 
       const session = await stripe.checkout.sessions.create({
-        line_items: [{ price: stripePrice.id, quantity: data.quantity || 1 }],
+        line_items: [
+          { price: stripePrice.id, quantity: data.quantity || 1 },
+          ...(setupStripePriceId ? [{ price: setupStripePriceId, quantity: 1 }] : []),
+        ],
         mode: isRecurring ? "subscription" : "payment",
         ui_mode: "embedded_page",
         return_url: data.returnUrl,
