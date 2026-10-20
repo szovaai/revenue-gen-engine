@@ -28,6 +28,7 @@ import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesAiReceptionistRouteImport } from './routes/services.ai-receptionist'
 import { Route as ServicesPaidAdsRouteImport } from './routes/services.paid-ads'
 import { Route as ServicesSeoRouteImport } from './routes/services.seo'
 import { Route as ServicesWebsiteDesignRouteImport } from './routes/services.website-design'
@@ -133,6 +134,11 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ServicesRoute,
 } as any)
+const ServicesAiReceptionistRoute = ServicesAiReceptionistRouteImport.update({
+  id: '/ai-receptionist',
+  path: '/ai-receptionist',
+  getParentRoute: () => ServicesRoute,
+} as any)
 const ServicesPaidAdsRoute = ServicesPaidAdsRouteImport.update({
   id: '/paid-ads',
   path: '/paid-ads',
@@ -202,6 +208,7 @@ export interface FileRoutesByFullPath {
   '/unsubscribe': typeof UnsubscribeRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
+  '/services/ai-receptionist': typeof ServicesAiReceptionistRoute
   '/services/paid-ads': typeof ServicesPaidAdsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/website-design': typeof ServicesWebsiteDesignRoute
@@ -230,6 +237,7 @@ export interface FileRoutesByTo {
   '/unsubscribe': typeof UnsubscribeRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
+  '/services/ai-receptionist': typeof ServicesAiReceptionistRoute
   '/services/paid-ads': typeof ServicesPaidAdsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/website-design': typeof ServicesWebsiteDesignRoute
@@ -261,6 +269,7 @@ export interface FileRoutesById {
   '/unsubscribe': typeof UnsubscribeRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
+  '/services/ai-receptionist': typeof ServicesAiReceptionistRoute
   '/services/paid-ads': typeof ServicesPaidAdsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/website-design': typeof ServicesWebsiteDesignRoute
@@ -293,6 +302,7 @@ export interface FileRouteTypes {
     | '/unsubscribe'
     | '/blog/$slug'
     | '/email/unsubscribe'
+    | '/services/ai-receptionist'
     | '/services/paid-ads'
     | '/services/seo'
     | '/services/website-design'
@@ -321,6 +331,7 @@ export interface FileRouteTypes {
     | '/unsubscribe'
     | '/blog/$slug'
     | '/email/unsubscribe'
+    | '/services/ai-receptionist'
     | '/services/paid-ads'
     | '/services/seo'
     | '/services/website-design'
@@ -351,6 +362,7 @@ export interface FileRouteTypes {
     | '/unsubscribe'
     | '/blog/$slug'
     | '/email/unsubscribe'
+    | '/services/ai-receptionist'
     | '/services/paid-ads'
     | '/services/seo'
     | '/services/website-design'
@@ -524,6 +536,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof ServicesRoute
     }
+    '/services/ai-receptionist': {
+      id: '/services/ai-receptionist'
+      path: '/ai-receptionist'
+      fullPath: '/services/ai-receptionist'
+      preLoaderRoute: typeof ServicesAiReceptionistRouteImport
+      parentRoute: typeof ServicesRoute
+    }
     '/services/paid-ads': {
       id: '/services/paid-ads'
       path: '/paid-ads'
@@ -603,6 +622,7 @@ const BlogRouteChildren: BlogRouteChildren = {
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 interface ServicesRouteChildren {
+  ServicesAiReceptionistRoute: typeof ServicesAiReceptionistRoute
   ServicesPaidAdsRoute: typeof ServicesPaidAdsRoute
   ServicesSeoRoute: typeof ServicesSeoRoute
   ServicesWebsiteDesignRoute: typeof ServicesWebsiteDesignRoute
@@ -610,6 +630,7 @@ interface ServicesRouteChildren {
 }
 
 const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesAiReceptionistRoute: ServicesAiReceptionistRoute,
   ServicesPaidAdsRoute: ServicesPaidAdsRoute,
   ServicesSeoRoute: ServicesSeoRoute,
   ServicesWebsiteDesignRoute: ServicesWebsiteDesignRoute,

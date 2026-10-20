@@ -183,6 +183,21 @@ function PricingPage() {
         </div>
       )}
 
+      <section className="px-6 pb-16">
+        <div className="max-w-[900px] mx-auto glass-card p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <span className="section-label">New Service</span>
+            <h2 className="text-2xl font-bold">AI Receptionist</h2>
+            <p className="text-sm text-[rgba(255,255,255,0.6)]">
+              $299 CAD one-time setup + $199 CAD/month. Never miss a call while you're on the job.
+            </p>
+          </div>
+          <Link to="/services/ai-receptionist" className="btn-primary whitespace-nowrap">
+            Learn More →
+          </Link>
+        </div>
+      </section>
+
 
       <section className="relative py-20 px-6">
         <div
