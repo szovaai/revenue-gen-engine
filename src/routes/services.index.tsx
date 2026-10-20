@@ -34,7 +34,7 @@ function ServicesPage() {
       </section>
 
       <section className="px-6 pb-16">
-        <div className="max-w-[1100px] mx-auto grid md:grid-cols-3 gap-6">
+        <div className="max-w-[1100px] mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
               icon: "🖥️",
@@ -62,6 +62,15 @@ function ServicesPage() {
                 "Google Ads + Facebook retargeting. Every click becomes a booked job. We manage it all.",
               cta: "Learn More →",
               to: "/services/paid-ads" as const,
+            },
+            {
+              icon: "📞",
+              title: "AI Receptionist",
+              price: "$299 setup + $199/mo CAD",
+              desc:
+                "Answers calls, captures leads and handles after-hours calls while you're on the job.",
+              cta: "Learn More →",
+              to: "/services/ai-receptionist" as const,
             },
           ].map((s) => (
             <div key={s.title} className="glass-card p-8 relative overflow-hidden">

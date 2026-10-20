@@ -22,6 +22,7 @@ const PRODUCT_NAMES: Record<string, string> = {
   starter_site: "Website Build",
   growth_plan: "Growth Plan",
   dominate_plan: "Dominate Plan",
+  ai_receptionist_monthly: "AI Receptionist",
 };
 
 function DashboardPage() {

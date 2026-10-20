@@ -30,6 +30,7 @@ export function CamLayout() {
     { label: "Website Design", desc: "$997 flat, free preview", to: "/services/website-design" },
     { label: "SEO", desc: "Rank in local search", to: "/services/seo" },
     { label: "Paid Ads", desc: "Google + Facebook", to: "/services/paid-ads" },
+    { label: "AI Receptionist", desc: "Never miss a call", to: "/services/ai-receptionist" },
     { label: "All Services", desc: "See everything", to: "/services" },
   ] as const;
 
