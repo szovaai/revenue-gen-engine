@@ -181,6 +181,7 @@ export function CamLayout() {
               {(
                 [
                   { label: "Services", to: "/services" },
+                  { label: "AI Receptionist", to: "/services/ai-receptionist" },
                   { label: "Portfolio", to: "/portfolio" },
                   { label: "Pricing", to: "/pricing" },
                   { label: "Process", to: "/process" },
