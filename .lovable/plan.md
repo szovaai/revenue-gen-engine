@@ -1,26 +1,36 @@
-## Add Batch 4 (Articles 31–40) to Blog
+# Add "AI Receptionist" Service
 
-Same pattern as Batches 1–3. Adds 10 more articles to the existing static blog.
+## What gets built
 
-### Files to create (20)
-10 markdown bodies in `src/content/blog/<slug>.md` and 10 AI-generated hero images in `src/assets/blog/<slug>.jpg` (1536×864, dark navy + blue/cyan glow, no text — matches existing 30).
+1. **New page: /services/ai-receptionist**
+   - Headline: "Stop Losing Jobs Because You Missed a Call."
+   - The sales pitch you gave, word for word.
+   - Price card: $299 CAD one-time setup + $199 CAD/month.
+   - "What's included" list (all 8 items you gave).
+   - "Who it's for": plumbers, electricians, HVAC, renovation companies, other home service businesses.
+   - Small note: "AI software subscription and usage fees are billed separately by the provider."
+   - Two buttons: "Get Started" (online checkout) and "Book a Call" (your Cal.com page).
+   - Same dark navy / electric blue look as the rest of the site.
 
-Slugs:
-1. `how-to-scope-your-website-project-before-hiring-a-designer`
-2. `best-platforms-to-find-affordable-web-designers`
-3. `what-to-expect-when-you-hire-a-web-designer`
-4. `how-to-check-references-for-a-web-designer`
-5. `why-local-web-designers-are-better-than-offshore-options`
-6. `how-much-does-a-website-cost-from-a-professional-designer`
-7. `what-should-i-have-ready-before-hiring-a-web-designer`
-8. `how-to-find-a-web-designer-who-understands-my-industry`
-9. `can-i-pay-a-web-designer-in-installments`
-10. `how-to-avoid-getting-ripped-off-by-web-designers`
+2. **Linked from the rest of the site**
+   - New card on the Services page.
+   - New link in the Services menu and the footer.
+   - New row/section on the Pricing page.
+   - Added to the sitemap and AI-search summary file.
 
-### Files to edit (3)
-- `src/content/blog/posts.ts` — append 10 entries (img31–img40 imports, getPost entries) parsed from the upload (title, meta description, keyword, readMinutes derived from ~word count).
-- `src/routes/sitemap[.]xml.ts` — append 10 new blog URLs.
-- `public/llms.txt` — append 10 entries.
+3. **Online checkout (Stripe)**
+   - New product "AI Receptionist" with two prices in CAD: $299 one-time setup and $199/month.
+   - One checkout charges the $299 setup today and starts the $199/month subscription.
+   - After paying: same thank-you page, your owner email and the customer welcome email, and it shows on the customer's dashboard with the Manage Billing button.
 
-### Out of scope
-No route, listing, design, nav, or CMS changes. No publish — user republishes when ready.
+## Assumptions (tell me if any are wrong)
+- The customer pays the AI software provider directly (your recommendation), so no usage fees are charged by us.
+- Prices shown in CAD on this page only; your website packages stay as they are.
+- The $997 website offer stays the main offer on the homepage; the AI receptionist is an add-on service, not on the homepage hero. A short teaser section can be added to the homepage if you want.
+
+## Technical details
+- Route `src/routes/services.ai-receptionist.tsx` with its own head() metadata.
+- Stripe: `payments--create_product` (ai_receptionist, price `ai_receptionist_monthly`, 19900 CAD, month, qty 1) + `payments--create_price` (`ai_receptionist_setup`, 29900 CAD one-time).
+- Extend `createCheckoutSession` to accept an optional `setupPriceId`, added as a second line item in subscription mode.
+- Existing webhook already records subscriptions; verify it handles the extra line item and the email template names the plan.
+- Update services index, CamLayout nav/footer, pricing page, sitemap, llms.txt.
