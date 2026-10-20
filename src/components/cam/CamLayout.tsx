@@ -129,8 +129,8 @@ export function CamLayout() {
         </div>
 
         {menuOpen && (
-          <div className="md:hidden fixed top-[84px] left-0 right-0 bottom-0 z-40 bg-white">
-            <div className="flex flex-col items-center gap-6 pt-10">
+          <div className="md:hidden absolute top-full left-0 right-0 h-[calc(100dvh-110px)] overflow-y-auto z-40 bg-white border-t border-gray-200">
+            <div className="flex flex-col items-center gap-6 py-10">
               <Link
                 to="/services"
                 className="text-lg text-gray-900 font-medium"
@@ -138,7 +138,7 @@ export function CamLayout() {
               >
                 Services
               </Link>
-              {serviceItems.slice(0, 3).map((s) => (
+              {serviceItems.filter((s) => s.to !== "/services").map((s) => (
                 <Link
                   key={s.to}
                   to={s.to}
