@@ -10,9 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as BookACallRouteImport } from './routes/book-a-call'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as PricingRouteImport } from './routes/pricing'
@@ -24,6 +26,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ThankYouRouteImport } from './routes/thank-you'
 import { Route as UnsubscribeRouteImport } from './routes/unsubscribe'
+import { Route as WebsiteDesignsRouteImport } from './routes/website-designs'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
@@ -34,6 +37,7 @@ import { Route as ServicesSeoRouteImport } from './routes/services.seo'
 import { Route as ServicesWebsiteDesignRouteImport } from './routes/services.website-design'
 import { Route as ApiPublicAiReceptionistInquiryRouteImport } from './routes/api/public/ai-receptionist-inquiry'
 import { Route as ApiPublicFreePreviewRequestRouteImport } from './routes/api/public/free-preview-request'
+import { Route as ApiPublicProjectInquiryRouteImport } from './routes/api/public/project-inquiry'
 import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
 import { Route as ApiPublicPaymentsWebhookRouteImport } from './routes/api/public/payments/webhook'
 import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
@@ -43,6 +47,11 @@ import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lova
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthRoute = AuthRouteImport.update({
@@ -58,6 +67,11 @@ const BlogRoute = BlogRouteImport.update({
 const BookACallRoute = BookACallRouteImport.update({
   id: '/book-a-call',
   path: '/book-a-call',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardRoute = DashboardRouteImport.update({
@@ -115,6 +129,11 @@ const UnsubscribeRoute = UnsubscribeRouteImport.update({
   path: '/unsubscribe',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WebsiteDesignsRoute = WebsiteDesignsRouteImport.update({
+  id: '/website-designs',
+  path: '/website-designs',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -167,6 +186,11 @@ const ApiPublicFreePreviewRequestRoute =
     path: '/api/public/free-preview-request',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiPublicProjectInquiryRoute = ApiPublicProjectInquiryRouteImport.update({
+  id: '/api/public/project-inquiry',
+  path: '/api/public/project-inquiry',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LovableEmailSuppressionRoute = LovableEmailSuppressionRouteImport.update({
   id: '/lovable/email/suppression',
   path: '/lovable/email/suppression',
@@ -199,9 +223,11 @@ const LovableEmailTransactionalSendRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/blog': typeof BlogRouteWithChildren
   '/book-a-call': typeof BookACallRoute
+  '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
   '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
@@ -213,6 +239,7 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
   '/unsubscribe': typeof UnsubscribeRoute
+  '/website-designs': typeof WebsiteDesignsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/services/ai-receptionist': typeof ServicesAiReceptionistRoute
@@ -223,6 +250,7 @@ export interface FileRoutesByFullPath {
   '/services/': typeof ServicesIndexRoute
   '/api/public/ai-receptionist-inquiry': typeof ApiPublicAiReceptionistInquiryRoute
   '/api/public/free-preview-request': typeof ApiPublicFreePreviewRequestRoute
+  '/api/public/project-inquiry': typeof ApiPublicProjectInquiryRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
@@ -231,8 +259,10 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/book-a-call': typeof BookACallRoute
+  '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
   '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
@@ -243,6 +273,7 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
   '/unsubscribe': typeof UnsubscribeRoute
+  '/website-designs': typeof WebsiteDesignsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/services/ai-receptionist': typeof ServicesAiReceptionistRoute
@@ -253,6 +284,7 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesIndexRoute
   '/api/public/ai-receptionist-inquiry': typeof ApiPublicAiReceptionistInquiryRoute
   '/api/public/free-preview-request': typeof ApiPublicFreePreviewRequestRoute
+  '/api/public/project-inquiry': typeof ApiPublicProjectInquiryRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
@@ -262,9 +294,11 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/blog': typeof BlogRouteWithChildren
   '/book-a-call': typeof BookACallRoute
+  '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
   '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
@@ -276,6 +310,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
   '/unsubscribe': typeof UnsubscribeRoute
+  '/website-designs': typeof WebsiteDesignsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/services/ai-receptionist': typeof ServicesAiReceptionistRoute
@@ -286,6 +321,7 @@ export interface FileRoutesById {
   '/services/': typeof ServicesIndexRoute
   '/api/public/ai-receptionist-inquiry': typeof ApiPublicAiReceptionistInquiryRoute
   '/api/public/free-preview-request': typeof ApiPublicFreePreviewRequestRoute
+  '/api/public/project-inquiry': typeof ApiPublicProjectInquiryRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
@@ -296,9 +332,11 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/auth'
     | '/blog'
     | '/book-a-call'
+    | '/contact'
     | '/dashboard'
     | '/portfolio'
     | '/pricing'
@@ -310,6 +348,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/thank-you'
     | '/unsubscribe'
+    | '/website-designs'
     | '/blog/$slug'
     | '/email/unsubscribe'
     | '/services/ai-receptionist'
@@ -320,6 +359,7 @@ export interface FileRouteTypes {
     | '/services/'
     | '/api/public/ai-receptionist-inquiry'
     | '/api/public/free-preview-request'
+    | '/api/public/project-inquiry'
     | '/lovable/email/suppression'
     | '/api/public/payments/webhook'
     | '/lovable/email/queue/process'
@@ -328,8 +368,10 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/auth'
     | '/book-a-call'
+    | '/contact'
     | '/dashboard'
     | '/portfolio'
     | '/pricing'
@@ -340,6 +382,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/thank-you'
     | '/unsubscribe'
+    | '/website-designs'
     | '/blog/$slug'
     | '/email/unsubscribe'
     | '/services/ai-receptionist'
@@ -350,6 +393,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/api/public/ai-receptionist-inquiry'
     | '/api/public/free-preview-request'
+    | '/api/public/project-inquiry'
     | '/lovable/email/suppression'
     | '/api/public/payments/webhook'
     | '/lovable/email/queue/process'
@@ -358,9 +402,11 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/auth'
     | '/blog'
     | '/book-a-call'
+    | '/contact'
     | '/dashboard'
     | '/portfolio'
     | '/pricing'
@@ -372,6 +418,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/thank-you'
     | '/unsubscribe'
+    | '/website-designs'
     | '/blog/$slug'
     | '/email/unsubscribe'
     | '/services/ai-receptionist'
@@ -382,6 +429,7 @@ export interface FileRouteTypes {
     | '/services/'
     | '/api/public/ai-receptionist-inquiry'
     | '/api/public/free-preview-request'
+    | '/api/public/project-inquiry'
     | '/lovable/email/suppression'
     | '/api/public/payments/webhook'
     | '/lovable/email/queue/process'
@@ -391,9 +439,11 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AuthRoute: typeof AuthRoute
   BlogRoute: typeof BlogRouteWithChildren
   BookACallRoute: typeof BookACallRoute
+  ContactRoute: typeof ContactRoute
   DashboardRoute: typeof DashboardRoute
   PortfolioRoute: typeof PortfolioRoute
   PricingRoute: typeof PricingRoute
@@ -405,9 +455,11 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   ThankYouRoute: typeof ThankYouRoute
   UnsubscribeRoute: typeof UnsubscribeRoute
+  WebsiteDesignsRoute: typeof WebsiteDesignsRoute
   EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
   ApiPublicAiReceptionistInquiryRoute: typeof ApiPublicAiReceptionistInquiryRoute
   ApiPublicFreePreviewRequestRoute: typeof ApiPublicFreePreviewRequestRoute
+  ApiPublicProjectInquiryRoute: typeof ApiPublicProjectInquiryRoute
   LovableEmailSuppressionRoute: typeof LovableEmailSuppressionRoute
   ApiPublicPaymentsWebhookRoute: typeof ApiPublicPaymentsWebhookRoute
   LovableEmailQueueProcessRoute: typeof LovableEmailQueueProcessRoute
@@ -422,6 +474,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/auth': {
@@ -443,6 +502,13 @@ declare module '@tanstack/react-router' {
       path: '/book-a-call'
       fullPath: '/book-a-call'
       preLoaderRoute: typeof BookACallRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard': {
@@ -522,6 +588,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UnsubscribeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/website-designs': {
+      id: '/website-designs'
+      path: '/website-designs'
+      fullPath: '/website-designs'
+      preLoaderRoute: typeof WebsiteDesignsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/': {
       id: '/blog/'
       path: '/'
@@ -590,6 +663,13 @@ declare module '@tanstack/react-router' {
       path: '/api/public/free-preview-request'
       fullPath: '/api/public/free-preview-request'
       preLoaderRoute: typeof ApiPublicFreePreviewRequestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/project-inquiry': {
+      id: '/api/public/project-inquiry'
+      path: '/api/public/project-inquiry'
+      fullPath: '/api/public/project-inquiry'
+      preLoaderRoute: typeof ApiPublicProjectInquiryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lovable/email/suppression': {
@@ -664,9 +744,11 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AuthRoute: AuthRoute,
   BlogRoute: BlogRouteWithChildren,
   BookACallRoute: BookACallRoute,
+  ContactRoute: ContactRoute,
   DashboardRoute: DashboardRoute,
   PortfolioRoute: PortfolioRoute,
   PricingRoute: PricingRoute,
@@ -678,9 +760,11 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   ThankYouRoute: ThankYouRoute,
   UnsubscribeRoute: UnsubscribeRoute,
+  WebsiteDesignsRoute: WebsiteDesignsRoute,
   EmailUnsubscribeRoute: EmailUnsubscribeRoute,
   ApiPublicAiReceptionistInquiryRoute: ApiPublicAiReceptionistInquiryRoute,
   ApiPublicFreePreviewRequestRoute: ApiPublicFreePreviewRequestRoute,
+  ApiPublicProjectInquiryRoute: ApiPublicProjectInquiryRoute,
   LovableEmailSuppressionRoute: LovableEmailSuppressionRoute,
   ApiPublicPaymentsWebhookRoute: ApiPublicPaymentsWebhookRoute,
   LovableEmailQueueProcessRoute: LovableEmailQueueProcessRoute,

@@ -19,15 +19,14 @@ export function CamLayout() {
   const isActive = (path: string) => location.pathname === path;
 
   const navLinks = [
-    { label: "Portfolio", to: "/portfolio" },
+    { label: "Website Designs", to: "/website-designs" },
     { label: "Pricing", to: "/pricing" },
-    { label: "Process", to: "/process" },
-    { label: "Blog", to: "/blog" },
-    { label: "Book a Call", to: "/book-a-call" },
+    { label: "About", to: "/about" },
+    { label: "Contact", to: "/contact" },
   ] as const;
 
   const serviceItems = [
-    { label: "Website Design", desc: "$997 flat, free preview", to: "/services/website-design" },
+    { label: "Premium Trade Website", desc: "$997 CAD, free preview first", to: "/services/website-design" },
     { label: "SEO", desc: "Rank in local search", to: "/services/seo" },
     { label: "Paid Ads", desc: "Google + Facebook", to: "/services/paid-ads" },
     { label: "AI Receptionist", desc: "Never miss a call", to: "/services/ai-receptionist" },
@@ -104,8 +103,8 @@ export function CamLayout() {
             >
               {user ? "Account" : "Sign in"}
             </Link>
-            <Link to="/book-a-call" className="cam-btn-primary text-xs !py-3 !px-5">
-              Get Free Preview &#8594;
+            <Link to="/contact" className="cam-btn-primary text-xs !py-3 !px-5">
+              Get Started &#8594;
             </Link>
           </div>
 
@@ -159,11 +158,11 @@ export function CamLayout() {
                 </Link>
               ))}
               <Link
-                to="/book-a-call"
+                to="/contact"
                 className="cam-btn-primary mt-4"
                 onClick={() => setMenuOpen(false)}
               >
-                Get Free Preview &#8594;
+                Get Started &#8594;
               </Link>
             </div>
           </div>
@@ -180,10 +179,13 @@ export function CamLayout() {
             <nav className="flex flex-wrap justify-center gap-6 mb-4">
               {(
                 [
+                  { label: "Website Designs", to: "/website-designs" },
                   { label: "Services", to: "/services" },
                   { label: "AI Receptionist", to: "/services/ai-receptionist" },
                   { label: "Portfolio", to: "/portfolio" },
                   { label: "Pricing", to: "/pricing" },
+                  { label: "About", to: "/about" },
+                  { label: "Contact", to: "/contact" },
                   { label: "Process", to: "/process" },
                   { label: "Blog", to: "/blog" },
                   { label: "Book a Call", to: "/book-a-call" },
