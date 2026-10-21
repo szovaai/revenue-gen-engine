@@ -3,6 +3,7 @@ import { template as customerWelcomeTemplate } from './customer-welcome'
 import { template as newCustomerOwnerTemplate } from './new-customer-owner'
 import { template as freePreviewRequestTemplate } from './free-preview-request'
 import { template as aiReceptionistInquiryTemplate } from './ai-receptionist-inquiry'
+import { template as projectInquiryTemplate } from './project-inquiry'
 
 export interface TemplateEntry {
   component: ComponentType<any>
@@ -18,5 +19,6 @@ export const TEMPLATES: Record<string, TemplateEntry> = {
   'new-customer-owner': newCustomerOwnerTemplate,
   'free-preview-request': freePreviewRequestTemplate,
   'ai-receptionist-inquiry': aiReceptionistInquiryTemplate,
+  'project-inquiry': projectInquiryTemplate,
 }
 
