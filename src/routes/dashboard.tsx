@@ -23,6 +23,9 @@ const PRODUCT_NAMES: Record<string, string> = {
   growth_plan: "Growth Plan",
   dominate_plan: "Dominate Plan",
   ai_receptionist_monthly: "AI Receptionist",
+  premium_website_onetime: "Premium Trade Website",
+  website_care_monthly: "Website Care",
+  website_crm_monthly: "Website + CRM",
 };
 
 function DashboardPage() {

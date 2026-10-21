@@ -34,6 +34,7 @@ import { Route as ServicesSeoRouteImport } from './routes/services.seo'
 import { Route as ServicesWebsiteDesignRouteImport } from './routes/services.website-design'
 import { Route as ApiPublicAiReceptionistInquiryRouteImport } from './routes/api/public/ai-receptionist-inquiry'
 import { Route as ApiPublicFreePreviewRequestRouteImport } from './routes/api/public/free-preview-request'
+import { Route as ApiPublicProjectInquiryRouteImport } from './routes/api/public/project-inquiry'
 import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
 import { Route as ApiPublicPaymentsWebhookRouteImport } from './routes/api/public/payments/webhook'
 import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
@@ -167,6 +168,11 @@ const ApiPublicFreePreviewRequestRoute =
     path: '/api/public/free-preview-request',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiPublicProjectInquiryRoute = ApiPublicProjectInquiryRouteImport.update({
+  id: '/api/public/project-inquiry',
+  path: '/api/public/project-inquiry',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LovableEmailSuppressionRoute = LovableEmailSuppressionRouteImport.update({
   id: '/lovable/email/suppression',
   path: '/lovable/email/suppression',
@@ -223,6 +229,7 @@ export interface FileRoutesByFullPath {
   '/services/': typeof ServicesIndexRoute
   '/api/public/ai-receptionist-inquiry': typeof ApiPublicAiReceptionistInquiryRoute
   '/api/public/free-preview-request': typeof ApiPublicFreePreviewRequestRoute
+  '/api/public/project-inquiry': typeof ApiPublicProjectInquiryRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
@@ -253,6 +260,7 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesIndexRoute
   '/api/public/ai-receptionist-inquiry': typeof ApiPublicAiReceptionistInquiryRoute
   '/api/public/free-preview-request': typeof ApiPublicFreePreviewRequestRoute
+  '/api/public/project-inquiry': typeof ApiPublicProjectInquiryRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
@@ -286,6 +294,7 @@ export interface FileRoutesById {
   '/services/': typeof ServicesIndexRoute
   '/api/public/ai-receptionist-inquiry': typeof ApiPublicAiReceptionistInquiryRoute
   '/api/public/free-preview-request': typeof ApiPublicFreePreviewRequestRoute
+  '/api/public/project-inquiry': typeof ApiPublicProjectInquiryRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
@@ -320,6 +329,7 @@ export interface FileRouteTypes {
     | '/services/'
     | '/api/public/ai-receptionist-inquiry'
     | '/api/public/free-preview-request'
+    | '/api/public/project-inquiry'
     | '/lovable/email/suppression'
     | '/api/public/payments/webhook'
     | '/lovable/email/queue/process'
@@ -350,6 +360,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/api/public/ai-receptionist-inquiry'
     | '/api/public/free-preview-request'
+    | '/api/public/project-inquiry'
     | '/lovable/email/suppression'
     | '/api/public/payments/webhook'
     | '/lovable/email/queue/process'
@@ -382,6 +393,7 @@ export interface FileRouteTypes {
     | '/services/'
     | '/api/public/ai-receptionist-inquiry'
     | '/api/public/free-preview-request'
+    | '/api/public/project-inquiry'
     | '/lovable/email/suppression'
     | '/api/public/payments/webhook'
     | '/lovable/email/queue/process'
@@ -408,6 +420,7 @@ export interface RootRouteChildren {
   EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
   ApiPublicAiReceptionistInquiryRoute: typeof ApiPublicAiReceptionistInquiryRoute
   ApiPublicFreePreviewRequestRoute: typeof ApiPublicFreePreviewRequestRoute
+  ApiPublicProjectInquiryRoute: typeof ApiPublicProjectInquiryRoute
   LovableEmailSuppressionRoute: typeof LovableEmailSuppressionRoute
   ApiPublicPaymentsWebhookRoute: typeof ApiPublicPaymentsWebhookRoute
   LovableEmailQueueProcessRoute: typeof LovableEmailQueueProcessRoute
@@ -592,6 +605,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicFreePreviewRequestRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/project-inquiry': {
+      id: '/api/public/project-inquiry'
+      path: '/api/public/project-inquiry'
+      fullPath: '/api/public/project-inquiry'
+      preLoaderRoute: typeof ApiPublicProjectInquiryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lovable/email/suppression': {
       id: '/lovable/email/suppression'
       path: '/lovable/email/suppression'
@@ -681,6 +701,7 @@ const rootRouteChildren: RootRouteChildren = {
   EmailUnsubscribeRoute: EmailUnsubscribeRoute,
   ApiPublicAiReceptionistInquiryRoute: ApiPublicAiReceptionistInquiryRoute,
   ApiPublicFreePreviewRequestRoute: ApiPublicFreePreviewRequestRoute,
+  ApiPublicProjectInquiryRoute: ApiPublicProjectInquiryRoute,
   LovableEmailSuppressionRoute: LovableEmailSuppressionRoute,
   ApiPublicPaymentsWebhookRoute: ApiPublicPaymentsWebhookRoute,
   LovableEmailQueueProcessRoute: LovableEmailQueueProcessRoute,

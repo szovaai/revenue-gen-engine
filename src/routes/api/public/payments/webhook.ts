@@ -19,6 +19,9 @@ const PRODUCT_LABELS: Record<string, string> = {
   growth_plan: "Growth Plan ($297/mo)",
   dominate_plan: "Dominate Plan ($997/mo)",
   ai_receptionist_monthly: "AI Receptionist ($299 CAD setup + $199 CAD/mo)",
+  premium_website_onetime: "Premium Trade Website ($997 CAD one-time)",
+  website_care_monthly: "Website Care ($49 CAD/mo)",
+  website_crm_monthly: "Website + CRM ($99 CAD/mo)",
 };
 
 async function notifyOwnerAndCustomer(args: {
