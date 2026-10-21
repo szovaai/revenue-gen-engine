@@ -10,9 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as BookACallRouteImport } from './routes/book-a-call'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as PricingRouteImport } from './routes/pricing'
@@ -24,6 +26,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ThankYouRouteImport } from './routes/thank-you'
 import { Route as UnsubscribeRouteImport } from './routes/unsubscribe'
+import { Route as WebsiteDesignsRouteImport } from './routes/website-designs'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
@@ -46,6 +49,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
@@ -59,6 +67,11 @@ const BlogRoute = BlogRouteImport.update({
 const BookACallRoute = BookACallRouteImport.update({
   id: '/book-a-call',
   path: '/book-a-call',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardRoute = DashboardRouteImport.update({
@@ -114,6 +127,11 @@ const ThankYouRoute = ThankYouRouteImport.update({
 const UnsubscribeRoute = UnsubscribeRouteImport.update({
   id: '/unsubscribe',
   path: '/unsubscribe',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsiteDesignsRoute = WebsiteDesignsRouteImport.update({
+  id: '/website-designs',
+  path: '/website-designs',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -205,9 +223,11 @@ const LovableEmailTransactionalSendRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/blog': typeof BlogRouteWithChildren
   '/book-a-call': typeof BookACallRoute
+  '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
   '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
@@ -219,6 +239,7 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
   '/unsubscribe': typeof UnsubscribeRoute
+  '/website-designs': typeof WebsiteDesignsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/services/ai-receptionist': typeof ServicesAiReceptionistRoute
@@ -238,8 +259,10 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/book-a-call': typeof BookACallRoute
+  '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
   '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
@@ -250,6 +273,7 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
   '/unsubscribe': typeof UnsubscribeRoute
+  '/website-designs': typeof WebsiteDesignsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/services/ai-receptionist': typeof ServicesAiReceptionistRoute
@@ -270,9 +294,11 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/blog': typeof BlogRouteWithChildren
   '/book-a-call': typeof BookACallRoute
+  '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
   '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
@@ -284,6 +310,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
   '/unsubscribe': typeof UnsubscribeRoute
+  '/website-designs': typeof WebsiteDesignsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/services/ai-receptionist': typeof ServicesAiReceptionistRoute
@@ -305,9 +332,11 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/auth'
     | '/blog'
     | '/book-a-call'
+    | '/contact'
     | '/dashboard'
     | '/portfolio'
     | '/pricing'
@@ -319,6 +348,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/thank-you'
     | '/unsubscribe'
+    | '/website-designs'
     | '/blog/$slug'
     | '/email/unsubscribe'
     | '/services/ai-receptionist'
@@ -338,8 +368,10 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/auth'
     | '/book-a-call'
+    | '/contact'
     | '/dashboard'
     | '/portfolio'
     | '/pricing'
@@ -350,6 +382,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/thank-you'
     | '/unsubscribe'
+    | '/website-designs'
     | '/blog/$slug'
     | '/email/unsubscribe'
     | '/services/ai-receptionist'
@@ -369,9 +402,11 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/auth'
     | '/blog'
     | '/book-a-call'
+    | '/contact'
     | '/dashboard'
     | '/portfolio'
     | '/pricing'
@@ -383,6 +418,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/thank-you'
     | '/unsubscribe'
+    | '/website-designs'
     | '/blog/$slug'
     | '/email/unsubscribe'
     | '/services/ai-receptionist'
@@ -403,9 +439,11 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AuthRoute: typeof AuthRoute
   BlogRoute: typeof BlogRouteWithChildren
   BookACallRoute: typeof BookACallRoute
+  ContactRoute: typeof ContactRoute
   DashboardRoute: typeof DashboardRoute
   PortfolioRoute: typeof PortfolioRoute
   PricingRoute: typeof PricingRoute
@@ -417,6 +455,7 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   ThankYouRoute: typeof ThankYouRoute
   UnsubscribeRoute: typeof UnsubscribeRoute
+  WebsiteDesignsRoute: typeof WebsiteDesignsRoute
   EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
   ApiPublicAiReceptionistInquiryRoute: typeof ApiPublicAiReceptionistInquiryRoute
   ApiPublicFreePreviewRequestRoute: typeof ApiPublicFreePreviewRequestRoute
@@ -435,6 +474,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/auth': {
@@ -456,6 +502,13 @@ declare module '@tanstack/react-router' {
       path: '/book-a-call'
       fullPath: '/book-a-call'
       preLoaderRoute: typeof BookACallRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard': {
@@ -533,6 +586,13 @@ declare module '@tanstack/react-router' {
       path: '/unsubscribe'
       fullPath: '/unsubscribe'
       preLoaderRoute: typeof UnsubscribeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/website-designs': {
+      id: '/website-designs'
+      path: '/website-designs'
+      fullPath: '/website-designs'
+      preLoaderRoute: typeof WebsiteDesignsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -684,9 +744,11 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AuthRoute: AuthRoute,
   BlogRoute: BlogRouteWithChildren,
   BookACallRoute: BookACallRoute,
+  ContactRoute: ContactRoute,
   DashboardRoute: DashboardRoute,
   PortfolioRoute: PortfolioRoute,
   PricingRoute: PricingRoute,
@@ -698,6 +760,7 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   ThankYouRoute: ThankYouRoute,
   UnsubscribeRoute: UnsubscribeRoute,
+  WebsiteDesignsRoute: WebsiteDesignsRoute,
   EmailUnsubscribeRoute: EmailUnsubscribeRoute,
   ApiPublicAiReceptionistInquiryRoute: ApiPublicAiReceptionistInquiryRoute,
   ApiPublicFreePreviewRequestRoute: ApiPublicFreePreviewRequestRoute,
