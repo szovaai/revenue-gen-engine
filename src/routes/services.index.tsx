@@ -7,7 +7,7 @@ export const Route = createFileRoute("/services/")({
       {
         name: "description",
         content:
-          "Websites, SEO, and Paid Ads built for contractors. From $997 sites to $997/mo full domination.",
+          "Websites, SEO, and Paid Ads built for contractors. Premium $997 CAD websites, plus optional CRM, SEO and ads.",
       },
       { property: "og:title", content: "Services — ClickAdMedia" },
       { property: "og:description", content: "Websites, SEO, and Paid Ads for contractors." },
@@ -27,8 +27,7 @@ function ServicesPage() {
             <span className="text-gradient">Built for Your Trade</span>
           </h1>
           <p className="text-[rgba(255,255,255,0.55)] text-lg max-w-[600px] mx-auto">
-            Most agencies build pretty sites. We build systems that make your phone ring. From $997
-            sites to $997/month full domination.
+            Most agencies build pretty sites. We build systems that make your phone ring. Premium $997 CAD websites, with optional CRM, SEO and ads.
           </p>
         </div>
       </section>
@@ -48,7 +47,7 @@ function ServicesPage() {
             {
               icon: "🔍",
               title: "SEO",
-              price: "$297/mo",
+              price: "Quoted",
               desc:
                 'Rank when customers search "plumber near me." Local optimization that actually works.',
               cta: "Learn More →",
@@ -113,15 +112,13 @@ function ServicesPage() {
               style={{ background: "var(--cam-gradient)" }}
             />
             <h3 className="text-2xl font-bold mb-3">
-              The Dominate Package — All Three, One Price
+              Website + SEO + Paid Ads
             </h3>
             <p className="text-[rgba(255,255,255,0.6)] mb-2">
-              Website + SEO + Paid Ads for{" "}
-              <span className="text-gradient font-bold text-xl">$997/month</span>
+              Want all three? We&apos;ll quote a combined package based on your market and goals.
             </p>
             <p className="text-sm text-[rgba(255,255,255,0.5)] mb-6">
-              Dedicated account manager. Monthly strategy calls. We handle everything. You handle
-              the jobs.
+              Start with your $997 CAD website — add SEO and ads when you're ready.
             </p>
             <Link to="/pricing" className="btn-primary">
               See Full Pricing →
