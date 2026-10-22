@@ -94,9 +94,9 @@ function SEOPage() {
           <h2 className="text-2xl font-bold mb-6">Pricing</h2>
           <div className="grid sm:grid-cols-2 gap-5">
             <div className="glass-card p-6">
-              <h3 className="text-lg font-bold mb-1">Growth</h3>
+              <h3 className="text-lg font-bold mb-1">Essentials</h3>
               <div className="text-3xl font-extrabold text-gradient mb-3">
-                $297<span className="text-base font-normal text-[rgba(255,255,255,0.4)]">/mo</span>
+                Quoted<span className="text-base font-normal text-[rgba(255,255,255,0.4)]"> by scope</span>
               </div>
               <ul className="space-y-2 text-sm text-[rgba(255,255,255,0.7)]">
                 <li>Everything above</li>
@@ -106,12 +106,12 @@ function SEOPage() {
               </ul>
             </div>
             <div className="glass-card p-6" style={{ border: "1px solid rgba(0,123,255,0.3)" }}>
-              <h3 className="text-lg font-bold mb-1">Dominate</h3>
+              <h3 className="text-lg font-bold mb-1">Advanced</h3>
               <div className="text-3xl font-extrabold text-gradient mb-3">
-                $997<span className="text-base font-normal text-[rgba(255,255,255,0.4)]">/mo</span>
+                Quoted<span className="text-base font-normal text-[rgba(255,255,255,0.4)]"> by scope</span>
               </div>
               <ul className="space-y-2 text-sm text-[rgba(255,255,255,0.7)]">
-                <li>Growth + Paid Ads</li>
+                <li>Essentials + Paid Ads</li>
                 <li>Dedicated manager</li>
                 <li>Weekly strategy calls</li>
                 <li>Priority everything</li>

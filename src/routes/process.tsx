@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     q: "What happens after my site goes live?",
-    a: "You own it. You can leave it as-is or sign up for our $97/month Care Plan and we handle hosting, updates, and edits for you.",
+    a: "You own it. You can leave it as-is or sign up for our $49 CAD/month Website Care plan for hosting coordination, maintenance and minor edits.",
   },
   {
     q: "Do you write the content too?",
@@ -65,7 +65,7 @@ const faqs = [
   },
   {
     q: "Will my site show up on Google?",
-    a: "Every site we build includes basic SEO setup — meta tags, schema markup, fast loading, and mobile optimization. For ranking higher, our $297/month Growth plan includes full local SEO.",
+    a: "Every site we build includes basic SEO setup — meta tags, schema markup, fast loading, and mobile optimization. Ongoing local SEO is available as a separately quoted service.",
   },
   {
     q: "Can I update the site myself?",
