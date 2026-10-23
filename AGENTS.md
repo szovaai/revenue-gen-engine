@@ -1,0 +1,2 @@
+# Project conventions
+- Keep custom-quoted project packages separate from fixed-price ongoing subscriptions in the shared package catalog; public project offers must lead to inquiries, while ongoing subscriptions retain their existing checkout flow.
