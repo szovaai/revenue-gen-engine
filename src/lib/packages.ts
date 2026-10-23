@@ -1,11 +1,11 @@
-// Customer-facing packages and prices (CAD). Price IDs match Stripe lookup keys.
+// Website projects are quoted individually. Monthly plan IDs match Stripe lookup keys.
 export const PACKAGES = {
   website: {
     name: "Premium Trade Website",
-    priceId: "premium_website_onetime",
-    amountCad: 997,
-    priceLabel: "$997 CAD",
-    cadence: "one-time",
+    priceId: null,
+    amountCad: null,
+    priceLabel: "Custom quote",
+    cadence: "quoted",
   },
   care: {
     name: "Website Care",
@@ -24,14 +24,14 @@ export const PACKAGES = {
   whiteGlove: {
     name: "White-Glove Digital Setup",
     priceId: null,
-    amountCad: 1497,
-    priceLabel: "from $1,497 CAD",
+    amountCad: null,
+    priceLabel: "Custom quote",
     cadence: "quoted",
   },
 } as const;
 
 export const INQUIRY_PACKAGE_OPTIONS = [
-  "Premium Trade Website — $997",
+  "Premium Trade Website",
   "Website + CRM",
   "White-Glove Digital Setup",
   "Website Care",
@@ -39,7 +39,7 @@ export const INQUIRY_PACKAGE_OPTIONS = [
 ] as const;
 
 export const PRICE_LABELS: Record<string, string> = {
-  premium_website_onetime: "Premium Trade Website ($997 CAD one-time)",
+  premium_website_onetime: "Premium Trade Website",
   website_care_monthly: "Website Care ($49 CAD/mo)",
   website_crm_monthly: "Website + CRM ($99 CAD/mo)",
   // legacy plans

@@ -46,7 +46,7 @@ The business that spends $250 on a disaster and then $1,500 to fix it has spent 
 
 ### How to Protect Yourself
 
-**Set a realistic budget.** Know what a professional build actually costs (in Canada, $997–$2,500 for a quality small business site) and budget accordingly. This calibrates your expectations from the start.
+**Set a realistic budget.** Get detailed quotes for your pages, content, and functionality. Compare the agreed scope, not just the total, and plan separately for ongoing costs.
 
 **Require a written contract.** Scope, timeline, payment terms, revision limits, ownership of the final site — everything in writing.
 
@@ -62,7 +62,7 @@ The business that spends $250 on a disaster and then $1,500 to fix it has spent 
 
 Avoiding cheap disasters doesn't mean you have to spend a fortune. It means spending wisely at a price point that supports professional quality.
 
-At ClickAdMedia, our builds start at $997 — a price that allows us to do the work properly without the compromises that come with rock-bottom pricing. It's not cheap. It's fair. And there's a significant difference.
+At ClickAdMedia, every website is custom-quoted around your business, pages, content, and features. Start with a free personalized preview, then review a clear scope and project quote before you commit. You don't pay for a website you don't approve.
 
 **[Build it properly the first time.](https://clickadmedia.co)**
 

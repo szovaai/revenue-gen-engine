@@ -71,7 +71,7 @@ function ContactPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.02em] mb-4">
             Let&apos;s Build Your Site.
             <br />
-            <span className="text-gradient">Free Preview. $997 Flat.</span>
+            <span className="text-gradient">Free Preview. Your Scope. Your Quote.</span>
           </h1>
           <p className="text-[rgba(255,255,255,0.55)] text-lg max-w-[550px] mx-auto">
             Book a call, text us, or fill out the form. We&apos;ll get your free preview started
@@ -259,7 +259,7 @@ function ContactPage() {
             {[
               "✓ No contracts",
               "✓ 48-hour delivery",
-              "✓ $997 flat fee",
+              "✓ Custom quote agreed upfront",
               "✓ You own the site",
               "✓ Free preview",
             ].map((item) => (

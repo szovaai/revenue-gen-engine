@@ -21,7 +21,7 @@ Limited experience but sometimes strong raw talent. Higher risk of delays, scope
 **Experienced Freelancer:** $1,000–$3,000  
 A competent independent designer with a solid portfolio. Good option if you find someone with relevant experience and clear communication. Risk: no team behind them if something goes wrong.
 
-**Boutique Agency (like ClickAdMedia):** $997–$5,000  
+**Boutique Agencies:** Custom-quoted by scope. A professional team can handle strategy, design, and launch with clear deliverables and accountability. Compare detailed quotes for your specific requirements rather than assuming a fixed starting price.
 A dedicated team with a defined process, portfolio, and accountability. Best value-to-quality ratio for most small businesses. The price reflects not just design skills but strategy, process, and post-launch support.
 
 **Mid-Sized Digital Agency:** $3,000–$15,000  
@@ -64,7 +64,7 @@ When something goes wrong with a cheap website — and it usually does eventuall
 
 ### ClickAdMedia's Pricing
 
-Our done-for-you builds start at $997. That's not a budget price — it's a transparent, fair price for professional work that includes everything you need to launch with confidence: design, development, mobile responsiveness, basic SEO setup, and post-launch support.
+At ClickAdMedia, every website is custom-quoted around your business, pages, content, and features. Start with a free personalized preview, then review a clear scope and project quote before you commit. You don't pay for a website you don't approve.
 
 We don't hide fees. We don't add surprise charges. What we quote is what you pay.
 

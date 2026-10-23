@@ -7,7 +7,7 @@ export const Route = createFileRoute("/services/")({
       {
         name: "description",
         content:
-          "Websites, SEO, and Paid Ads built for contractors. Premium $997 CAD websites, plus optional CRM, SEO and ads.",
+          "Websites, SEO, and Paid Ads built for contractors. Custom-quoted premium websites, plus optional CRM, SEO and ads.",
       },
       { property: "og:title", content: "Services — ClickAdMedia" },
       { property: "og:description", content: "Websites, SEO, and Paid Ads for contractors." },
@@ -27,7 +27,7 @@ function ServicesPage() {
             <span className="text-gradient">Built for Your Trade</span>
           </h1>
           <p className="text-[rgba(255,255,255,0.55)] text-lg max-w-[600px] mx-auto">
-            Most agencies build pretty sites. We build systems that make your phone ring. Premium $997 CAD websites, with optional CRM, SEO and ads.
+            Most agencies build pretty sites. We build systems that make your phone ring. Custom-quoted premium websites, with optional CRM, SEO and ads.
           </p>
         </div>
       </section>
@@ -38,9 +38,9 @@ function ServicesPage() {
             {
               icon: "🖥️",
               title: "Website Design",
-              price: "$997 flat",
+              price: "Custom quote",
               desc:
-                "$997 flat. Free personalized preview first. Mobile-first, built for contractors — not generic templates.",
+                "Quoted for your scope. Free personalized preview first. Mobile-first, built for contractors — not generic templates.",
               cta: "Learn More →",
               to: "/services/website-design" as const,
             },
@@ -118,10 +118,10 @@ function ServicesPage() {
               Want all three? We&apos;ll quote a combined package based on your market and goals.
             </p>
             <p className="text-sm text-[rgba(255,255,255,0.5)] mb-6">
-              Start with your $997 CAD website — add SEO and ads when you're ready.
+              Start with a website scoped to your business — add SEO and ads when you're ready.
             </p>
             <Link to="/pricing" className="btn-primary">
-              See Full Pricing →
+              Explore Packages →
             </Link>
           </div>
         </div>

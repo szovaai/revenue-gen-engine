@@ -68,10 +68,10 @@ This isn't a platform, but it consistently outperforms every platform listed abo
 
 ### The Honest Bottom Line
 
-The "most affordable" platform depends on your definition of affordable. If affordable means lowest price regardless of quality, Fiverr has the lowest floor. If affordable means best value for money — quality relative to cost — a boutique agency that charges $997–$1,500 and delivers a professional, functional, converting website is often genuinely more affordable than a $400 Fiverr project that requires a rebuild.
+The "most affordable" platform depends on whether you mean the lowest upfront price or the best value. Compare project-specific quotes, quality, scope, ownership, and support. A professional build can be better value than a cheaper project that needs rebuilding.
 
 ### ClickAdMedia: Professional Quality, Fair Pricing
 
-Our builds start at $997. That's our fair price for done-for-you work that actually performs. We're transparent about scope, clear on pricing, and accountable for results.
+At ClickAdMedia, every website is custom-quoted around your business, pages, content, and features. Start with a free personalized preview, then review a clear scope and project quote before you commit. You don't pay for a website you don't approve.
 
 **[Get a quote and see how we compare.](https://clickadmedia.co)**

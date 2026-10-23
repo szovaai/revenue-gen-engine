@@ -69,6 +69,6 @@ Many reputable agencies offer phased payment structures — typically 50% upfron
 
 ## ClickAdMedia's Fair Pricing Approach
 
-Our builds start at $997. That's not a "budget" rate — it's a fair rate for professional, done-for-you work that actually performs. We're transparent about what's included and what costs extra, and we don't surprise you with bills mid-project.
+At ClickAdMedia, every website is custom-quoted around your business, pages, content, and features. Start with a free personalized preview, then review a clear scope and project quote before you commit. You don't pay for a website you don't approve.
 
 **[Talk to us about your budget and what's possible.](/book-a-call)**

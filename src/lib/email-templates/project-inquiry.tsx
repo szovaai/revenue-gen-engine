@@ -46,7 +46,7 @@ export const template = {
   to: 'support@jasonrszova.com',
   previewData: {
     name: 'Jane Smith', business: "Smith's Plumbing", email: 'jane@example.com', phone: '(555) 123-4567',
-    trade: 'Plumbing', website: '', pkg: 'Premium Trade Website — $997', budget: '$1,000–$2,500', details: 'Need a new site.',
+    trade: 'Plumbing', website: '', pkg: 'Premium Trade Website', budget: '$1,000–$2,500', details: 'Need a new site.',
   },
 } satisfies TemplateEntry
 

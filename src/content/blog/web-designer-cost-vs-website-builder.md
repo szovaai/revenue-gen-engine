@@ -20,7 +20,7 @@ But here's what that number doesn't include:
 
 ## The True Cost of Hiring a Professional
 
-A professional small business website from a boutique agency like ClickAdMedia starts around $997–$2,500 for a complete build.
+A professional small business website from ClickAdMedia is custom-quoted based on the agreed pages, content, and functionality. Ask for a detailed scope that separates the build from ongoing costs.
 
 That includes:
 
@@ -68,7 +68,7 @@ When you factor in time, quality, and revenue impact, a professionally built sit
 
 ## ClickAdMedia's Value Equation
 
-Our builds start at $997. That's one-time. What you get back — in time saved, credibility gained, and leads converted — typically pays that off within the first few months.
+At ClickAdMedia, every website is custom-quoted around your business, pages, content, and features. Start with a free personalized preview, then review a clear scope and project quote before you commit. You don't pay for a website you don't approve.
 
 We're not the cheapest option on the market. We're the option that's worth the price.
 

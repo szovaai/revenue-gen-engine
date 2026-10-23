@@ -80,7 +80,7 @@ export function ProjectInquiryForm({ defaultPackage }: { defaultPackage?: string
       </label>
       {error && <p className="text-sm text-red-400" role="alert">{error}</p>}
       <button type="submit" disabled={status === "sending"} className="btn-primary w-full text-center py-4 disabled:opacity-60">
-        {status === "sending" ? "Sending…" : "Send Project Inquiry →"}
+        {status === "sending" ? "Sending…" : "Get my free website preview →"}
       </button>
     </form>
   );

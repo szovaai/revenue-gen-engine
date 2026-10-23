@@ -62,6 +62,6 @@ Not all designers are created equal. Watch out for:
 
 At ClickAdMedia, our done-for-you builds are exactly that — done for you. We handle the strategy, the design, the build, and the setup, so you can focus on what you actually do for a living.
 
-We work with Canadian small businesses who want a professional online presence without the confusion, the runaround, or the inflated agency pricing. Our builds start at $997 and include everything you need to launch confidently.
+We work with Canadian small businesses who want a professional online presence without the confusion or runaround. Every project is custom-quoted for its pages, content, and features. See a free personalized preview first, and agree the scope and price before you commit.
 
 **Want to see what we can do for your business?** [Book a free discovery call.](/book-a-call)

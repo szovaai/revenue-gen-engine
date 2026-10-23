@@ -50,7 +50,7 @@ Designers sometimes have more capacity during slower periods (typically Januaryâ
 
 ### The ClickAdMedia Approach to Pricing
 
-Our builds start at $997. That's our fair price for the work we do. We're happy to have a conversation about scope â€” if your budget requires a leaner initial build, we'll tell you honestly what's achievable and map out a Phase 2 roadmap for the rest.
+At ClickAdMedia, every website is custom-quoted around your business, pages, content, and features. Start with a free personalized preview, then review a clear scope and project quote before you commit. You don't pay for a website you don't approve.
 
 We don't inflate prices to leave room for negotiation. What we quote is what we think it's worth.
 

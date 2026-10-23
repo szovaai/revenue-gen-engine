@@ -166,7 +166,7 @@ function PaidAdsPage() {
               },
               {
                 q: "Do I need a website first?",
-                a: "Yes — and we'll build it. Pair it with our $997 CAD Premium Trade Website.",
+                a: "Yes — and we'll build it. Pair it with our custom-quoted Premium Trade Website, with a free preview first.",
               },
             ].map((f) => (
               <div key={f.q} className="glass-card p-5">
