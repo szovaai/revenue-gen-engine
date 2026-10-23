@@ -26,7 +26,7 @@ export function CamLayout() {
   ] as const;
 
   const serviceItems = [
-    { label: "Premium Trade Website", desc: "$997 CAD, free preview first", to: "/services/website-design" },
+    { label: "Premium Trade Website", desc: "Custom quote, free preview first", to: "/services/website-design" },
     { label: "SEO", desc: "Rank in local search", to: "/services/seo" },
     { label: "Paid Ads", desc: "Google + Facebook", to: "/services/paid-ads" },
     { label: "AI Receptionist", desc: "Never miss a call", to: "/services/ai-receptionist" },
@@ -104,7 +104,7 @@ export function CamLayout() {
               {user ? "Account" : "Sign in"}
             </Link>
             <Link to="/contact" className="cam-btn-primary text-xs !py-3 !px-5">
-              Get Started &#8594;
+              Free Website Preview &#8594;
             </Link>
           </div>
 
@@ -162,7 +162,7 @@ export function CamLayout() {
                 className="cam-btn-primary mt-4"
                 onClick={() => setMenuOpen(false)}
               >
-                Get Started &#8594;
+                Free Website Preview &#8594;
               </Link>
             </div>
           </div>

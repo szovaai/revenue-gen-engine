@@ -6,7 +6,7 @@ export const Route = createFileRoute("/website-designs")({
   head: () => ({
     meta: [
       { title: "Website Designs for Trades — ClickAdMedia" },
-      { name: "description", content: "Plumber, electrician, HVAC, roofing, landscaping and contractor website design concepts. Customized for your business from $997 CAD." },
+      { name: "description", content: "Plumber, electrician, HVAC, roofing, landscaping and contractor website design concepts. Customized for your business with a clear, project-specific quote and free preview first." },
       { property: "og:title", content: "Website Designs for Trades — ClickAdMedia" },
       { property: "og:description", content: "Explore trade-specific website designs for plumbers, electricians, HVAC, roofers and contractors." },
       { property: "og:type", content: "website" },
@@ -69,7 +69,7 @@ function DesignsPage() {
         <p className="max-w-[800px] mx-auto text-center text-xs text-[rgba(255,255,255,0.45)]">
           These are design concepts for fictional businesses, shown to illustrate style direction. Your site is customized with your own branding, services, photos and content.
         </p>
-        <div className="text-center mt-8"><Link to="/contact" className="btn-primary">Get Your Website — $997 →</Link></div>
+        <div className="text-center mt-8"><Link to="/contact" className="btn-primary">Get my free website preview →</Link></div>
       </section>
     </>
   );

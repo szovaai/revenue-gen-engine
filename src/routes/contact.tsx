@@ -5,7 +5,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Start Your Project — ClickAdMedia" },
-      { name: "description", content: "Tell us about your trade business. Get a free website preview before you pay for a Premium Trade Website ($997 CAD)." },
+      { name: "description", content: "Tell us about your trade business. Get a free website preview and a personalized quote before you commit." },
       { property: "og:title", content: "Start Your Project — ClickAdMedia" },
       { property: "og:description", content: "Project inquiry for plumbers, electricians, HVAC, roofers and contractors." },
       { property: "og:type", content: "website" },
@@ -21,9 +21,9 @@ function ContactPage() {
       <section className="pt-24 pb-12 px-6">
         <div className="max-w-[900px] mx-auto text-center">
           <span className="section-label">Contact</span>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-[-0.02em] mb-4">Tell Us About Your Business.</h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-[-0.02em] mb-4">Get Your Free Website Preview.</h1>
           <p className="text-[rgba(255,255,255,0.6)] text-lg max-w-[620px] mx-auto">
-            Share a few details and we&apos;ll reply within one business day. Every website starts with a
+            Share your trade, services, and goals. We&apos;ll confirm a clear quote tailored to your project. Start with a
             free, personalized preview — you don&apos;t pay for a website you don&apos;t approve.
           </p>
         </div>

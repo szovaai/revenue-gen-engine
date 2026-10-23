@@ -21,7 +21,7 @@ A $200 Fiverr site can technically go live and display information. It is not a 
 
 **Simple Small Business Site (5–8 pages)**  
 What's included: Home, About, Services, Contact, basic interior pages. Mobile-responsive, SEO-ready, contact form, analytics setup.  
-**Typical cost: $997–$2,500**  
+**Cost:** Quoted based on the agreed pages, content, and functionality.
 Best for: Service businesses, trades, consultants, local retailers, professional services.
 
 **E-commerce Website (up to 50 products)**  
@@ -59,7 +59,7 @@ A professional designer's price includes more than the hours spent building. You
 - Process and project management that keeps things on time
 - Post-launch support and accountability
 
-This is why a $997 professional build is better value than a $200 non-professional build — not just because the output looks better, but because everything that surrounds the build protects your investment.
+This is why a properly scoped professional build can be better value than a cut-rate build: the design, process, and support protect your investment. Compare the complete scope, not just the upfront price.
 
 ### The Ongoing Costs to Factor In
 
@@ -74,6 +74,6 @@ A realistic first-year total for a small business website: **$1,500–$4,000** i
 
 ### ClickAdMedia's Starting Point
 
-Our done-for-you builds start at $997 — a complete, professional small business website with everything needed to launch with confidence. No surprise charges, no stripped-down scope that requires upgrades to function.
+At ClickAdMedia, every website is custom-quoted around your business, pages, content, and features. Start with a free personalized preview, then review a clear scope and project quote before you commit. You don't pay for a website you don't approve.
 
 **[Get a clear quote for your specific project.](https://clickadmedia.co)**

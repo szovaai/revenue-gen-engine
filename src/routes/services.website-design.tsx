@@ -8,7 +8,7 @@ export const Route = createFileRoute("/services/website-design")({
       {
         name: "description",
         content:
-          "$997 flat. Free personalized preview first. A website built for your trade.",
+          "Custom quote for your scope. Free personalized preview first. A website built for your trade.",
       },
     ],
   }),
@@ -51,7 +51,7 @@ function WebsiteDesignPage() {
             <span className="text-gradient">Not Just Looks Pretty</span>
           </h1>
           <p className="text-[rgba(255,255,255,0.55)] text-lg max-w-[550px] mb-6">
-            $997 flat. No hidden fees. We build a free personalized preview first — you don&apos;t pay for a website you don&apos;t approve.
+            Your pages, features, and goals shape your quote. We agree the scope and price before you commit. We build a free personalized preview first — you don&apos;t pay for a website you don&apos;t approve.
           </p>
           <Link to="/book-a-call" className="btn-primary">
             See Your Free Preview
@@ -114,9 +114,10 @@ function WebsiteDesignPage() {
           <div className="grid gap-5 mb-6">
             <div className="glass-card p-6">
               <h3 className="text-lg font-bold mb-1">Website Build</h3>
-              <div className="text-3xl font-extrabold text-gradient mb-3">$997</div>
+              <div className="text-3xl font-extrabold text-gradient mb-3">Custom quote</div>
+              <p className="text-sm mb-4">Start with a free preview. Get a clear quote for the website you actually need.</p>
               <ul className="space-y-2 text-sm text-[rgba(255,255,255,0.7)]">
-                <li>5 pages</li>
+                <li>Pages agreed to your scope</li>
                 <li>Mobile-ready</li>
                 <li>Contact form</li>
                 <li>Click-to-call</li>

@@ -10,7 +10,7 @@ Web design pricing in Canada generally falls into four tiers:
 
 **Freelancers (Fiverr, Upwork, local): $500–$3,500.** Results vary wildly. Some freelancers are exceptional; others disappear mid-project or deliver something that looks like 2009 called and wants its website back.
 
-**Boutique Agencies (like ClickAdMedia): $997–$5,000.** You get a done-for-you build, professional strategy, brand alignment, and someone accountable if something goes wrong. This is where most small businesses find the best value-to-quality ratio.
+**Boutique Agencies:** Custom-quoted by scope. A professional team can handle strategy, design, and launch with clear deliverables and accountability. Compare detailed quotes for your specific requirements rather than assuming a fixed starting price.
 
 **Large Digital Agencies: $5,000–$50,000+.** Enterprise builds with large teams, long timelines, and pricing to match. Overkill for most small businesses.
 
@@ -33,9 +33,9 @@ A legitimate web designer charges what they do because they're protecting your b
 
 ## What a Fair Price Looks Like
 
-For most Canadian small businesses, a professionally designed, conversion-focused website with 5–8 pages, mobile optimization, basic SEO, and a contact form should fall somewhere in the **$997–$2,500 range** when working with a boutique agency.
+For a professionally designed, conversion-focused small business website, the fair price depends on page count, content, integrations, and support. Ask for a detailed project quote rather than relying on a universal price range.
 
-At ClickAdMedia, our done-for-you builds start at $997 — that's not a "budget" price, it's a fair price for professional work that actually performs. We don't cut corners, and we don't disappear after launch.
+At ClickAdMedia, every website is custom-quoted around your business, pages, content, and features. Start with a free personalized preview, then review a clear scope and project quote before you commit. You don't pay for a website you don't approve.
 
 ## Questions to Ask Before Committing
 

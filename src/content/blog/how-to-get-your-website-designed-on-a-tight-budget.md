@@ -61,7 +61,7 @@ These aren't premium features. They're the foundation of a functioning website.
 
 ### What Budget Web Design Actually Looks Like
 
-At ClickAdMedia, our builds start at $997. That's not a cut-rate price — it's a fair price for a focused, professional, done-for-you build designed specifically for small businesses.
+At ClickAdMedia, every website is custom-quoted around your business, pages, content, and features. Start with a free personalized preview, then review a clear scope and project quote before you commit. You don't pay for a website you don't approve.
 
 We scope the project to what you actually need at launch, keep the process efficient, and deliver something you can be proud of — without charging you for features you don't need yet.
 

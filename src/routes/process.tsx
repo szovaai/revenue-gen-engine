@@ -34,14 +34,14 @@ const steps = [
     num: "03",
     title: "Your Review",
     desc:
-      "You get a live preview link. Review it, request changes, or approve it on the spot. One round of revisions is included. Most clients approve on the first pass.",
+      "You get a free preview link and a clear quote for your project. Review the direction and agreed scope before you commit. One round of revisions is included. Most clients approve on the first pass.",
     detail: "Takes 1 day",
   },
   {
     num: "04",
     title: "Go Live",
     desc:
-      "We connect your domain, set up hosting, and launch your site. You get a 5-page website that looks professional — for a flat $997. Done.",
+      "We connect your domain, set up hosting, and launch your site. Your pages, features, and project price are agreed in a personalized quote before you commit.",
     detail: "Same day",
   },
 ];

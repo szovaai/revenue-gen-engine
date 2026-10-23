@@ -7,9 +7,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "ClickAdMedia — Premium Websites for Tradesmen & Contractors" },
-      { name: "description", content: "Premium, customized websites for plumbers, electricians, HVAC, roofers and contractors — $997 CAD. Optional CRM, booking and lead management. Free preview first." },
+      { name: "description", content: "Premium, customized websites for plumbers, electricians, HVAC, roofers and contractors — custom-quoted to your scope. Optional CRM, booking and lead management. Free preview first." },
       { property: "og:title", content: "ClickAdMedia — Premium Websites for the Trades" },
-      { property: "og:description", content: "Premium websites. Smarter lead management. Built for the trades. $997 CAD with a free preview first." },
+      { property: "og:description", content: "Premium websites. Smarter lead management. Built for the trades. Custom quotes with a free preview first." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -28,7 +28,7 @@ const STEPS = [
 
 const WHY = [
   { t: "Premium Design", d: "A professional website that reflects the quality of your work." },
-  { t: "Clear Pricing", d: "A defined $997 website package with clearly scoped deliverables." },
+  { t: "Clear Pricing", d: "A clear, personalized quote based on your pages, features, and goals — agreed before you commit." },
   { t: "Connected Tools", d: "Optional CRM, booking, and lead-management workflows." },
   { t: "Personal Support", d: "A practical digital partner who can help with implementation and ongoing needs." },
 ];
@@ -60,10 +60,10 @@ function HomePage() {
               We build premium, professionally customized websites for plumbers, electricians, HVAC companies, roofers, and contractors — with optional CRM, booking, and lead-management tools to help you run your business online.
             </p>
             <div className="flex flex-wrap gap-3 mb-6">
-              <Link to="/website-designs" className="btn-primary">Explore Website Designs →</Link>
-              <Link to="/pricing" className="btn-secondary">View Our Packages</Link>
+              <Link to="/contact" className="btn-primary">Get my free website preview →</Link>
+              <Link to="/website-designs" className="btn-secondary">Explore Website Designs</Link>
             </div>
-            <p className="text-sm text-[rgba(255,255,255,0.5)]">Professional design. Straightforward pricing. Built around your business.</p>
+            <p className="text-sm text-[rgba(255,255,255,0.5)]">Free personalized preview. No obligation. A clear quote tailored to your project.</p>
           </div>
           <img src={heroMockup} alt="Premium plumbing company website shown on a laptop and phone" width={1600} height={1056} className="w-full rounded-xl" />
         </div>
@@ -87,13 +87,13 @@ function HomePage() {
           <div>
             <span className="section-label">Core Package</span>
             <h2 className="text-3xl font-extrabold mb-2">{PACKAGES.website.name}</h2>
-            <p className="text-5xl font-extrabold mb-1">$997 <span className="text-lg font-semibold text-[rgba(255,255,255,0.5)]">CAD one-time</span></p>
+            <p className="text-2xl font-bold mb-1">Built for your business. Quoted for your scope.</p>
             <p className={`${muted} my-5`}>Get a professional online presence designed around your trade, your services, and your business.</p>
             <p className="text-sm text-[rgba(255,255,255,0.75)] mb-6">
               <strong>Free preview first.</strong> We build a personalized preview before you pay — you don&apos;t pay for a website you don&apos;t approve.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link to="/pricing" className="btn-primary">Get Your Website — $997 →</Link>
+              <Link to="/contact" className="btn-primary">Get my free website preview →</Link>
               <Link to="/website-designs" className="btn-secondary">View Website Designs</Link>
             </div>
           </div>
@@ -115,14 +115,14 @@ function HomePage() {
             <span className="section-label">Website + CRM</span>
             <h2 className="text-2xl font-extrabold mb-3">Your Website Is Just the Beginning.</h2>
             <p className={`${muted} mb-4`}>Connect your website to a system that helps you organize incoming inquiries, manage contacts, and stay on top of customer follow-up.</p>
-            <p className="font-bold mb-6">$997 CAD website setup + from $99 CAD/month</p>
+            <p className="font-bold mb-6">Custom-quoted website setup + CRM from $99 CAD/month</p>
             <Link to="/pricing" className="btn-secondary text-sm">Explore Website + CRM →</Link>
           </div>
           <div className="glass-card p-8">
             <span className="section-label">White-Glove</span>
             <h2 className="text-2xl font-extrabold mb-3">We Handle the Setup. You Focus on the Work.</h2>
             <p className={`${muted} mb-4`}>From your website to your lead-management workflow, we help configure the pieces so your digital setup is ready to use.</p>
-            <p className="font-bold mb-6">Projects from $1,497 CAD, quoted by scope</p>
+            <p className="font-bold mb-6">A custom quote for your complete digital setup</p>
             <Link to="/contact" className="btn-secondary text-sm">Request White-Glove Setup →</Link>
           </div>
         </div>
@@ -143,7 +143,7 @@ function HomePage() {
             ))}
           </div>
           <p className="text-xs text-[rgba(255,255,255,0.45)] mb-6">Timelines depend on receiving the necessary information, content, approvals, and access.</p>
-          <Link to="/contact" className="btn-primary">Start Your Website — $997 →</Link>
+          <Link to="/contact" className="btn-primary">Get my free website preview →</Link>
         </div>
       </section>
 
@@ -166,7 +166,7 @@ function HomePage() {
       <section className="px-6 py-24 border-t border-[rgba(255,255,255,0.06)] text-center">
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Ready for a Better Website?</h2>
         <p className={`${muted} mb-8 max-w-[560px] mx-auto`}>Tell us about your business and we&apos;ll build your free, personalized preview.</p>
-        <Link to="/contact" className="btn-primary">Get Started →</Link>
+        <Link to="/contact" className="btn-primary">Get my free website preview →</Link>
       </section>
     </>
   );

@@ -16,7 +16,7 @@ export const Route = createFileRoute("/about")({
 
 const VALUES = [
   { t: "Premium Design", d: "A professional website that reflects the quality of your work." },
-  { t: "Clear Pricing", d: "A defined $997 CAD website package with clearly scoped deliverables." },
+  { t: "Clear Pricing", d: "A personalized quote based on your pages, features, and goals, with scope agreed before you commit." },
   { t: "Connected Tools", d: "Optional CRM, booking, and lead-management workflows." },
   { t: "Personal Support", d: "A practical digital partner who can help with implementation and ongoing needs." },
 ];
@@ -44,7 +44,7 @@ function AboutPage() {
         </div>
       </section>
       <section className="px-6 pb-24 text-center">
-        <Link to="/contact" className="btn-primary">Start Your Website — $997 →</Link>
+        <Link to="/contact" className="btn-primary">Get my free website preview →</Link>
       </section>
     </>
   );
