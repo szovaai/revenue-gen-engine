@@ -115,7 +115,7 @@ function HomePage() {
             <span className="section-label">Website + CRM</span>
             <h2 className="text-2xl font-extrabold mb-3">Your Website Is Just the Beginning.</h2>
             <p className={`${muted} mb-4`}>Connect your website to a system that helps you organize incoming inquiries, manage contacts, and stay on top of customer follow-up.</p>
-            <p className="font-bold mb-6">Custom-quoted website setup + CRM from $99 CAD/month</p>
+            <p className="font-bold mb-6">One custom quote for your website and CRM setup</p>
             <Link to="/pricing" className="btn-secondary text-sm">Explore Website + CRM →</Link>
           </div>
           <div className="glass-card p-8">

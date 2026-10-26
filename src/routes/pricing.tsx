@@ -7,9 +7,9 @@ export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
       { title: "Website Packages & Custom Quotes | ClickAdMedia" },
-      { name: "description", content: "Custom-quoted websites and digital setup for trades. Free personalized preview first. Optional Website Care $49 CAD/mo and CRM from $99 CAD/mo." },
+      { name: "description", content: "Custom-quoted websites and digital setup for trades. Free personalized preview first. Optional website care and CRM plans tailored to your business." },
       { property: "og:title", content: "ClickAdMedia Pricing" },
-      { property: "og:description", content: "A website quote tailored to your scope, with a free preview before you commit. Optional care and CRM plans in CAD." },
+      { property: "og:description", content: "A website quote tailored to your scope, with a free preview before you commit. Optional care and CRM plans available." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -62,8 +62,8 @@ function PricingPage() {
           <div className="glass-card p-8 flex flex-col">
             <span className="section-label">Website + CRM</span>
             <h2 className="text-2xl font-extrabold">{PACKAGES.crm.name}</h2>
-            <p className="text-4xl font-extrabold my-3">$99 <span className="text-base font-semibold text-[rgba(255,255,255,0.5)]">CAD/month and up</span></p>
-            <p className="text-xs text-[rgba(255,255,255,0.5)] mb-4">Website setup is custom-quoted separately. Monthly CRM pricing is confirmed for your needs.</p>
+            <p className="text-3xl font-extrabold my-3">Custom quote</p>
+            <p className="text-xs text-[rgba(255,255,255,0.5)] mb-4">Website setup is custom-quoted separately. Monthly plan confirmed in your quote.</p>
             <List items={["Everything in Premium Trade Website", "Website forms connected to Leadstack CRM", "Centralized lead & contact management", "Estimate or appointment request workflows", "Configured lead notifications", "Website care per plan", "Basic support for the integrated system"]} />
             <Link to="/contact" className="btn-secondary text-center">Get a Website + CRM Quote →</Link>
           </div>
@@ -83,13 +83,13 @@ function PricingPage() {
           <h2 className="text-2xl font-extrabold mb-6">Ongoing Plans</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="glass-card p-8 flex flex-col">
-              <h3 className="text-xl font-bold">Website Care — $49 CAD/month</h3>
+              <h3 className="text-xl font-bold">Website Care</h3>
               <p className={`text-sm ${muted} my-3`}>Website-only maintenance.</p>
               <List items={["Hosting or hosting coordination", "Routine maintenance", "Basic technical monitoring", "Allowance for minor content edits", "Support for common website issues"]} />
               <button onClick={() => buy(PACKAGES.care.priceId)} className="btn-secondary text-center">Add Website Care →</button>
             </div>
             <div className="glass-card p-8 flex flex-col">
-              <h3 className="text-xl font-bold">Website + CRM — from $99 CAD/month</h3>
+              <h3 className="text-xl font-bold">Website + CRM Plan</h3>
               <p className={`text-sm ${muted} my-3`}>Website care plus lead management. Website setup is custom-quoted separately.</p>
               <List items={["Website care as specified in the plan", "Leadstack CRM access", "Lead capture and organization", "Configured booking or estimate workflows", "Defined support allowance"]} />
               <button onClick={() => buy(PACKAGES.crm.priceId)} className="btn-secondary text-center">Start Website + CRM →</button>

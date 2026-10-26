@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     q: "What happens after my site goes live?",
-    a: "You own it. You can leave it as-is or sign up for our $49 CAD/month Website Care plan for hosting coordination, maintenance and minor edits.",
+    a: "You own it. You can leave it as-is or sign up for our optional Website Care plan for hosting coordination, maintenance and minor edits.",
   },
   {
     q: "Do you write the content too?",

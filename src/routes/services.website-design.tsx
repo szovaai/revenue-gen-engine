@@ -38,7 +38,7 @@ function WebsiteDesignPage() {
     { q: "Do I own the site?", a: "Yes, 100%. We hand over all files." },
     { q: "What if I don't like it?", a: "We revise until you do. No extra charge." },
     { q: "How fast?", a: "We build your free preview first. Once you approve the direction, we complete the full build under the agreed scope." },
-    { q: "What about updates?", a: "Our $49 CAD/month Website Care plan covers hosting coordination, maintenance and minor edits." },
+    { q: "What about updates?", a: "Our optional Website Care plan covers hosting coordination, maintenance and minor edits." },
   ];
 
   return (
