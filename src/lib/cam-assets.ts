@@ -1,4 +1,4 @@
-import logoFull from "@/assets/cam-logo-full.png.asset.json";
+import logoFull from "@/assets/clickadmedia-logo-2026.png.asset.json";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import autorepair from "@/assets/portfolio/autorepair.jpg.asset.json";
 import chiropractor from "@/assets/portfolio/chiropractor.jpg.asset.json";
