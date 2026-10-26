@@ -126,7 +126,7 @@ function WebsiteDesignPage() {
           </div>
           <div className="glass-card p-5 text-center">
             <span className="text-sm text-[rgba(255,255,255,0.6)]">Care Plan: </span>
-            <span className="text-gradient font-bold">$49 CAD/month</span>
+            <span className="text-gradient font-bold">Optional & affordable</span>
             <span className="text-sm text-[rgba(255,255,255,0.6)]">
               {" "}— hosting coordination, maintenance, monitoring and minor edits
             </span>
