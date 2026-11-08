@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { portfolioImg } from "@/lib/cam-assets";
+import { OwnershipBadge } from "@/components/cam/Ownership";
 
 export const Route = createFileRoute("/services/website-design")({
   head: () => ({
@@ -56,6 +57,7 @@ function WebsiteDesignPage() {
           <Link to="/book-a-call" className="btn-primary">
             See Your Free Preview
           </Link>
+          <div><OwnershipBadge className="mt-5" /></div>
         </div>
       </section>
 
