@@ -77,6 +77,15 @@ function TermsPage() {
             non-exclusive, non-transferable right to access and use the Service for your internal
             business purposes during your subscription term.
           </p>
+          <h3 className="font-semibold text-gray-900 mt-4 mb-2">Website ownership &amp; transfer</h3>
+          <p>
+            Notwithstanding the above, once a custom website project built for you by Jason R Szova
+            Consulting is paid in full, you own the completed website delivered to you. Third-party
+            items included in the website (such as themes, fonts, stock photos, plugins, and software
+            subscriptions) remain subject to their own license terms, which we will disclose. If you
+            end our hosting or care services, we will provide the website&apos;s source files on
+            request so you can move to another hosting provider.
+          </p>
         </section>
 
         <section>

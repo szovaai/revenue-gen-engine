@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import heroMockup from "@/assets/designs/hero-plumbing.jpg";
 import { DesignGallery } from "./website-designs";
 import { PACKAGES } from "@/lib/packages";
+import { OwnershipBadge, OwnershipSection } from "@/components/cam/Ownership";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -64,6 +65,7 @@ function HomePage() {
               <Link to="/website-designs" className="btn-secondary">Explore Website Designs</Link>
             </div>
             <p className="text-sm text-[rgba(255,255,255,0.5)]">Free personalized preview. No obligation. A clear quote tailored to your project.</p>
+            <OwnershipBadge className="mt-4" />
           </div>
           <img src={heroMockup} alt="Premium plumbing company website shown on a laptop and phone" width={1600} height={1056} className="w-full rounded-xl" />
         </div>
@@ -107,6 +109,8 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      <OwnershipSection />
 
       {/* UPSELLS */}
       <section className="px-6 py-20 border-t border-[rgba(255,255,255,0.06)]">

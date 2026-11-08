@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { OwnItBlock } from "@/components/cam/Ownership";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -43,6 +44,7 @@ function AboutPage() {
           ))}
         </div>
       </section>
+      <section className="px-6 pb-12"><OwnItBlock /></section>
       <section className="px-6 pb-24 text-center">
         <Link to="/contact" className="btn-primary">Get my free website preview →</Link>
       </section>

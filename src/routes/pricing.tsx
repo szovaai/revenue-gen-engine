@@ -2,6 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useStripeCheckout } from "@/hooks/use-stripe-checkout";
 import { useAuth } from "@/hooks/use-auth";
 import { PACKAGES } from "@/lib/packages";
+import { OwnershipBadge, OwnItBlock } from "@/components/cam/Ownership";
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({
@@ -123,6 +124,8 @@ function PricingPage() {
           <Link to="/services/ai-receptionist" className="btn-secondary whitespace-nowrap">Learn More →</Link>
         </div>
       </section>
+
+      <section className="px-6 pb-4"><OwnItBlock /></section>
 
       <section className="py-20 px-6 text-center">
         <h2 className="text-2xl font-bold mb-3">See What We Can Build for Your Business.</h2>
