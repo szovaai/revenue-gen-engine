@@ -56,6 +56,7 @@ function PricingPage() {
             <span className="section-label">Your Website Starts Here</span>
             <h2 className="text-2xl font-extrabold">{PACKAGES.website.name}</h2>
             <p className="text-3xl font-extrabold my-3">Custom quote</p>
+            <OwnershipBadge className="mb-4 self-start" />
             <p className={`text-sm ${muted} mb-4`}>See your free preview first. We confirm your scope and quote before you commit.</p>
             <List items={["Premium customized design", "Mobile-responsive layout", "Homepage + agreed core service pages", "Services & service-area content", "Click-to-call + quote form", "Basic on-page SEO", "Domain connection assistance", "Pre-launch QA + defined revisions"]} />
             <Link to="/contact" className="btn-primary text-center">Get my free website preview →</Link>
