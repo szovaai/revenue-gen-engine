@@ -1,2 +1,3 @@
 # Project conventions
 - Keep custom-quoted project packages separate from fixed-price ongoing subscriptions in the shared package catalog; public project offers must lead to inquiries, while ongoing subscriptions retain their existing checkout flow.
+- Keep approved-project payment packages in a separate private catalog, with an unlisted noindex page excluded from navigation and sitemaps; this preserves public custom-quote offers while allowing direct client payments.
