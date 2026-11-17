@@ -4,6 +4,8 @@
 - [ ] Verify website request links and page rendering, and test custom-quote package rules.
 
 # Unlisted website project payments
-- [ ] Add an unlisted, noindex payment page with three one-time CAD website packages; leave public offers unchanged.
-- [ ] Register the matching Stripe prices and reuse secure checkout with verified payment confirmation.
-- [ ] Verify all three amounts, checkout rendering, and a test purchase.
+- [x] Add an unlisted, noindex payment page with three one-time CAD website packages; leave public offers unchanged.
+- [x] Register the matching Stripe prices and reuse secure checkout with verified payment confirmation.
+- [x] Verify all three amounts, package selection, sign-in return link, and desktop/mobile page rendering.
+- [ ] Verify checkout rendering and a test purchase — blocked: no customer accounts exist; a confirmed account must sign in first.
+- [ ] Accept real payments — blocked: Stripe go-live setup is incomplete.

@@ -4,6 +4,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { EmbeddedCheckout, EmbeddedCheckoutProvider } from "@stripe/react-stripe-js";
 import { ArrowLeft, ArrowRight, CheckCircle2, CreditCard, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { PaymentTestModeBanner } from "@/components/PaymentTestModeBanner";
 import { useAuth } from "@/hooks/use-auth";
 import { PRIVATE_WEBSITE_PACKAGES, findPrivateWebsitePackage } from "@/lib/private-website-packages";
 import { getStripe, getStripeEnvironment } from "@/lib/stripe";
@@ -70,6 +71,8 @@ function WebsitePaymentPage() {
   }
 
   return (
+    <>
+    <div className="pt-4"><PaymentTestModeBanner /></div>
     <section className="px-5 py-16 md:py-24 text-foreground">
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-2 text-sm text-muted-foreground mb-5"><ShieldCheck className="size-4 text-primary" /> ClickAdMedia · Client payments</div>
@@ -114,5 +117,6 @@ function WebsitePaymentPage() {
         )}
       </div>
     </section>
+    </>
   );
 }
