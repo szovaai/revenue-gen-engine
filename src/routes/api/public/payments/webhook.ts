@@ -20,6 +20,8 @@ const PRODUCT_LABELS: Record<string, string> = {
   dominate_plan: "Dominate Plan ($997/mo)",
   ai_receptionist_monthly: "AI Receptionist ($299 CAD setup + $199 CAD/mo)",
   premium_website_onetime: "Premium Trade Website ($997 CAD one-time)",
+  growth_website_onetime: "Growth Website Build ($1,497 CAD one-time)",
+  interactive_website_onetime: "3D Interactive Premium Website Build ($2,997 CAD one-time)",
   website_care_monthly: "Website Care ($49 CAD/mo)",
   website_crm_monthly: "Website + CRM ($99 CAD/mo)",
 };
