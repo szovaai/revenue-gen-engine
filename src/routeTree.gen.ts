@@ -27,6 +27,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ThankYouRouteImport } from './routes/thank-you'
 import { Route as UnsubscribeRouteImport } from './routes/unsubscribe'
 import { Route as WebsiteDesignsRouteImport } from './routes/website-designs'
+import { Route as WebsitePaymentRouteImport } from './routes/website-payment'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
@@ -132,6 +133,11 @@ const UnsubscribeRoute = UnsubscribeRouteImport.update({
 const WebsiteDesignsRoute = WebsiteDesignsRouteImport.update({
   id: '/website-designs',
   path: '/website-designs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsitePaymentRoute = WebsitePaymentRouteImport.update({
+  id: '/website-payment',
+  path: '/website-payment',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -240,6 +246,7 @@ export interface FileRoutesByFullPath {
   '/thank-you': typeof ThankYouRoute
   '/unsubscribe': typeof UnsubscribeRoute
   '/website-designs': typeof WebsiteDesignsRoute
+  '/website-payment': typeof WebsitePaymentRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/services/ai-receptionist': typeof ServicesAiReceptionistRoute
@@ -274,6 +281,7 @@ export interface FileRoutesByTo {
   '/thank-you': typeof ThankYouRoute
   '/unsubscribe': typeof UnsubscribeRoute
   '/website-designs': typeof WebsiteDesignsRoute
+  '/website-payment': typeof WebsitePaymentRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/services/ai-receptionist': typeof ServicesAiReceptionistRoute
@@ -311,6 +319,7 @@ export interface FileRoutesById {
   '/thank-you': typeof ThankYouRoute
   '/unsubscribe': typeof UnsubscribeRoute
   '/website-designs': typeof WebsiteDesignsRoute
+  '/website-payment': typeof WebsitePaymentRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/services/ai-receptionist': typeof ServicesAiReceptionistRoute
@@ -349,6 +358,7 @@ export interface FileRouteTypes {
     | '/thank-you'
     | '/unsubscribe'
     | '/website-designs'
+    | '/website-payment'
     | '/blog/$slug'
     | '/email/unsubscribe'
     | '/services/ai-receptionist'
@@ -383,6 +393,7 @@ export interface FileRouteTypes {
     | '/thank-you'
     | '/unsubscribe'
     | '/website-designs'
+    | '/website-payment'
     | '/blog/$slug'
     | '/email/unsubscribe'
     | '/services/ai-receptionist'
@@ -419,6 +430,7 @@ export interface FileRouteTypes {
     | '/thank-you'
     | '/unsubscribe'
     | '/website-designs'
+    | '/website-payment'
     | '/blog/$slug'
     | '/email/unsubscribe'
     | '/services/ai-receptionist'
@@ -456,6 +468,7 @@ export interface RootRouteChildren {
   ThankYouRoute: typeof ThankYouRoute
   UnsubscribeRoute: typeof UnsubscribeRoute
   WebsiteDesignsRoute: typeof WebsiteDesignsRoute
+  WebsitePaymentRoute: typeof WebsitePaymentRoute
   EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
   ApiPublicAiReceptionistInquiryRoute: typeof ApiPublicAiReceptionistInquiryRoute
   ApiPublicFreePreviewRequestRoute: typeof ApiPublicFreePreviewRequestRoute
@@ -593,6 +606,13 @@ declare module '@tanstack/react-router' {
       path: '/website-designs'
       fullPath: '/website-designs'
       preLoaderRoute: typeof WebsiteDesignsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/website-payment': {
+      id: '/website-payment'
+      path: '/website-payment'
+      fullPath: '/website-payment'
+      preLoaderRoute: typeof WebsitePaymentRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -761,6 +781,7 @@ const rootRouteChildren: RootRouteChildren = {
   ThankYouRoute: ThankYouRoute,
   UnsubscribeRoute: UnsubscribeRoute,
   WebsiteDesignsRoute: WebsiteDesignsRoute,
+  WebsitePaymentRoute: WebsitePaymentRoute,
   EmailUnsubscribeRoute: EmailUnsubscribeRoute,
   ApiPublicAiReceptionistInquiryRoute: ApiPublicAiReceptionistInquiryRoute,
   ApiPublicFreePreviewRequestRoute: ApiPublicFreePreviewRequestRoute,
