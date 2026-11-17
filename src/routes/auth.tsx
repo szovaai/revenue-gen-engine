@@ -4,16 +4,24 @@ import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable/index";
 
 export const Route = createFileRoute("/auth")({
+  validateSearch: (search: Record<string, unknown>): { next?: string } => ({
+    next: typeof search.next === "string" && /^\/(?:website-payment|pricing)(?:\?[^#]*)?$/.test(search.next) ? search.next : undefined,
+  }),
   head: () => ({
     meta: [
       { title: "Sign in — ClickAdMedia" },
       { name: "description", content: "Sign in or create your ClickAdMedia account." },
+      { property: "og:title", content: "Sign in | ClickAdMedia" },
+      { property: "og:description", content: "Access your ClickAdMedia account and secure project payments." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: AuthPage,
 });
 
 function AuthPage() {
+  const { next } = Route.useSearch();
   const navigate = useNavigate();
   const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
@@ -23,21 +31,25 @@ function AuthPage() {
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => {
-      if (data.user) navigate({ to: "/dashboard" });
+      if (data.user) {
+        if (next) window.location.assign(next);
+        else navigate({ to: "/dashboard" });
+      }
     });
-  }, [navigate]);
+  }, [navigate, next]);
 
   const onGoogle = async () => {
     setError(null);
     const result = await lovable.auth.signInWithOAuth("google", {
-      redirect_uri: window.location.origin + "/dashboard",
+      redirect_uri: window.location.origin + "/auth" + (next ? `?next=${encodeURIComponent(next)}` : ""),
     });
     if (result.error) {
       setError(result.error.message || "Google sign-in failed");
       return;
     }
     if (result.redirected) return;
-    navigate({ to: "/dashboard" });
+    if (next) window.location.assign(next);
+    else navigate({ to: "/dashboard" });
   };
 
   const onSubmit = async (e: React.FormEvent) => {
@@ -49,14 +61,19 @@ function AuthPage() {
         const { error } = await supabase.auth.signUp({
           email,
           password,
-          options: { emailRedirectTo: window.location.origin + "/dashboard" },
+          options: { emailRedirectTo: window.location.origin + "/auth" + (next ? `?next=${encodeURIComponent(next)}` : "") },
         });
         if (error) throw error;
       } else {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
       }
-      navigate({ to: "/dashboard" });
+      if (mode === "signup") {
+        const { data } = await supabase.auth.getSession();
+        if (!data.session) { setError("Check your email to confirm your account, then sign in to continue."); return; }
+      }
+      if (next) window.location.assign(next);
+      else navigate({ to: "/dashboard" });
     } catch (err: any) {
       setError(err.message || "Something went wrong");
     } finally {
